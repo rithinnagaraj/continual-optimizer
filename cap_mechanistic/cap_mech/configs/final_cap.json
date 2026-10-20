@@ -1,0 +1,13 @@
+{
+  "lr": 0.0033333333333333335,
+  "betas": [0.9, 0.999],
+  "eps": 1e-8,
+  "weight_decay": 0.0,
+  "k": 7e-5,
+  "T_a": 2000.0,
+  "T_s": 2000.0,
+  "T_m": 1000000.0,
+  "importance": "raw_g2",
+  "protection": "coordinate_box",
+  "release_update": "contest_blocked"
+}

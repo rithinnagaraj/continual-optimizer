@@ -1,0 +1,15 @@
+{
+  "tasks": 200, "updates_per_task": 5000, "batch_size": 128,
+  "normalization_mean": 0.1307, "normalization_std": 0.3081,
+  "a_permutation_seed": 100000, "b_permutation_seed": 200001,
+  "pool_size": 40, "schedule_seed": 555, "schedule_type": "five_shuffled_40_task_blocks",
+  "test_subset_seed": 999, "test_examples": 2000, "eval_batch_size": 128,
+  "threshold_window": 200, "threshold": 0.85,
+  "sampler": "pytorch_random_sampler_persistent_workers",
+  "persistent_workers": true,
+  "gate_plasticity_metric": "P_historical_100step",
+  "additional_plasticity_metric": "P_dense_all_updates",
+  "historical_accuracy_interval": 100,
+  "a_checkpoints": [20, 50, 100, 150, 200],
+  "b_checkpoints": [50, 100, 150, 200]
+}

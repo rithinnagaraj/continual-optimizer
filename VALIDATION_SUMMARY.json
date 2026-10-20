@@ -1,0 +1,106 @@
+{
+  "schema": "source-validation-v2",
+  "static_check_runtime": "Python 3.12",
+  "scientific_runtime_execution": "unverified",
+  "published_numerical_reproduction": "not_verified",
+  "execution": {
+    "numerical_tests": "not_executed",
+    "smoke_runs": "not_executed",
+    "full_experiments": "not_executed"
+  },
+  "runtime_limitation": "Installed PyTorch native library blocked by Windows Application Control (WinError 4551); alternative available runtime has no PyTorch.",
+  "environment": {
+    "recorded_scientific_python": "3.10.20",
+    "recorded_scientific_torch": "2.11.0+cu130",
+    "tested_environment_lock_available": false,
+    "guide": "docs/ENVIRONMENT.md"
+  },
+  "implementation": {
+    "initial_importance": 0,
+    "anchors": "initial_weight_clone",
+    "biases": "plain_Adam",
+    "box_off": "count_crossings_without_clipping",
+    "paper_targets_mapped": 34,
+    "historical_variants_implemented": true,
+    "published_numerical_reproduction": "not_verified",
+    "plasticity_observation": "full incoming current-task minibatch before replay mixing",
+    "s1_evaluation_batch_size": 128,
+    "mnist_paper_admission": "bounded same-environment validation; historical endpoint gate unchanged",
+    "added_parameter_groups": "initialized with per-tensor protection inference",
+    "optimizer_defaults": "contest_blocked_release",
+    "benchmark_settings": "fixed_reported_hyperparameters",
+    "cifar_learning_rates": {
+      "mlp": 0.0002,
+      "cnn": 0.0003
+    },
+    "guide": "docs/IMPLEMENTATION.md"
+  },
+  "historical_test_record": {
+    "release_portability_unittests": {
+      "passed": true,
+      "tests": 5
+    },
+    "dn4il_retune_protocol_and_horizon_unittests": {
+      "passed": true,
+      "tests": 15
+    },
+    "post_phase1_stdlib_unittests": {
+      "passed": true,
+      "tests_passed": 6,
+      "torch_tests_skipped": 5
+    },
+    "cifar_lr_selection_unittests": {
+      "passed": true,
+      "tests": 4
+    },
+    "paper_contract_numerical_tests": {
+      "status": "not_executed",
+      "tests": 4,
+      "reason": "PyTorch native runtime unavailable"
+    },
+    "paper_reporting_unittests": {
+      "passed": true,
+      "tests": 6
+    },
+    "paper_historical_numerical_tests": {
+      "status": "not_executed",
+      "tests": 5,
+      "reason": "PyTorch native runtime unavailable"
+    },
+    "standard_library_totals": {
+      "tests_passed": 41,
+      "tests_skipped": 5
+    },
+    "reference_diagnostics_unittests": {
+      "passed": true,
+      "tests": 5
+    },
+    "scope": "Earlier source snapshot; not rerun for or applicable as validation of the current implementation."
+  },
+  "static_checks": {
+    "manifest_and_metadata": {
+      "passed": true
+    },
+    "bundled_upgd_source_pins": {
+      "passed": true
+    },
+    "mnist_core_and_reference_source_pins": {
+      "passed": true
+    },
+    "python_and_json_syntax": {
+      "passed": true
+    },
+    "documentation_links_and_target_dependencies": {
+      "passed": true
+    },
+    "archive_matches_manifest": {
+      "passed": true
+    }
+  },
+  "run_integrity": {
+    "guide": "docs/RUN_INTEGRITY.md",
+    "verification": "static source/configuration and archive checks only"
+  },
+  "contains_historical_private_results": false,
+  "first_party_license": "unlicensed"
+}

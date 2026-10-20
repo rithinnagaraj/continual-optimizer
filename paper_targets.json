@@ -1,0 +1,795 @@
+{
+  "schema": "cap-paper-map-v1",
+  "targets": {
+    "table-01": {
+      "label": "tab:settings",
+      "title": "S1/S2/S3 settings",
+      "status": "protocol",
+      "commands": [],
+      "artifacts": [
+        "cap_mechanistic/cap_mech/configs/*.json",
+        "cap_mechanistic_cifar/cifar_mech/configs/*.json",
+        "docs/METHOD.md",
+        "experiment_paper_benchmark.py"
+      ],
+      "hardware": "CPU (configuration inspection)",
+      "runtime": "No training; seconds expected for metadata export (estimate, not measured).",
+      "notes": "S1 lr=1/300, S2 MLP lr=2e-4, S3 CNN lr=3e-4. Uses the reported rates directly; Table 6 separately reruns the historical pilot."
+    },
+    "table-02": {
+      "label": "tab:mech",
+      "title": "Headline M1-M4 contrasts",
+      "status": "data-pipeline",
+      "commands": [
+        [
+          "run_experiments.py",
+          "mechanistic-mnist-paper",
+          "--device",
+          "{device}",
+          "--resume"
+        ],
+        [
+          "run_experiments.py",
+          "mechanistic-cifar-paper",
+          "--device",
+          "{device}",
+          "--resume"
+        ]
+      ],
+      "artifacts": [
+        "results/mechanistic_mnist/m1_importance_faithfulness/summary/*.csv",
+        "results/mechanistic_mnist/m2_k_causal_dial/summary/*.csv",
+        "results/mechanistic_mnist/m3_stream_age_state/summary/*.csv",
+        "results/mechanistic_mnist/m4_importance_assignment/summary/*.csv",
+        "results/mechanistic_cifar/paper_fixed/mlp/scientific/m1_importance_faithfulness/summary/*.csv",
+        "results/mechanistic_cifar/paper_fixed/mlp/scientific/m2_k_causal_dial/summary/*.csv",
+        "results/mechanistic_cifar/paper_fixed/mlp/scientific/m3_stream_age_state/summary/*.csv",
+        "results/mechanistic_cifar/paper_fixed/mlp/scientific/m4_importance_assignment/summary/*.csv",
+        "results/mechanistic_cifar/paper_fixed/cnn/scientific/m1_importance_faithfulness/summary/*.csv",
+        "results/mechanistic_cifar/paper_fixed/cnn/scientific/m2_k_causal_dial/summary/*.csv",
+        "results/mechanistic_cifar/paper_fixed/cnn/scientific/m3_stream_age_state/summary/*.csv",
+        "results/mechanistic_cifar/paper_fixed/cnn/scientific/m4_importance_assignment/summary/*.csv"
+      ],
+      "hardware": "A30: S1 interventions; CIFAR LR pilot: A30; full CIFAR GPU model not separately recorded. Historical S1 benchmark: L4 (reported environment).",
+      "runtime": "End-to-end wall time unrecorded. Reference training: 10M updates for S1 and 10M per CIFAR architecture; interventions add branches/probes.",
+      "notes": "Runs the configured experiments and collects generated data and plots. Resume requires compatible source/configuration identities. S1 uses the bounded same-environment validation route reported in the paper: a complete reference bank followed by exact short-horizon comparisons. Failed historical endpoint labels are retained."
+    },
+    "table-03": {
+      "label": "tab:bench",
+      "title": "S1 benchmark P/R/B",
+      "status": "data-pipeline",
+      "commands": [
+        [
+          "experiment_paper_benchmark.py",
+          "--device",
+          "{device}",
+          "--resume"
+        ]
+      ],
+      "artifacts": [
+        "results/paper_benchmark/analysis/table03_benchmark.csv"
+      ],
+      "hardware": "NVIDIA L4 (reported S1 benchmark environment)",
+      "runtime": "End-to-end wall time unrecorded; 5 methods x 5 seeds x 2 streams x 1M updates = 50M updates.",
+      "notes": "Runs the configured experiments and collects generated data and plots. Resume requires compatible source/configuration identities."
+    },
+    "table-04": {
+      "label": "tab:app-baselines",
+      "title": "S1 baseline hyperparameters",
+      "status": "protocol",
+      "commands": [
+        [
+          "experiment_paper_benchmark.py",
+          "--export-settings"
+        ]
+      ],
+      "artifacts": [
+        "results/paper_benchmark/fixed_settings.json"
+      ],
+      "hardware": "CPU (configuration export)",
+      "runtime": "No training; seconds estimated, unmeasured.",
+      "notes": "Exports the fixed settings reported in the paper; no reselection."
+    },
+    "table-05": {
+      "label": "tab:app-budget",
+      "title": "S1 tuning budgets",
+      "status": "data-pipeline",
+      "commands": [
+        [
+          "run_experiments.py",
+          "post-phase1",
+          "--device",
+          "{device}",
+          "--resume"
+        ]
+      ],
+      "artifacts": [
+        "results/post_phase1_v2/retention_grids/grid_results.csv",
+        "results/post_phase1_v2/retention_grids/post_edge_extension_plan.json"
+      ],
+      "hardware": "A30: S1 interventions; CIFAR LR pilot: A30; full CIFAR GPU model not separately recorded. Historical S1 benchmark: L4 (reported environment).",
+      "runtime": "End-to-end wall time unrecorded. Full retention grids, one edge extension, retuning and paired final streams are required.",
+      "notes": "Runs the configured experiments and collects generated data and plots. Resume requires compatible source/configuration identities."
+    },
+    "table-06": {
+      "label": "tab:app-lr",
+      "title": "CIFAR learning-rate pilot",
+      "status": "data-pipeline",
+      "commands": [
+        [
+          "-c",
+          "from torchvision.datasets import CIFAR100; CIFAR100('data', train=True, download=True)"
+        ],
+        [
+          "run_experiments.py",
+          "cifar-lr-sweep",
+          "--device",
+          "{device}",
+          "--resume"
+        ]
+      ],
+      "artifacts": [
+        "cap_mechanistic_cifar/selected_lrs.json"
+      ],
+      "hardware": "NVIDIA A30 (recorded pilot)",
+      "runtime": "Wall time unrecorded; 20 candidates x 5,000 updates = 100,000 updates.",
+      "notes": "Runs the configured experiments and collects generated data and plots. Resume requires compatible source/configuration identities."
+    },
+    "table-07": {
+      "label": "tab:interventions",
+      "title": "Intervention design",
+      "status": "protocol",
+      "commands": [],
+      "artifacts": [
+        "cap_mechanistic/cap_mech/configs/*.json",
+        "cap_mechanistic_cifar/cifar_mech/configs/*.json",
+        "docs/METHOD.md"
+      ],
+      "hardware": "CPU",
+      "runtime": "No training; seconds expected for metadata export (estimate).",
+      "notes": "Specification in packaged mechanism JSON."
+    },
+    "table-08": {
+      "label": "tab:app-signs",
+      "title": "Per-seed headline-effect signs",
+      "status": "data-pipeline",
+      "commands": [
+        [
+          "run_experiments.py",
+          "mechanistic-mnist-paper",
+          "--device",
+          "{device}",
+          "--resume"
+        ],
+        [
+          "run_experiments.py",
+          "mechanistic-cifar-paper",
+          "--device",
+          "{device}",
+          "--resume"
+        ]
+      ],
+      "artifacts": [
+        "results/mechanistic_mnist/m1_importance_faithfulness/summary/*.csv",
+        "results/mechanistic_mnist/m2_k_causal_dial/summary/*.csv",
+        "results/mechanistic_mnist/m3_stream_age_state/summary/*.csv",
+        "results/mechanistic_mnist/m4_importance_assignment/summary/*.csv",
+        "results/mechanistic_cifar/paper_fixed/mlp/scientific/m1_importance_faithfulness/summary/*.csv",
+        "results/mechanistic_cifar/paper_fixed/mlp/scientific/m2_k_causal_dial/summary/*.csv",
+        "results/mechanistic_cifar/paper_fixed/mlp/scientific/m3_stream_age_state/summary/*.csv",
+        "results/mechanistic_cifar/paper_fixed/mlp/scientific/m4_importance_assignment/summary/*.csv",
+        "results/mechanistic_cifar/paper_fixed/cnn/scientific/m1_importance_faithfulness/summary/*.csv",
+        "results/mechanistic_cifar/paper_fixed/cnn/scientific/m2_k_causal_dial/summary/*.csv",
+        "results/mechanistic_cifar/paper_fixed/cnn/scientific/m3_stream_age_state/summary/*.csv",
+        "results/mechanistic_cifar/paper_fixed/cnn/scientific/m4_importance_assignment/summary/*.csv"
+      ],
+      "hardware": "A30: S1 interventions; CIFAR LR pilot: A30; full CIFAR GPU model not separately recorded. Historical S1 benchmark: L4 (reported environment).",
+      "runtime": "End-to-end wall time unrecorded. Reference training: 10M updates for S1 and 10M per CIFAR architecture; interventions add branches/probes.",
+      "notes": "Runs the configured experiments and collects generated data and plots. Resume requires compatible source/configuration identities. S1 uses the bounded same-environment validation route reported in the paper: a complete reference bank followed by exact short-horizon comparisons. Failed historical endpoint labels are retained."
+    },
+    "table-09": {
+      "label": "tab:app-m1",
+      "title": "Importance/Fisher/magnitude damage",
+      "status": "data-pipeline",
+      "commands": [
+        [
+          "run_experiments.py",
+          "mechanistic-mnist-paper",
+          "--device",
+          "{device}",
+          "--resume"
+        ],
+        [
+          "run_experiments.py",
+          "mechanistic-cifar-paper",
+          "--device",
+          "{device}",
+          "--resume"
+        ]
+      ],
+      "artifacts": [
+        "results/mechanistic_mnist/m1_importance_faithfulness/summary/*.csv",
+        "results/mechanistic_cifar/paper_fixed/mlp/scientific/m1_importance_faithfulness/summary/*.csv",
+        "results/mechanistic_cifar/paper_fixed/cnn/scientific/m1_importance_faithfulness/summary/*.csv"
+      ],
+      "hardware": "A30: S1 interventions; CIFAR LR pilot: A30; full CIFAR GPU model not separately recorded. Historical S1 benchmark: L4 (reported environment).",
+      "runtime": "End-to-end wall time unrecorded. Reference training: 10M updates for S1 and 10M per CIFAR architecture; interventions add branches/probes.",
+      "notes": "Runs the configured experiments and collects generated data and plots. Resume requires compatible source/configuration identities. S1 uses the bounded same-environment validation route reported in the paper: a complete reference bank followed by exact short-horizon comparisons. Failed historical endpoint labels are retained."
+    },
+    "table-10": {
+      "label": "tab:app-m2",
+      "title": "Box-scale branch responses",
+      "status": "data-pipeline",
+      "commands": [
+        [
+          "run_experiments.py",
+          "mechanistic-mnist-paper",
+          "--device",
+          "{device}",
+          "--resume"
+        ],
+        [
+          "run_experiments.py",
+          "mechanistic-cifar-paper",
+          "--device",
+          "{device}",
+          "--resume"
+        ]
+      ],
+      "artifacts": [
+        "results/mechanistic_mnist/m2_k_causal_dial/summary/*.csv",
+        "results/mechanistic_cifar/paper_fixed/mlp/scientific/m2_k_causal_dial/summary/*.csv",
+        "results/mechanistic_cifar/paper_fixed/cnn/scientific/m2_k_causal_dial/summary/*.csv"
+      ],
+      "hardware": "A30: S1 interventions; CIFAR LR pilot: A30; full CIFAR GPU model not separately recorded. Historical S1 benchmark: L4 (reported environment).",
+      "runtime": "End-to-end wall time unrecorded. Reference training: 10M updates for S1 and 10M per CIFAR architecture; interventions add branches/probes.",
+      "notes": "Runs the configured experiments and collects generated data and plots. Resume requires compatible source/configuration identities. S1 uses the bounded same-environment validation route reported in the paper: a complete reference bank followed by exact short-horizon comparisons. Failed historical endpoint labels are retained."
+    },
+    "table-11": {
+      "label": "tab:app-m3",
+      "title": "State-reset branch responses",
+      "status": "data-pipeline",
+      "commands": [
+        [
+          "run_experiments.py",
+          "mechanistic-mnist-paper",
+          "--device",
+          "{device}",
+          "--resume"
+        ],
+        [
+          "run_experiments.py",
+          "mechanistic-cifar-paper",
+          "--device",
+          "{device}",
+          "--resume"
+        ]
+      ],
+      "artifacts": [
+        "results/mechanistic_mnist/m3_stream_age_state/summary/*.csv",
+        "results/mechanistic_cifar/paper_fixed/mlp/scientific/m3_stream_age_state/summary/*.csv",
+        "results/mechanistic_cifar/paper_fixed/cnn/scientific/m3_stream_age_state/summary/*.csv"
+      ],
+      "hardware": "A30: S1 interventions; CIFAR LR pilot: A30; full CIFAR GPU model not separately recorded. Historical S1 benchmark: L4 (reported environment).",
+      "runtime": "End-to-end wall time unrecorded. Reference training: 10M updates for S1 and 10M per CIFAR architecture; interventions add branches/probes.",
+      "notes": "Runs the configured experiments and collects generated data and plots. Resume requires compatible source/configuration identities. S1 uses the bounded same-environment validation route reported in the paper: a complete reference bank followed by exact short-horizon comparisons. Failed historical endpoint labels are retained."
+    },
+    "table-12": {
+      "label": "tab:app-m4",
+      "title": "Importance-assignment branch responses",
+      "status": "data-pipeline",
+      "commands": [
+        [
+          "run_experiments.py",
+          "mechanistic-mnist-paper",
+          "--device",
+          "{device}",
+          "--resume"
+        ],
+        [
+          "run_experiments.py",
+          "mechanistic-cifar-paper",
+          "--device",
+          "{device}",
+          "--resume"
+        ]
+      ],
+      "artifacts": [
+        "results/mechanistic_mnist/m4_importance_assignment/summary/*.csv",
+        "results/mechanistic_cifar/paper_fixed/mlp/scientific/m4_importance_assignment/summary/*.csv",
+        "results/mechanistic_cifar/paper_fixed/cnn/scientific/m4_importance_assignment/summary/*.csv"
+      ],
+      "hardware": "A30: S1 interventions; CIFAR LR pilot: A30; full CIFAR GPU model not separately recorded. Historical S1 benchmark: L4 (reported environment).",
+      "runtime": "End-to-end wall time unrecorded. Reference training: 10M updates for S1 and 10M per CIFAR architecture; interventions add branches/probes.",
+      "notes": "Runs the configured experiments and collects generated data and plots. Resume requires compatible source/configuration identities. S1 uses the bounded same-environment validation route reported in the paper: a complete reference bank followed by exact short-horizon comparisons. Failed historical endpoint labels are retained."
+    },
+    "table-13": {
+      "label": "tab:app-m5",
+      "title": "Prospective prediction",
+      "status": "data-pipeline",
+      "commands": [
+        [
+          "run_experiments.py",
+          "mechanistic-mnist-paper",
+          "--device",
+          "{device}",
+          "--resume"
+        ]
+      ],
+      "artifacts": [
+        "results/mechanistic_mnist/m5_prospective_prediction/summary/*.csv"
+      ],
+      "hardware": "NVIDIA A30",
+      "runtime": "End-to-end wall time unrecorded. Reference training: 10M updates for S1 and 10M per CIFAR architecture; interventions add branches/probes.",
+      "notes": "Runs the configured experiments and collects generated data and plots. Resume requires compatible source/configuration identities. S1 uses the bounded same-environment validation route reported in the paper: a complete reference bank followed by exact short-horizon comparisons. Failed historical endpoint labels are retained."
+    },
+    "table-14": {
+      "label": "tab:app-m6",
+      "title": "Release-timescale response",
+      "status": "data-pipeline",
+      "commands": [
+        [
+          "run_experiments.py",
+          "mechanistic-mnist-paper",
+          "--device",
+          "{device}",
+          "--resume"
+        ]
+      ],
+      "artifacts": [
+        "results/mechanistic_mnist/m6_release_dial/summary/*.csv"
+      ],
+      "hardware": "NVIDIA A30",
+      "runtime": "End-to-end wall time unrecorded. Reference training: 10M updates for S1 and 10M per CIFAR architecture; interventions add branches/probes.",
+      "notes": "Runs the configured experiments and collects generated data and plots. Resume requires compatible source/configuration identities. S1 uses the bounded same-environment validation route reported in the paper: a complete reference bank followed by exact short-horizon comparisons. Failed historical endpoint labels are retained."
+    },
+    "table-15": {
+      "label": "tab:app-gate",
+      "title": "Historical endpoint comparison",
+      "status": "data-pipeline",
+      "commands": [
+        [
+          "tools/reference_diagnostics.py",
+          "--device",
+          "{device}",
+          "--resume"
+        ]
+      ],
+      "artifacts": [
+        "results/mechanistic_mnist/reproduction/reproduction_gate.json"
+      ],
+      "hardware": "A30 rerun versus historical L4 benchmark",
+      "runtime": "End-to-end wall time unrecorded; 5 seeds x 2 streams x 1M updates = 10M reference updates.",
+      "notes": "Runs only the complete five-seed reference. Endpoint discrepancies are reportable for this diagnostic after source/configuration/checkpoint checks; the failed gate remains failed and no mechanisms are admitted."
+    },
+    "table-16": {
+      "label": "tab:app-cifar-ref",
+      "title": "CIFAR reference P/R",
+      "status": "data-pipeline",
+      "commands": [
+        [
+          "run_experiments.py",
+          "mechanistic-cifar-paper",
+          "--device",
+          "{device}",
+          "--resume"
+        ]
+      ],
+      "artifacts": [
+        "results/mechanistic_cifar/paper_fixed/mlp/scientific/reproduction/summary/*.csv",
+        "results/mechanistic_cifar/paper_fixed/cnn/scientific/reproduction/summary/*.csv"
+      ],
+      "hardware": "A30: S1 interventions; CIFAR LR pilot: A30; full CIFAR GPU model not separately recorded. Historical S1 benchmark: L4 (reported environment).",
+      "runtime": "End-to-end wall time unrecorded. Reference training: 10M updates for S1 and 10M per CIFAR architecture; interventions add branches/probes.",
+      "notes": "Runs the configured experiments and collects generated data and plots. Resume requires compatible source/configuration identities."
+    },
+    "table-17": {
+      "label": "tab:app-cifar-base",
+      "title": "CIFAR absolute baseline branches",
+      "status": "data-pipeline",
+      "commands": [
+        [
+          "run_experiments.py",
+          "mechanistic-cifar-paper",
+          "--device",
+          "{device}",
+          "--resume"
+        ]
+      ],
+      "artifacts": [
+        "results/mechanistic_cifar/paper_fixed/mlp/scientific/m2_k_causal_dial/raw/m2_branch_metrics.csv",
+        "results/mechanistic_cifar/paper_fixed/mlp/scientific/m3_stream_age_state/raw/m3_branch_metrics.csv",
+        "results/mechanistic_cifar/paper_fixed/mlp/scientific/m4_importance_assignment/raw/m4_branch_metrics.csv",
+        "results/mechanistic_cifar/paper_fixed/cnn/scientific/m2_k_causal_dial/raw/m2_branch_metrics.csv",
+        "results/mechanistic_cifar/paper_fixed/cnn/scientific/m3_stream_age_state/raw/m3_branch_metrics.csv",
+        "results/mechanistic_cifar/paper_fixed/cnn/scientific/m4_importance_assignment/raw/m4_branch_metrics.csv"
+      ],
+      "hardware": "A30: S1 interventions; CIFAR LR pilot: A30; full CIFAR GPU model not separately recorded. Historical S1 benchmark: L4 (reported environment).",
+      "runtime": "End-to-end wall time unrecorded. Reference training: 10M updates for S1 and 10M per CIFAR architecture; interventions add branches/probes.",
+      "notes": "Runs the configured experiments and collects generated data and plots. Resume requires compatible source/configuration identities."
+    },
+    "table-18": {
+      "label": "tab:app-e1",
+      "title": "Historical importance validation",
+      "status": "data-pipeline",
+      "commands": [
+        [
+          "run_experiments.py",
+          "e1",
+          "e1-extra",
+          "--device",
+          "{device}",
+          "--resume"
+        ]
+      ],
+      "artifacts": [
+        "results/e1/correlation_summary.csv",
+        "results/e1/final/corrected_group_by_seed.csv"
+      ],
+      "hardware": "Historical GPU model unrecorded",
+      "runtime": "Unrecorded; historical protocol: 20 epochs per dataset and five seeds plus probes.",
+      "notes": "Uses centered importance evidence. Runs the configured experiments and collects generated data and plots. Resume requires compatible source/configuration identities."
+    },
+    "table-19": {
+      "label": "tab:app-e3",
+      "title": "Historical centered/raw contamination",
+      "status": "data-pipeline",
+      "commands": [
+        [
+          "run_experiments.py",
+          "e3",
+          "--device",
+          "{device}",
+          "--resume"
+        ]
+      ],
+      "artifacts": [
+        "results/e3/contamination_summary.csv",
+        "results/e3/burn_in_summary.csv"
+      ],
+      "hardware": "Historical GPU model unrecorded",
+      "runtime": "Unrecorded.",
+      "notes": "Uses centered importance evidence. Runs the configured experiments and collects generated data and plots. Resume requires compatible source/configuration identities."
+    },
+    "table-20": {
+      "label": "tab:design",
+      "title": "Development variants",
+      "status": "data-pipeline",
+      "commands": [
+        [
+          "experiment_paper_development.py",
+          "--device",
+          "{device}",
+          "--resume"
+        ]
+      ],
+      "artifacts": [
+        "results/paper_development/analysis/table20_variants.csv"
+      ],
+      "hardware": "NVIDIA L4 (reported S1 development environment)",
+      "runtime": "End-to-end wall time unrecorded; 8 variants x seed 42 x 2 streams x 1M updates = 16M updates.",
+      "notes": "Runs the configured experiments and collects generated data and plots. Resume requires compatible source/configuration identities. Runs all eight development variants. The paper omitted standardized P for two early variants; fresh runs may additionally record it. For the five-seed original/final check, use experiment_paper_development.py --variants original final --seeds 42 123 451 789 2026 --device cuda --resume."
+    },
+    "table-21": {
+      "label": "tab:app-dev-time",
+      "title": "Late Stream-A diagnostic windows",
+      "status": "data-pipeline",
+      "commands": [
+        [
+          "experiment_paper_development.py",
+          "--device",
+          "{device}",
+          "--resume"
+        ]
+      ],
+      "artifacts": [
+        "results/paper_development/analysis/table21_temporal.csv"
+      ],
+      "hardware": "NVIDIA L4 (reported S1 development environment)",
+      "runtime": "End-to-end wall time unrecorded; 8 variants x seed 42 x 2 streams x 1M updates = 16M updates.",
+      "notes": "Runs the configured experiments and collects generated data and plots. Resume requires compatible source/configuration identities."
+    },
+    "table-22": {
+      "label": "tab:app-dev-gap",
+      "title": "Development retention by revisit gap",
+      "status": "data-pipeline",
+      "commands": [
+        [
+          "experiment_paper_benchmark.py",
+          "--methods",
+          "upgd",
+          "--seeds",
+          "42",
+          "--device",
+          "{device}",
+          "--resume"
+        ],
+        [
+          "experiment_paper_development.py",
+          "--device",
+          "{device}",
+          "--resume",
+          "--baseline-pool",
+          "results/paper_benchmark/upgd/stream_b/streamb_pool.csv"
+        ]
+      ],
+      "artifacts": [
+        "results/paper_development/analysis/table22_gap_retention.csv"
+      ],
+      "hardware": "NVIDIA L4 (reported S1 development environment)",
+      "runtime": "End-to-end wall time unrecorded; 8 variants x seed 42 x 2 streams x 1M updates = 16M updates. UPGD reference adds 2M updates.",
+      "notes": "Runs the configured experiments and collects generated data and plots. Resume requires compatible source/configuration identities."
+    },
+    "table-23": {
+      "label": "tab:app-dev-within",
+      "title": "Development within-task accuracy",
+      "status": "data-pipeline",
+      "commands": [
+        [
+          "experiment_paper_development.py",
+          "--device",
+          "{device}",
+          "--resume"
+        ]
+      ],
+      "artifacts": [
+        "results/paper_development/analysis/table23_within_task.csv"
+      ],
+      "hardware": "NVIDIA L4 (reported S1 development environment)",
+      "runtime": "End-to-end wall time unrecorded; 8 variants x seed 42 x 2 streams x 1M updates = 16M updates.",
+      "notes": "Runs the configured experiments and collects generated data and plots. Resume requires compatible source/configuration identities."
+    },
+    "table-24": {
+      "label": "tab:app-versions",
+      "title": "Optimizer-version ledger",
+      "status": "protocol",
+      "commands": [],
+      "artifacts": [
+        "docs/METHOD.md",
+        "docs/IMPLEMENTATION.md"
+      ],
+      "hardware": "CPU",
+      "runtime": "No training; metadata export only.",
+      "notes": "Optimizer-version ledger; historical E1/E3 centered evidence, E2 proximal protection, original and final Release, and every development variant are explicit in source."
+    },
+    "figure-01": {
+      "label": "fig:CAP-step",
+      "title": "Single-coordinate update schematic",
+      "status": "data-pipeline",
+      "commands": [
+        [
+          "plot_paper.py",
+          "figure-01"
+        ]
+      ],
+      "artifacts": [
+        "results/paper/figure-01/figure.svg"
+      ],
+      "hardware": "CPU",
+      "runtime": "No training; metadata export only.",
+      "notes": "Renders a conceptual update schematic without training; layout differs from the manuscript TikZ artwork."
+    },
+    "figure-02": {
+      "label": "fig:mech",
+      "title": "M2 trade-off and M3 age panels",
+      "status": "data-pipeline",
+      "commands": [
+        [
+          "run_experiments.py",
+          "mechanistic-mnist-paper",
+          "--device",
+          "{device}",
+          "--resume"
+        ],
+        [
+          "run_experiments.py",
+          "mechanistic-cifar-paper",
+          "--device",
+          "{device}",
+          "--resume"
+        ]
+      ],
+      "artifacts": [
+        "results/mechanistic_mnist/m2_k_causal_dial/summary/*.csv",
+        "results/mechanistic_mnist/m3_stream_age_state/summary/*.csv",
+        "results/mechanistic_cifar/paper_fixed/mlp/scientific/m2_k_causal_dial/summary/*.csv",
+        "results/mechanistic_cifar/paper_fixed/mlp/scientific/m3_stream_age_state/summary/*.csv",
+        "results/mechanistic_cifar/paper_fixed/cnn/scientific/m2_k_causal_dial/summary/*.csv",
+        "results/mechanistic_cifar/paper_fixed/cnn/scientific/m3_stream_age_state/summary/*.csv",
+        "results/mechanistic_mnist/m2_k_causal_dial/summary/*stability_plasticity.png",
+        "results/mechanistic_cifar/paper_fixed/mlp/scientific/m2_k_causal_dial/summary/*stability_plasticity.png",
+        "results/mechanistic_cifar/paper_fixed/cnn/scientific/m2_k_causal_dial/summary/*stability_plasticity.png",
+        "results/mechanistic_mnist/m3_stream_age_state/summary/*tax_by_age.png",
+        "results/mechanistic_cifar/paper_fixed/mlp/scientific/m3_stream_age_state/summary/*tax_by_age.png",
+        "results/mechanistic_cifar/paper_fixed/cnn/scientific/m3_stream_age_state/summary/*tax_by_age.png"
+      ],
+      "hardware": "A30: S1 interventions; CIFAR LR pilot: A30; full CIFAR GPU model not separately recorded. Historical S1 benchmark: L4 (reported environment).",
+      "runtime": "End-to-end wall time unrecorded. Reference training: 10M updates for S1 and 10M per CIFAR architecture; interventions add branches/probes.",
+      "notes": "Runs the configured experiments and collects generated data and plots. Resume requires compatible source/configuration identities. S1 uses the bounded same-environment validation route reported in the paper: a complete reference bank followed by exact short-horizon comparisons. Failed historical endpoint labels are retained."
+    },
+    "figure-03": {
+      "label": "fig:horizon",
+      "title": "S1 horizon plasticity and retention gaps",
+      "status": "data-pipeline",
+      "commands": [
+        [
+          "experiment_paper_benchmark.py",
+          "--device",
+          "{device}",
+          "--resume"
+        ],
+        [
+          "plot_paper.py",
+          "figure-03"
+        ]
+      ],
+      "artifacts": [
+        "results/paper_benchmark/analysis/horizon_plasticity.csv",
+        "results/paper_benchmark/analysis/retention_by_gap.csv",
+        "results/paper/figure-03/figure.pdf"
+      ],
+      "hardware": "NVIDIA L4 (reported S1 benchmark environment)",
+      "runtime": "End-to-end wall time unrecorded; 5 methods x 5 seeds x 2 streams x 1M updates = 50M updates.",
+      "notes": "Runs the configured experiments and collects generated data and plots. Resume requires compatible source/configuration identities."
+    },
+    "figure-04": {
+      "label": "fig:app-m1",
+      "title": "Importance damage",
+      "status": "data-pipeline",
+      "commands": [
+        [
+          "run_experiments.py",
+          "mechanistic-mnist-paper",
+          "--device",
+          "{device}",
+          "--resume"
+        ]
+      ],
+      "artifacts": [
+        "results/mechanistic_mnist/m1_importance_faithfulness/summary/*.csv",
+        "results/mechanistic_mnist/m1_importance_faithfulness/summary/*.png"
+      ],
+      "hardware": "NVIDIA A30",
+      "runtime": "End-to-end wall time unrecorded. Reference training: 10M updates for S1 and 10M per CIFAR architecture; interventions add branches/probes.",
+      "notes": "Runs the configured experiments and collects generated data and plots. Resume requires compatible source/configuration identities. S1 uses the bounded same-environment validation route reported in the paper: a complete reference bank followed by exact short-horizon comparisons. Failed historical endpoint labels are retained."
+    },
+    "figure-05": {
+      "label": "fig:app-m5",
+      "title": "Prospective prediction",
+      "status": "data-pipeline",
+      "commands": [
+        [
+          "run_experiments.py",
+          "mechanistic-mnist-paper",
+          "--device",
+          "{device}",
+          "--resume"
+        ]
+      ],
+      "artifacts": [
+        "results/mechanistic_mnist/m5_prospective_prediction/summary/*.csv",
+        "results/mechanistic_mnist/m5_prospective_prediction/summary/*.png"
+      ],
+      "hardware": "NVIDIA A30",
+      "runtime": "End-to-end wall time unrecorded. Reference training: 10M updates for S1 and 10M per CIFAR architecture; interventions add branches/probes.",
+      "notes": "Runs the configured experiments and collects generated data and plots. Resume requires compatible source/configuration identities. S1 uses the bounded same-environment validation route reported in the paper: a complete reference bank followed by exact short-horizon comparisons. Failed historical endpoint labels are retained."
+    },
+    "figure-06": {
+      "label": "fig:app-m6",
+      "title": "Release response",
+      "status": "data-pipeline",
+      "commands": [
+        [
+          "run_experiments.py",
+          "mechanistic-mnist-paper",
+          "--device",
+          "{device}",
+          "--resume"
+        ]
+      ],
+      "artifacts": [
+        "results/mechanistic_mnist/m6_release_dial/summary/*.csv",
+        "results/mechanistic_mnist/m6_release_dial/summary/*.png"
+      ],
+      "hardware": "NVIDIA A30",
+      "runtime": "End-to-end wall time unrecorded. Reference training: 10M updates for S1 and 10M per CIFAR architecture; interventions add branches/probes.",
+      "notes": "Runs the configured experiments and collects generated data and plots. Resume requires compatible source/configuration identities. S1 uses the bounded same-environment validation route reported in the paper: a complete reference bank followed by exact short-horizon comparisons. Failed historical endpoint labels are retained."
+    },
+    "figure-07": {
+      "label": "fig:app-gate",
+      "title": "Endpoint-error diagnostic",
+      "status": "data-pipeline",
+      "commands": [
+        [
+          "tools/reference_diagnostics.py",
+          "--device",
+          "{device}",
+          "--resume"
+        ],
+        [
+          "plot_paper.py",
+          "figure-07"
+        ]
+      ],
+      "artifacts": [
+        "results/mechanistic_mnist/reproduction/reproduction_gate.json",
+        "results/paper/figure-07/figure.pdf"
+      ],
+      "hardware": "A30: S1 interventions; CIFAR LR pilot: A30; full CIFAR GPU model not separately recorded. Historical S1 benchmark: L4 (reported environment).",
+      "runtime": "End-to-end wall time unrecorded; 5 seeds x 2 streams x 1M updates = 10M reference updates.",
+      "notes": "Runs only the complete five-seed reference. Endpoint discrepancies are reportable for this diagnostic after source/configuration/checkpoint checks; the failed gate remains failed and no mechanisms are admitted."
+    },
+    "figure-08": {
+      "label": "fig:app-e2",
+      "title": "Box versus proximal spring",
+      "status": "data-pipeline",
+      "commands": [
+        [
+          "run_experiments.py",
+          "e2",
+          "--device",
+          "{device}",
+          "--resume"
+        ]
+      ],
+      "artifacts": [
+        "results/e2/e2_points.csv",
+        "results/e2/e2_frontier_levels.csv",
+        "results/e2/e2_frontiers.png"
+      ],
+      "hardware": "Historical GPU model unrecorded",
+      "runtime": "Unrecorded; 5 seeds x (5k burn-in + 18 x 5k branch updates) = 475,000 training updates plus evaluation.",
+      "notes": "Both arms branch from identical frozen state. Spring uses the paper proximal formula. Runs the configured experiments and collects generated data and plots. Resume requires compatible source/configuration identities."
+    },
+    "figure-09": {
+      "label": "fig:app-e4b",
+      "title": "Historical retention-rule freezing",
+      "status": "data-pipeline",
+      "commands": [
+        [
+          "run_experiments.py",
+          "e4a",
+          "e4a-discriminator",
+          "phase1-prepare",
+          "e4b",
+          "--device",
+          "{device}",
+          "--resume"
+        ],
+        [
+          "plot_paper.py",
+          "figure-09"
+        ]
+      ],
+      "artifacts": [
+        "results/stream_a/stream_scalars.csv",
+        "results/stream_a/stream_tasks.csv",
+        "results/paper/figure-09/figure.pdf"
+      ],
+      "hardware": "Historical GPU model not recorded in the supplied run manifest",
+      "runtime": "Unrecorded; historical core is 4 arms x 5 seeds x 1M updates, plus selection/comparators.",
+      "notes": "Runs the configured experiments and collects generated data and plots. Resume requires compatible source/configuration identities."
+    },
+    "overhead": {
+      "label": "overhead",
+      "title": "Section 3.4 / Appendix A GPU overhead",
+      "status": "data-pipeline",
+      "commands": [
+        [
+          "run_experiments.py",
+          "e6",
+          "--device",
+          "{device}",
+          "--resume"
+        ]
+      ],
+      "artifacts": [
+        "results/e6/e6_results.csv",
+        "results/e6/report.md"
+      ],
+      "hardware": "NVIDIA L4; idle GPU; FP32; synchronized timings",
+      "runtime": "Unrecorded end-to-end; 3 workloads x 3 arms x 3 repeats x (50 warm-up + 200 timed full steps), plus optimizer-only timings.",
+      "notes": "Runs the configured experiments and collects generated data and plots. Resume requires compatible source/configuration identities."
+    }
+  }
+}

@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+.venv/
+.env
+data/
+results/
+validation_output/
+dist/
+cap_mechanistic/validation/*-smoke/
+cap_mechanistic_cifar/lr_sweep/
+cap_mechanistic_cifar/selected_lrs.json
+*.log
+*.pt
+*.pth
+*.zip

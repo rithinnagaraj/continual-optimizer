@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "cap-mechanistic-cifar"
+version = "1.0.0"
+requires-python = ">=3.10"
+dependencies = ["torch", "torchvision", "numpy", "pandas", "matplotlib", "pytest"]
+[project.scripts]
+cap-cifar = "cifar_mech.cli:main"
+[tool.setuptools.packages.find]
+include = ["cifar_mech*"]
+[tool.setuptools.package-data]
+cifar_mech = ["configs/*.json"]
+[tool.pytest.ini_options]
+testpaths = ["tests"]

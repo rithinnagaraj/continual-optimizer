@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cap-mechanistic"
+version = "1.0.0"
+requires-python = ">=3.10"
+dependencies = ["torch", "torchvision", "numpy", "pandas", "matplotlib", "pytest"]
+
+[project.scripts]
+cap-mech = "cap_mech.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["cap_mech*"]
+
+[tool.setuptools.package-data]
+cap_mech = ["configs/*.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"

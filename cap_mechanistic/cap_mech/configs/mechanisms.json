@@ -1,0 +1,19 @@
+{
+  "version": "cap-mechanisms-final-v1",
+  "seeds": [42, 123, 451, 789, 2026],
+  "a_checkpoints": [20, 50, 100, 150],
+  "m1_checkpoints": [100, 200], "b_checkpoints": [100, 150],
+  "k_multipliers": [0.5, 0.75, 1.0, 1.5, 2.0],
+  "reset_branches": ["baseline", "box_off", "recenter_only", "importance_reset", "full_cap_state_reset"],
+  "shuffle_replicates": 8, "shuffle_seed": 310000,
+  "horizons": {"m2": 5, "m3": 1, "m4": 10, "m6": 10},
+  "release_times": [250000.0, 500000.0, 1000000.0, 2000000.0, "infinity"],
+  "curve_steps": [100, 200, 500, 1000, 2000, 5000],
+  "diagnostic_interval": 100, "checkpoint_interval": 1000,
+  "fractions": [0.01, 0.05, 0.2], "random_groups": 20,
+  "noise_draws": 3, "noise_scale": 0.1, "probe_seed": 410000,
+  "fisher_examples_per_permutation": 200, "fisher_subset_seed": 510000,
+  "features": ["log_median_importance", "log_median_radius", "mean_normalized_displacement", "boundary_fraction", "trailing_bind_rate", "parameter_norm", "previous_task_accuracy"],
+  "ridge_alphas": [0, 0.1, 1, 10, 100],
+  "bootstrap_resamples": 10000, "bootstrap_seed": 610000
+}

@@ -1,0 +1,10 @@
+# Install a matching torch/torchvision pair for your CPU or CUDA environment first.
+torch>=2.2
+torchvision>=0.17
+numpy>=1.26
+pandas>=2.1
+matplotlib>=3.8
+pytest>=8
+Pillow>=10
+# E6 constructs GPT-2 from configuration; it does not download pretrained weights.
+transformers>=4.40,<5
