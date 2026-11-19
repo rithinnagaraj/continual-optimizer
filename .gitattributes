@@ -1,0 +1,3 @@
+# Scientific manifests and vendored-source pins hash exact bytes.
+# Preserve the validated line endings on every platform.
+* -text

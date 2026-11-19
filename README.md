@@ -76,6 +76,13 @@ experiments; those runners select their variants explicitly.
 
 ## Running the experiments
 
+For the new, isolated TMLR rebuttal UPGD search and evaluation, see
+[the experiment plan and runbook](docs/REBUTTAL_PLAN.md). Its runners support
+individual resumable jobs, a train-only validation split, frozen selection,
+utility checkpoints, and per-attempt timing. Inspect without training with
+`python experiment_upgd_tuning.py plan`. The original paper commands below retain
+their frozen settings.
+
 To list stages or inspect commands without training:
 
 ```bash

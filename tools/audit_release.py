@@ -37,7 +37,7 @@ def audit(root=ROOT, *, forbidden=(), strict=False):
     errors = []
     entries = manifest_paths(root)
     modules = {p.stem for p in root.glob("*.py")}
-    modules.update({"cap_mech", "cifar_mech", "compare_reference", "reference_model", "reference_optimizer",
+    modules.update({"cap_mech", "cap_mechanistic", "cifar_mech", "compare_reference", "reference_model", "reference_optimizer",
                     "run_validated_mechanisms", "audit_release", "test_isolation", "tests", "tools", "run_experiments"})
     parsed = 0
     for relative, expected in entries.items():
@@ -118,6 +118,10 @@ def audit(root=ROOT, *, forbidden=(), strict=False):
     expected_files = set(entries) | {"MANIFEST.sha256"}
     for path in root.rglob("*"):
         relative = path.relative_to(root)
+        # A live checkout contains VCS metadata. Strict distribution audits must
+        # still reject it; the source allowlist never packages it.
+        if not strict and relative.parts[0] == ".git":
+            continue
         if path.is_symlink():
             errors.append(f"Symlink: {relative.as_posix()}")
         if not path.is_file() or relative.as_posix() in expected_files:
