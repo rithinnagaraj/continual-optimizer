@@ -156,8 +156,23 @@ checkpoints are trusted local pickle payloads; do not load untrusted checkpoints
 
 ## Commands for the L4 machine
 
-Run from the `public_repo` root with its scientific dependencies installed.
-These are instructions, not commands executed during implementation.
+Run from the repository root (the local `public_repo` directory, or the root of
+the GitHub clone). Use a CUDA-enabled PyTorch image and preserve its working
+torch/torchvision pair. For priority 1, install only the lightweight requirements:
+
+```bash
+python -m pip install --upgrade pip
+python -m pip install -r requirements-upgd.txt
+python -c "import torch, torchvision, numpy; assert torch.cuda.is_available(); print(torch.__version__, torchvision.__version__, numpy.__version__, torch.cuda.get_device_name(0))"
+python tools/audit_release.py
+```
+
+Do not install the full `requirements.txt` with CUDA-build constraints for this
+campaign: that asks pip to resolve the GPU packages again and pulls dependencies
+for unrelated experiments. The priority-1 runners need only the existing torch,
+torchvision, NumPy, and the Python standard library. A normal checkout audit
+ignores generated virtual-environment symlinks; `--strict` is for clean source
+exports and intentionally rejects them. These commands do not start training.
 
 Inspect the production plan without importing PyTorch, downloading data, or
 creating output directories:

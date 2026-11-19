@@ -1,0 +1,4 @@
+# Priority-1 runners use the image's already-working CUDA torch/torchvision.
+# Do not ask pip to resolve or replace that pair when preparing this campaign.
+# Other dependencies are Python standard library modules.
+numpy>=1.26

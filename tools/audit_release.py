@@ -118,9 +118,12 @@ def audit(root=ROOT, *, forbidden=(), strict=False):
     expected_files = set(entries) | {"MANIFEST.sha256"}
     for path in root.rglob("*"):
         relative = path.relative_to(root)
-        # A live checkout contains VCS metadata. Strict distribution audits must
-        # still reject it; the source allowlist never packages it.
-        if not strict and relative.parts[0] == ".git":
+        # Development environments legitimately contain interpreter symlinks.
+        # Manifest entries were independently checked above, so this exemption
+        # applies only to unlisted development/generated paths. Strict release
+        # audits still reject these paths and all symlinks.
+        if not strict and (relative.parts[0] == ".git" or
+                           (set(relative.parts) & GENERATED_PARTS and relative.as_posix() not in expected_files)):
             continue
         if path.is_symlink():
             errors.append(f"Symlink: {relative.as_posix()}")

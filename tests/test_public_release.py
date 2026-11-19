@@ -7,6 +7,7 @@ import subprocess
 import sys
 import tempfile
 import unittest
+from unittest.mock import patch
 import zipfile
 
 from run_experiments import ROOT, STAGES, plan
@@ -62,6 +63,25 @@ class PublicReleaseTests(unittest.TestCase):
     def test_distribution_audit(self):
         result = audit()
         self.assertTrue(result["passed"], result["errors"])
+
+    def test_checkout_allows_venv_symlinks_but_release_and_source_checks_do_not(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            copy = Path(temporary) / "source-copy"
+            for relative in [*manifest_paths(), "MANIFEST.sha256"]:
+                destination = copy / relative
+                destination.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copyfile(ROOT / relative, destination)
+            interpreter = copy / ".venv/bin/python"
+            interpreter.parent.mkdir(parents=True)
+            interpreter.touch()
+            original = Path.is_symlink
+            # Simulate the Linux venv symlink on hosts without symlink privilege.
+            with patch.object(Path, "is_symlink", lambda path: path == interpreter or original(path)):
+                self.assertTrue(audit(copy)["passed"])
+                self.assertIn("Symlink: .venv/bin/python", audit(copy, strict=True)["errors"])
+            source = copy / "model.py"
+            with patch.object(Path, "is_symlink", lambda path: path == source or original(path)):
+                self.assertIn("Missing or escaping file: model.py", audit(copy)["errors"])
 
     def test_copied_release_plans_without_parent(self):
         with tempfile.TemporaryDirectory() as temporary:
