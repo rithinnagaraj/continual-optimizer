@@ -37,7 +37,7 @@ def audit(root=ROOT, *, forbidden=(), strict=False):
     errors = []
     entries = manifest_paths(root)
     modules = {p.stem for p in root.glob("*.py")}
-    modules.update({"cap_mech", "cap_mechanistic", "cifar_mech", "compare_reference", "reference_model", "reference_optimizer",
+    modules.update({"cap_mech", "cap_mechanistic", "cap_mechanistic_cifar", "cifar_mech", "compare_reference", "reference_model", "reference_optimizer",
                     "run_validated_mechanisms", "audit_release", "test_isolation", "tests", "tools", "run_experiments"})
     parsed = 0
     for relative, expected in entries.items():

@@ -90,6 +90,9 @@ utility/Fisher/random perturbation probes, use the separate
 UPGD checkpoints and do not train a model.
 The completed five-seed probe results are recorded in
 [PRIORITY2_RESULTS.md](docs/PRIORITY2_RESULTS.md).
+For the CIFAR-100 AdamW/UPGD baselines, use the separate
+[priority-3 bounded L4 pilot](docs/PRIORITY3_RUNBOOK.md). Its timing, LR selection,
+and 80-task benchmark stages are explicit and resumable.
 
 To list stages or inspect commands without training:
 

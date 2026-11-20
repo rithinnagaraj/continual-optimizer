@@ -1,0 +1,455 @@
+{
+  "archive_sha256": "8236000fda453531dbb853eae5aa94e23ce4737191fd22977c64a1409f812d02",
+  "eval_tasks": 80,
+  "limitations": [
+    "Derived from archived task/pool summaries; no checkpoint bytes in review archive.",
+    "Historical CAP and new baseline environments may differ; no exact trajectory equality claimed.",
+    "CAP LR selection used seed 42; new baseline development seed is disjoint from reporting seeds.",
+    "80-task prefixes, not original 200-task endpoints; earlier exploratory test access remains disclosed."
+  ],
+  "metrics": {
+    "balanced": "min(P,R) per seed",
+    "plasticity": "mean historical_sampled_plasticity over stream A tasks 41-80",
+    "retention": "mean non-current stream B accuracy at task 80"
+  },
+  "patch_size": 4,
+  "per_seed": [
+    {
+      "arm": "cap_archived",
+      "balanced": 0.06805128205128205,
+      "model": "mlp",
+      "plasticity": 0.35568906252086163,
+      "provenance": "historical CAP 80-task prefix; not a same-environment rerun",
+      "retention": 0.06805128205128205,
+      "seed": 42
+    },
+    {
+      "arm": "cap_archived",
+      "balanced": 0.07025641025641026,
+      "model": "mlp",
+      "plasticity": 0.3559125000089407,
+      "provenance": "historical CAP 80-task prefix; not a same-environment rerun",
+      "retention": 0.07025641025641026,
+      "seed": 123
+    },
+    {
+      "arm": "cap_archived",
+      "balanced": 0.07097435897435897,
+      "model": "mlp",
+      "plasticity": 0.35822890627384185,
+      "provenance": "historical CAP 80-task prefix; not a same-environment rerun",
+      "retention": 0.07097435897435897,
+      "seed": 451
+    },
+    {
+      "arm": "cap_archived",
+      "balanced": 0.07101282051282051,
+      "model": "mlp",
+      "plasticity": 0.35471406251192095,
+      "provenance": "historical CAP 80-task prefix; not a same-environment rerun",
+      "retention": 0.07101282051282051,
+      "seed": 789
+    },
+    {
+      "arm": "cap_archived",
+      "balanced": 0.07092307692307692,
+      "model": "mlp",
+      "plasticity": 0.35346562500298023,
+      "provenance": "historical CAP 80-task prefix; not a same-environment rerun",
+      "retention": 0.07092307692307692,
+      "seed": 2026
+    },
+    {
+      "arm": "cap_archived",
+      "balanced": 0.21394871794871795,
+      "model": "cnn",
+      "plasticity": 0.3553421875014901,
+      "provenance": "historical CAP 80-task prefix; not a same-environment rerun",
+      "retention": 0.21394871794871795,
+      "seed": 42
+    },
+    {
+      "arm": "cap_archived",
+      "balanced": 0.21126923076923076,
+      "model": "cnn",
+      "plasticity": 0.3552179687693715,
+      "provenance": "historical CAP 80-task prefix; not a same-environment rerun",
+      "retention": 0.21126923076923076,
+      "seed": 123
+    },
+    {
+      "arm": "cap_archived",
+      "balanced": 0.20744871794871794,
+      "model": "cnn",
+      "plasticity": 0.3515953125059605,
+      "provenance": "historical CAP 80-task prefix; not a same-environment rerun",
+      "retention": 0.20744871794871794,
+      "seed": 451
+    },
+    {
+      "arm": "cap_archived",
+      "balanced": 0.21417948717948718,
+      "model": "cnn",
+      "plasticity": 0.35742421877384184,
+      "provenance": "historical CAP 80-task prefix; not a same-environment rerun",
+      "retention": 0.21417948717948718,
+      "seed": 789
+    },
+    {
+      "arm": "cap_archived",
+      "balanced": 0.1986153846153846,
+      "model": "cnn",
+      "plasticity": 0.3634750000089407,
+      "provenance": "historical CAP 80-task prefix; not a same-environment rerun",
+      "retention": 0.1986153846153846,
+      "seed": 2026
+    }
+  ],
+  "schema": "cifar-cap-prefix-80-v1",
+  "sources": {
+    "cnn": {
+      "config": {
+        "allow_unverified_reference": false,
+        "baseline": {
+          "T_a": 2000.0,
+          "T_m": 1000000.0,
+          "T_s": 2000.0,
+          "betas": [
+            0.9,
+            0.999
+          ],
+          "eps": 1e-08,
+          "importance": "raw_g2",
+          "k": 7e-05,
+          "lr": 0.0003,
+          "protection": "coordinate_box",
+          "release_update": "contest_blocked",
+          "weight_decay": 0.0
+        },
+        "checkpoint_hashes": {},
+        "device": "cuda",
+        "experiment": "reference",
+        "mechanisms": {
+          "a_checkpoints": [
+            20,
+            50,
+            100,
+            150
+          ],
+          "b_checkpoints": [
+            100,
+            150
+          ],
+          "bootstrap_resamples": 10000,
+          "bootstrap_seed": 610000,
+          "checkpoint_interval": 1000,
+          "curve_steps": [
+            100,
+            200,
+            500,
+            1000,
+            2000,
+            5000
+          ],
+          "diagnostic_interval": 100,
+          "fisher_examples_per_permutation": 200,
+          "fisher_subset_seed": 510000,
+          "fractions": [
+            0.01,
+            0.05,
+            0.2
+          ],
+          "horizons": {
+            "m2": 5,
+            "m3": 1,
+            "m4": 10
+          },
+          "k_multipliers": [
+            0.5,
+            0.75,
+            1.0,
+            1.5,
+            2.0
+          ],
+          "m1_checkpoints": [
+            100,
+            200
+          ],
+          "noise_draws": 3,
+          "noise_scale": 0.1,
+          "probe_seed": 410000,
+          "random_groups": 20,
+          "reset_branches": [
+            "baseline",
+            "box_off",
+            "recenter_only",
+            "importance_reset",
+            "full_safe_state_reset"
+          ],
+          "seeds": [
+            42,
+            123,
+            451,
+            789,
+            2026
+          ],
+          "shuffle_replicates": 8,
+          "shuffle_seed": 310000,
+          "version": "cifar-mechanisms-final-v1"
+        },
+        "protocol": {
+          "architecture": "cnn",
+          "augmentation": "none",
+          "batchnorm": false,
+          "cnn": "Conv3x3(3,32)-ReLU-Pool2; Conv3x3(32,64)-ReLU-Pool2; Conv3x3(64,128)-ReLU-Pool2; Flatten-Linear(2048,256)-ReLU-Linear(256,100)",
+          "dataset": "CIFAR100",
+          "dropout": false,
+          "lr_selection_sha256": "ceb29f7de11090fac20acbfd4b9908ca44630f83e8bff0309669e44a000c7bca",
+          "mlp": [
+            3072,
+            300,
+            300,
+            100
+          ],
+          "patch_grid": 8,
+          "patch_semantics": "shared RGB permutation; within-patch pixels unchanged",
+          "patch_size": 4,
+          "reference_policy": "complete same-protocol bank; no historical CIFAR targets"
+        },
+        "seeds": [
+          42,
+          123,
+          451,
+          789,
+          2026
+        ],
+        "smoke": false,
+        "source_version": "796be470c5f9077caeb267d342e4e6502e1e00e68f3f4139ac324dec4a896970",
+        "streams": {
+          "a_checkpoints": [
+            20,
+            50,
+            100,
+            150,
+            200
+          ],
+          "a_permutation_seed": 100000,
+          "additional_plasticity_metric": "P_dense_all_updates",
+          "b_checkpoints": [
+            50,
+            100,
+            150,
+            200
+          ],
+          "b_permutation_seed": 200001,
+          "batch_size": 128,
+          "dataset": "CIFAR100",
+          "eval_batch_size": 128,
+          "gate_plasticity_metric": "P_sampled_100step",
+          "historical_accuracy_interval": 100,
+          "normalization_mean": [
+            0.5071,
+            0.4867,
+            0.4408
+          ],
+          "normalization_std": [
+            0.2675,
+            0.2565,
+            0.2761
+          ],
+          "persistent_workers": true,
+          "pool_size": 40,
+          "sampler": "pytorch_random_sampler_persistent_workers",
+          "schedule_seed": 555,
+          "schedule_type": "five_shuffled_40_task_blocks",
+          "tasks": 200,
+          "test_examples": 2000,
+          "test_subset_seed": 999,
+          "threshold": 0.85,
+          "threshold_window": 200,
+          "updates_per_task": 5000
+        },
+        "threads": 1,
+        "torch_version": "2.11.0+cu130",
+        "version": "cifar-mechanisms-final-v1"
+      },
+      "gate_scope": "reference completeness and integrity only; not historical reproduction",
+      "table_sha256": {
+        "pool": "ba597ffcaa1c18d6fcd1c07c543ea2bcc7b2671cf7ea33bb909238666c5c9e1a",
+        "tasks": "bb0c7c25dc6a4725c8d96a328a14466f9fe0670815e95f17f30062ad6ada1041"
+      }
+    },
+    "mlp": {
+      "config": {
+        "allow_unverified_reference": false,
+        "baseline": {
+          "T_a": 2000.0,
+          "T_m": 1000000.0,
+          "T_s": 2000.0,
+          "betas": [
+            0.9,
+            0.999
+          ],
+          "eps": 1e-08,
+          "importance": "raw_g2",
+          "k": 7e-05,
+          "lr": 0.0002,
+          "protection": "coordinate_box",
+          "release_update": "contest_blocked",
+          "weight_decay": 0.0
+        },
+        "checkpoint_hashes": {},
+        "device": "cuda",
+        "experiment": "reference",
+        "mechanisms": {
+          "a_checkpoints": [
+            20,
+            50,
+            100,
+            150
+          ],
+          "b_checkpoints": [
+            100,
+            150
+          ],
+          "bootstrap_resamples": 10000,
+          "bootstrap_seed": 610000,
+          "checkpoint_interval": 1000,
+          "curve_steps": [
+            100,
+            200,
+            500,
+            1000,
+            2000,
+            5000
+          ],
+          "diagnostic_interval": 100,
+          "fisher_examples_per_permutation": 200,
+          "fisher_subset_seed": 510000,
+          "fractions": [
+            0.01,
+            0.05,
+            0.2
+          ],
+          "horizons": {
+            "m2": 5,
+            "m3": 1,
+            "m4": 10
+          },
+          "k_multipliers": [
+            0.5,
+            0.75,
+            1.0,
+            1.5,
+            2.0
+          ],
+          "m1_checkpoints": [
+            100,
+            200
+          ],
+          "noise_draws": 3,
+          "noise_scale": 0.1,
+          "probe_seed": 410000,
+          "random_groups": 20,
+          "reset_branches": [
+            "baseline",
+            "box_off",
+            "recenter_only",
+            "importance_reset",
+            "full_safe_state_reset"
+          ],
+          "seeds": [
+            42,
+            123,
+            451,
+            789,
+            2026
+          ],
+          "shuffle_replicates": 8,
+          "shuffle_seed": 310000,
+          "version": "cifar-mechanisms-final-v1"
+        },
+        "protocol": {
+          "architecture": "mlp",
+          "augmentation": "none",
+          "batchnorm": false,
+          "cnn": "Conv3x3(3,32)-ReLU-Pool2; Conv3x3(32,64)-ReLU-Pool2; Conv3x3(64,128)-ReLU-Pool2; Flatten-Linear(2048,256)-ReLU-Linear(256,100)",
+          "dataset": "CIFAR100",
+          "dropout": false,
+          "lr_selection_sha256": "ceb29f7de11090fac20acbfd4b9908ca44630f83e8bff0309669e44a000c7bca",
+          "mlp": [
+            3072,
+            300,
+            300,
+            100
+          ],
+          "patch_grid": 8,
+          "patch_semantics": "shared RGB permutation; within-patch pixels unchanged",
+          "patch_size": 4,
+          "reference_policy": "complete same-protocol bank; no historical CIFAR targets"
+        },
+        "seeds": [
+          42,
+          123,
+          451,
+          789,
+          2026
+        ],
+        "smoke": false,
+        "source_version": "796be470c5f9077caeb267d342e4e6502e1e00e68f3f4139ac324dec4a896970",
+        "streams": {
+          "a_checkpoints": [
+            20,
+            50,
+            100,
+            150,
+            200
+          ],
+          "a_permutation_seed": 100000,
+          "additional_plasticity_metric": "P_dense_all_updates",
+          "b_checkpoints": [
+            50,
+            100,
+            150,
+            200
+          ],
+          "b_permutation_seed": 200001,
+          "batch_size": 128,
+          "dataset": "CIFAR100",
+          "eval_batch_size": 128,
+          "gate_plasticity_metric": "P_sampled_100step",
+          "historical_accuracy_interval": 100,
+          "normalization_mean": [
+            0.5071,
+            0.4867,
+            0.4408
+          ],
+          "normalization_std": [
+            0.2675,
+            0.2565,
+            0.2761
+          ],
+          "persistent_workers": true,
+          "pool_size": 40,
+          "sampler": "pytorch_random_sampler_persistent_workers",
+          "schedule_seed": 555,
+          "schedule_type": "five_shuffled_40_task_blocks",
+          "tasks": 200,
+          "test_examples": 2000,
+          "test_subset_seed": 999,
+          "threshold": 0.85,
+          "threshold_window": 200,
+          "updates_per_task": 5000
+        },
+        "threads": 1,
+        "torch_version": "2.11.0+cu130",
+        "version": "cifar-mechanisms-final-v1"
+      },
+      "gate_scope": "reference completeness and integrity only; not historical reproduction",
+      "table_sha256": {
+        "pool": "eb6d4b3f56bf7cb3a4b81cfc2b03fc55a618ffda12d43d537040776f9b252362",
+        "tasks": "112a23c08ba6a3f7fe996024a175c78e411ebb15774570cabaed63b087143e3b"
+      }
+    }
+  }
+}

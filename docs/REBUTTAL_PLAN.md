@@ -10,8 +10,14 @@ Priority 2's five-seed checkpoint probes are also complete. See
 [PRIORITY2_RUNBOOK.md](PRIORITY2_RUNBOOK.md) for the frozen scope and commands.
 Paper revisions are deferred until the planned experiments finish.
 
+**21 November 2026 update:** Priority 3's resumable CIFAR baseline runners and
+bounded timing pilot are implemented in [PRIORITY3_RUNBOOK.md](PRIORITY3_RUNBOOK.md).
+Matching historical CAP 80-task prefixes have been recovered and bundled with
+provenance; no new baseline scientific runs were launched during implementation.
+
 Priority 1 uses a separate UPGD tuning/evaluation campaign; priority 2 uses the
-checkpoint-probing runner linked above. Priorities 3–4 remain planned follow-ups.
+checkpoint-probing runner linked above. Priority 3 has a separate CIFAR runner;
+priority 4 remains a planned follow-up.
 No scientific campaign was launched during implementation. Target: freeze experimental results during the
 first week of an approximately two-week rebuttal window.
 
