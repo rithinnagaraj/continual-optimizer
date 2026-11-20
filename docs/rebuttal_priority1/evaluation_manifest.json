@@ -1,0 +1,17 @@
+{
+  "campaign_hash": "0aa822457441e6617a6a0483e8222acfc0dec2a1baf142d4d4751b8b0f86d942",
+  "result_hashes": {
+    "eval-selected-123-a": "8efefa0432292808f8c425e60d844e5fe0a3700b04d37a0b01b2304574a84df9",
+    "eval-selected-123-b": "6e759dd277ad64a646e98645b33e744edaf8532e9e0fb0f9cfc3d7a47b667348",
+    "eval-selected-2026-a": "80fc285ea3d666e6477dad669f989f0f2a98558a60c3730ac5a8682c13d31f16",
+    "eval-selected-2026-b": "12925d8ceb38c05f41699ab82be4c8e4dbcb5bfa312e84be76eae2d72cf396fa",
+    "eval-selected-42-a": "3296e791f4201ae12cb29b84abf71bbcbf74d6a2bd920bd147d3e7fddf39cf91",
+    "eval-selected-42-b": "fef67f7a878ca4086ed1da235f0f4c08dc1d8cf25bbd2f2a26ff3316895de65a",
+    "eval-selected-451-a": "fe69eaa16e7868c5b3ec60620ae6984d9d45b86672f3ee29018b4e17e168d698",
+    "eval-selected-451-b": "66119f0d89cf03bf23751e6146efe6c21c41fa95b6ee4a6449208e34398a89b9",
+    "eval-selected-789-a": "32559760a88692beafd4da3ab3dea55eac54db0fc1254695f71c9f0aa912e005",
+    "eval-selected-789-b": "843163425a15af2d0362ea4b6ac8ef6e88dd5ef7825e884e73a0d8392f2bce02"
+  },
+  "selected_config_hash": "229d2ce5aacc80d04e9cd975dd4a8d1c7aa0fbd8277279d71caf8bc005f5d444",
+  "smoke": false
+}

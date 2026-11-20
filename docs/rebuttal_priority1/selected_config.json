@@ -1,0 +1,55 @@
+{
+  "balanced": 0.8611105263157894,
+  "campaign_hash": "0aa822457441e6617a6a0483e8222acfc0dec2a1baf142d4d4751b8b0f86d942",
+  "candidates": [
+    {
+      "balanced": 0.8611105263157894,
+      "config": {
+        "beta_utility": 0.9999,
+        "lr": 0.001,
+        "sigma": 0.0001,
+        "weight_decay": 0.0
+      },
+      "config_index": 22,
+      "mean_pr": 0.8897027631578948
+    },
+    {
+      "balanced": 0.8610789473684212,
+      "config": {
+        "beta_utility": 0.9999,
+        "lr": 0.001,
+        "sigma": 0.0,
+        "weight_decay": 0.0
+      },
+      "config_index": 18,
+      "mean_pr": 0.8896894736842106
+    },
+    {
+      "balanced": 0.8603842105263155,
+      "config": {
+        "beta_utility": 0.999,
+        "lr": 0.001,
+        "sigma": 0.0001,
+        "weight_decay": 0.0
+      },
+      "config_index": 20,
+      "mean_pr": 0.8897496052631578
+    }
+  ],
+  "config": {
+    "beta_utility": 0.9999,
+    "lr": 0.001,
+    "sigma": 0.0001,
+    "weight_decay": 0.0
+  },
+  "config_index": 22,
+  "confirmation_result_hashes": {
+    "confirm-018": "7d4f8e0da1f1d37e204e51bf93016a34f05a1d51156f13c7ae856ffe32e85949",
+    "confirm-020": "486b835a3f98ebff0bd2ae90ff557e5dbf561b3171fbba8881536e43a72a7081",
+    "confirm-022": "c42c8c733e116d1319867d7e2238c7eef8aaad6859eb743c8d7332b38bcf3c0a"
+  },
+  "excluded_confirmation_indices": [],
+  "mean_pr": 0.8897027631578948,
+  "selection_rule": "mean per-seed min(P_val,R_val); then mean (P_val+R_val)/2; then grid index",
+  "shortlist_hash": "105d736eeef9e58e455c6859144fcc7ea406feaa4bdf720012fa8c33ce7543f4"
+}

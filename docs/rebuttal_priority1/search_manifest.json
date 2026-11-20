@@ -1,0 +1,5 @@
+{
+  "campaign_hash": "0aa822457441e6617a6a0483e8222acfc0dec2a1baf142d4d4751b8b0f86d942",
+  "curve_order": "fixed grid order, descriptive validation curve, not randomized search-efficiency inference",
+  "smoke": false
+}

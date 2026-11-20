@@ -1,0 +1,482 @@
+{
+  "batch_size": 128,
+  "cap_reference": {
+    "T_a": 2000.0,
+    "T_m": 1000000.0,
+    "T_s": 2000.0,
+    "k": 7e-05,
+    "lr": 0.0033333333333333335
+  },
+  "configurations": [
+    {
+      "beta_utility": 0.999,
+      "lr": 0.0001,
+      "sigma": 0.0,
+      "weight_decay": 0.0
+    },
+    {
+      "beta_utility": 0.999,
+      "lr": 0.0001,
+      "sigma": 0.0,
+      "weight_decay": 0.01
+    },
+    {
+      "beta_utility": 0.9999,
+      "lr": 0.0001,
+      "sigma": 0.0,
+      "weight_decay": 0.0
+    },
+    {
+      "beta_utility": 0.9999,
+      "lr": 0.0001,
+      "sigma": 0.0,
+      "weight_decay": 0.01
+    },
+    {
+      "beta_utility": 0.999,
+      "lr": 0.0001,
+      "sigma": 0.0001,
+      "weight_decay": 0.0
+    },
+    {
+      "beta_utility": 0.999,
+      "lr": 0.0001,
+      "sigma": 0.0001,
+      "weight_decay": 0.01
+    },
+    {
+      "beta_utility": 0.9999,
+      "lr": 0.0001,
+      "sigma": 0.0001,
+      "weight_decay": 0.0
+    },
+    {
+      "beta_utility": 0.9999,
+      "lr": 0.0001,
+      "sigma": 0.0001,
+      "weight_decay": 0.01
+    },
+    {
+      "beta_utility": 0.999,
+      "lr": 0.0001,
+      "sigma": 0.01,
+      "weight_decay": 0.0
+    },
+    {
+      "beta_utility": 0.999,
+      "lr": 0.0001,
+      "sigma": 0.01,
+      "weight_decay": 0.01
+    },
+    {
+      "beta_utility": 0.9999,
+      "lr": 0.0001,
+      "sigma": 0.01,
+      "weight_decay": 0.0
+    },
+    {
+      "beta_utility": 0.9999,
+      "lr": 0.0001,
+      "sigma": 0.01,
+      "weight_decay": 0.01
+    },
+    {
+      "beta_utility": 0.999,
+      "lr": 0.0001,
+      "sigma": 0.1,
+      "weight_decay": 0.0
+    },
+    {
+      "beta_utility": 0.999,
+      "lr": 0.0001,
+      "sigma": 0.1,
+      "weight_decay": 0.01
+    },
+    {
+      "beta_utility": 0.9999,
+      "lr": 0.0001,
+      "sigma": 0.1,
+      "weight_decay": 0.0
+    },
+    {
+      "beta_utility": 0.9999,
+      "lr": 0.0001,
+      "sigma": 0.1,
+      "weight_decay": 0.01
+    },
+    {
+      "beta_utility": 0.999,
+      "lr": 0.001,
+      "sigma": 0.0,
+      "weight_decay": 0.0
+    },
+    {
+      "beta_utility": 0.999,
+      "lr": 0.001,
+      "sigma": 0.0,
+      "weight_decay": 0.01
+    },
+    {
+      "beta_utility": 0.9999,
+      "lr": 0.001,
+      "sigma": 0.0,
+      "weight_decay": 0.0
+    },
+    {
+      "beta_utility": 0.9999,
+      "lr": 0.001,
+      "sigma": 0.0,
+      "weight_decay": 0.01
+    },
+    {
+      "beta_utility": 0.999,
+      "lr": 0.001,
+      "sigma": 0.0001,
+      "weight_decay": 0.0
+    },
+    {
+      "beta_utility": 0.999,
+      "lr": 0.001,
+      "sigma": 0.0001,
+      "weight_decay": 0.01
+    },
+    {
+      "beta_utility": 0.9999,
+      "lr": 0.001,
+      "sigma": 0.0001,
+      "weight_decay": 0.0
+    },
+    {
+      "beta_utility": 0.9999,
+      "lr": 0.001,
+      "sigma": 0.0001,
+      "weight_decay": 0.01
+    },
+    {
+      "beta_utility": 0.999,
+      "lr": 0.001,
+      "sigma": 0.01,
+      "weight_decay": 0.0
+    },
+    {
+      "beta_utility": 0.999,
+      "lr": 0.001,
+      "sigma": 0.01,
+      "weight_decay": 0.01
+    },
+    {
+      "beta_utility": 0.9999,
+      "lr": 0.001,
+      "sigma": 0.01,
+      "weight_decay": 0.0
+    },
+    {
+      "beta_utility": 0.9999,
+      "lr": 0.001,
+      "sigma": 0.01,
+      "weight_decay": 0.01
+    },
+    {
+      "beta_utility": 0.999,
+      "lr": 0.001,
+      "sigma": 0.1,
+      "weight_decay": 0.0
+    },
+    {
+      "beta_utility": 0.999,
+      "lr": 0.001,
+      "sigma": 0.1,
+      "weight_decay": 0.01
+    },
+    {
+      "beta_utility": 0.9999,
+      "lr": 0.001,
+      "sigma": 0.1,
+      "weight_decay": 0.0
+    },
+    {
+      "beta_utility": 0.9999,
+      "lr": 0.001,
+      "sigma": 0.1,
+      "weight_decay": 0.01
+    },
+    {
+      "beta_utility": 0.999,
+      "lr": 0.01,
+      "sigma": 0.0,
+      "weight_decay": 0.0
+    },
+    {
+      "beta_utility": 0.999,
+      "lr": 0.01,
+      "sigma": 0.0,
+      "weight_decay": 0.01
+    },
+    {
+      "beta_utility": 0.9999,
+      "lr": 0.01,
+      "sigma": 0.0,
+      "weight_decay": 0.0
+    },
+    {
+      "beta_utility": 0.9999,
+      "lr": 0.01,
+      "sigma": 0.0,
+      "weight_decay": 0.01
+    },
+    {
+      "beta_utility": 0.999,
+      "lr": 0.01,
+      "sigma": 0.0001,
+      "weight_decay": 0.0
+    },
+    {
+      "beta_utility": 0.999,
+      "lr": 0.01,
+      "sigma": 0.0001,
+      "weight_decay": 0.01
+    },
+    {
+      "beta_utility": 0.9999,
+      "lr": 0.01,
+      "sigma": 0.0001,
+      "weight_decay": 0.0
+    },
+    {
+      "beta_utility": 0.9999,
+      "lr": 0.01,
+      "sigma": 0.0001,
+      "weight_decay": 0.01
+    },
+    {
+      "beta_utility": 0.999,
+      "lr": 0.01,
+      "sigma": 0.01,
+      "weight_decay": 0.0
+    },
+    {
+      "beta_utility": 0.999,
+      "lr": 0.01,
+      "sigma": 0.01,
+      "weight_decay": 0.01
+    },
+    {
+      "beta_utility": 0.9999,
+      "lr": 0.01,
+      "sigma": 0.01,
+      "weight_decay": 0.0
+    },
+    {
+      "beta_utility": 0.9999,
+      "lr": 0.01,
+      "sigma": 0.01,
+      "weight_decay": 0.01
+    },
+    {
+      "beta_utility": 0.999,
+      "lr": 0.01,
+      "sigma": 0.1,
+      "weight_decay": 0.0
+    },
+    {
+      "beta_utility": 0.999,
+      "lr": 0.01,
+      "sigma": 0.1,
+      "weight_decay": 0.01
+    },
+    {
+      "beta_utility": 0.9999,
+      "lr": 0.01,
+      "sigma": 0.1,
+      "weight_decay": 0.0
+    },
+    {
+      "beta_utility": 0.9999,
+      "lr": 0.01,
+      "sigma": 0.1,
+      "weight_decay": 0.01
+    },
+    {
+      "beta_utility": 0.999,
+      "lr": 0.03,
+      "sigma": 0.0,
+      "weight_decay": 0.0
+    },
+    {
+      "beta_utility": 0.999,
+      "lr": 0.03,
+      "sigma": 0.0,
+      "weight_decay": 0.01
+    },
+    {
+      "beta_utility": 0.9999,
+      "lr": 0.03,
+      "sigma": 0.0,
+      "weight_decay": 0.0
+    },
+    {
+      "beta_utility": 0.9999,
+      "lr": 0.03,
+      "sigma": 0.0,
+      "weight_decay": 0.01
+    },
+    {
+      "beta_utility": 0.999,
+      "lr": 0.03,
+      "sigma": 0.0001,
+      "weight_decay": 0.0
+    },
+    {
+      "beta_utility": 0.999,
+      "lr": 0.03,
+      "sigma": 0.0001,
+      "weight_decay": 0.01
+    },
+    {
+      "beta_utility": 0.9999,
+      "lr": 0.03,
+      "sigma": 0.0001,
+      "weight_decay": 0.0
+    },
+    {
+      "beta_utility": 0.9999,
+      "lr": 0.03,
+      "sigma": 0.0001,
+      "weight_decay": 0.01
+    },
+    {
+      "beta_utility": 0.999,
+      "lr": 0.03,
+      "sigma": 0.01,
+      "weight_decay": 0.0
+    },
+    {
+      "beta_utility": 0.999,
+      "lr": 0.03,
+      "sigma": 0.01,
+      "weight_decay": 0.01
+    },
+    {
+      "beta_utility": 0.9999,
+      "lr": 0.03,
+      "sigma": 0.01,
+      "weight_decay": 0.0
+    },
+    {
+      "beta_utility": 0.9999,
+      "lr": 0.03,
+      "sigma": 0.01,
+      "weight_decay": 0.01
+    },
+    {
+      "beta_utility": 0.999,
+      "lr": 0.03,
+      "sigma": 0.1,
+      "weight_decay": 0.0
+    },
+    {
+      "beta_utility": 0.999,
+      "lr": 0.03,
+      "sigma": 0.1,
+      "weight_decay": 0.01
+    },
+    {
+      "beta_utility": 0.9999,
+      "lr": 0.03,
+      "sigma": 0.1,
+      "weight_decay": 0.0
+    },
+    {
+      "beta_utility": 0.9999,
+      "lr": 0.03,
+      "sigma": 0.1,
+      "weight_decay": 0.01
+    }
+  ],
+  "confirmation_seed": 27182,
+  "eval_batch_size": 128,
+  "eval_pool": 40,
+  "eval_tasks": 200,
+  "evaluation_P": "pre-update incoming-batch accuracy every 100 updates in second half of A",
+  "evaluation_R": "final official-test mean over 39 non-current B domains",
+  "evaluation_checkpoint_tasks": [
+    100,
+    200
+  ],
+  "holdout_examples": 5000,
+  "incumbent": {
+    "beta_utility": 0.9999,
+    "lr": 0.001,
+    "sigma": 0.0001,
+    "weight_decay": 0.0
+  },
+  "observation_interval": 100,
+  "report_seeds": [
+    42,
+    123,
+    451,
+    789,
+    2026
+  ],
+  "sampler": "existing IndexSampler; persistent-worker RNG semantics; retain short batches",
+  "search_permutation_base": 300001,
+  "search_pool": 20,
+  "search_schedule_seed": 556,
+  "search_seed": 31415,
+  "search_tasks": 40,
+  "selection": "mean per-seed min(P_val,R_val); then mean (P_val+R_val)/2; then grid index",
+  "selection_data": "stratified MNIST train holdout; official test unused for selection",
+  "shortlist_top": 3,
+  "smoke": false,
+  "source_hashes": {
+    "cap_adam.py": "02b9b99ae8eb82f3a0f34ec8bc523bd8cc928f45da93c794e5db51bf9cee6bfd",
+    "cap_mechanistic/cap_mech/__init__.py": "9b4f47be14be6e375b3b43fe31c4fdda578bfbe595aaf8a1c47f9a824305aa53",
+    "cap_mechanistic/cap_mech/analysis.py": "1baa19b9b01ec927af70f35cbc75ded34f9b0625c8d3d72e9b5059f9c1536d95",
+    "cap_mechanistic/cap_mech/checkpointing.py": "e71929f26f46bcbb98bc69f363c6c49303ba4d83c7ae1d27fb09633faad8c0ed",
+    "cap_mechanistic/cap_mech/cli.py": "b4870638d4db7bb54fcb224981531e707f4357520a31da2662fb319867d4ea45",
+    "cap_mechanistic/cap_mech/configs/final_cap.json": "fd19b0daedd409bd6395a6a0b2e1ecffe5abd7429b44a3b4a652c01783ea6119",
+    "cap_mechanistic/cap_mech/configs/mechanisms.json": "ad0ce0e932bc66591edbf9f230590c3734ff8ffc3b6b6070ae128a38122579c0",
+    "cap_mechanistic/cap_mech/configs/streams.json": "6ff43647df8b6a4a3cc1506be7d0fc615dcb49a08309458103515bd4b2145a9c",
+    "cap_mechanistic/cap_mech/constants.py": "fbdf79ba6bb41d5c264f8f3fa3ea9d2d60b7cc2517169e8fd61a2b739cc0aeec",
+    "cap_mechanistic/cap_mech/data.py": "9b44bdc8e8ff1acd937786912793c95e147b1b7e4b83b014ae1d5d641a1f2870",
+    "cap_mechanistic/cap_mech/faithfulness.py": "7c2b3e8e0a84c7212082b54cfe4463ba1d9a2cbce1f8ac28625d4575831534b7",
+    "cap_mechanistic/cap_mech/interventions/__init__.py": "6c7e2fe1bbef9bdde2e452d6d0194453cf1544a82ebf829db7c0c416e8cc71ed",
+    "cap_mechanistic/cap_mech/interventions/box_toggle.py": "8e0c3331f88b44ed9fb4faa3da9a4e8d32b3c1c86937245bcf2ee2ab8e74e493",
+    "cap_mechanistic/cap_mech/interventions/importance_shuffle.py": "62f062266cec1c8121acd2a10a4f715ad9b0e30afb8307b6d762a8632cb63fa0",
+    "cap_mechanistic/cap_mech/interventions/k_dial.py": "00043461c44acb550aad0e64b895b7808e41441721042b21cc18dbf16973d1d2",
+    "cap_mechanistic/cap_mech/interventions/release_dial.py": "62019b7a255819b206103bad94c208e2fa3aeac9585bea5ed237b7f439e654d3",
+    "cap_mechanistic/cap_mech/interventions/state_reset.py": "8e2e5c9faeb1e2b62aed746019416f53298c50dcbc10f297d7a1b6e1543ceb1d",
+    "cap_mechanistic/cap_mech/metrics.py": "6e1b0a78ded6f6d5bdf7e7c4cbc3454b90d4b2468850ae340627d77b6f728fe3",
+    "cap_mechanistic/cap_mech/model.py": "3be121811aea9a0f7773df7ef4fe6a06168d620d783ecae76140a5d1a3af53f3",
+    "cap_mechanistic/cap_mech/optim/__init__.py": "6a29b22bdd9d563be34d94a9a71989aeeb5423950885e9a06ec569f5508428b5",
+    "cap_mechanistic/cap_mech/optim/adamw.py": "f2e5256b14a9ee52d6b9ce4a937e37c312270b95d04e39cc5d8e38632f518f51",
+    "cap_mechanistic/cap_mech/optim/cap_final.py": "cdbfac49149aaaf71ada00b2f50f658f11f1ceed45d687b9cd01db02af6c9558",
+    "cap_mechanistic/cap_mech/plotting.py": "e227e8ad54e249142c0a41c04f9f4dafba07aac55b88ffa8628c1ffdabc0ab58",
+    "cap_mechanistic/cap_mech/prediction.py": "d09732e75f1ba2e0f4063e9d07fe975a29e5d8bb4f88be2aae13cff5260a7591",
+    "cap_mechanistic/cap_mech/probes/__init__.py": "982eefcdd5bb36b4fc35459532f51459e68db88dc714beedc8ed20aac1c194a8",
+    "cap_mechanistic/cap_mech/probes/fisher.py": "3a9e900edeb055a1ee899062080e8056589b92027957c5c46acb8708c4a759b1",
+    "cap_mechanistic/cap_mech/probes/functional_damage.py": "60bfe502039b928778f9bd5aa74d88069cc913a11e8e7414d05256bb38e04fcd",
+    "cap_mechanistic/cap_mech/probes/state_features.py": "faafc76e2caf4a34b2db5265073000f297e38d0518431fa31486171b6a365cdb",
+    "cap_mechanistic/cap_mech/records.py": "084f57ea705005c10c7ebbfb0c1df1b2ce02f0e76db78b3ea8f8a46b11222c22",
+    "cap_mechanistic/cap_mech/runner.py": "6cc2d27e125d835947c4b61dc9dac80abff9107b51b0d33753a195c061139d93",
+    "cap_mechanistic/cap_mech/seed.py": "e8c56f4c6377a77360f532d9ed9cc23495fb45bc561a43b1e4aa146b6f26277d",
+    "cap_mechanistic/cap_mech/statistics.py": "4332b227b36c93d5002e00e7e07bd2623028933de363f08cc26ff05e017cdf64",
+    "cap_mechanistic/cap_mech/streams.py": "38154660f9a91a6504fa7740f713ae067c4775fd4835cf3db48798872eb3e30a",
+    "experiment_upgd_evaluation.py": "72f726e36756ce25a47330767151dfe5e6a58a41cd74d67191795f527ae1e979",
+    "experiment_upgd_tuning.py": "76271e33397310bafbb2022014f9e22e505c11533fcfbe97e38ac66194a37518",
+    "external/upgd/core/optim/weight_upgd/first_order.py": "d976b8ca34cced48b79a2002a638f717b72ad00368f6eeb7d1d424fa5724cdef",
+    "model.py": "7078a6a9f344f2a13ee13df38992858e43610adeb6a725b5b0acef6da9a7f2f1",
+    "upgd_rebuttal.py": "7e1343743665e94063b1beb11663ac7330a551d285b972c188b8e2c184fb144f",
+    "upgd_rebuttal_runtime.py": "b91d07e165db03e33daf618ab62e59c32febc61ea19e2ff8c48fb1849f6c02b9"
+  },
+  "split_seed": 777,
+  "stream_a_permutation_base": 100000,
+  "stream_b_permutation_base": 200001,
+  "stream_b_schedule_seed": 555,
+  "test_examples": 2000,
+  "test_subset_seed": 999,
+  "tuning_P": "mean current-domain held-out task-end accuracy in round two",
+  "tuning_R": "final held-out mean over non-current validation domains",
+  "updates_per_task": 5000,
+  "version": "upgd-rebuttal-v1"
+}

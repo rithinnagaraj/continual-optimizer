@@ -83,6 +83,12 @@ utility checkpoints, and per-attempt timing. Inspect without training with
 `python experiment_upgd_tuning.py plan`. The original paper commands below retain
 their frozen settings.
 
+The completed priority-1 campaign is recorded in
+[PRIORITY1_RESULTS.md](docs/PRIORITY1_RESULTS.md). For priority 2's native UPGD
+utility/Fisher/random perturbation probes, use the separate
+[bounded-pilot runbook](docs/PRIORITY2_RUNBOOK.md). These probes reuse the final
+UPGD checkpoints and do not train a model.
+
 To list stages or inspect commands without training:
 
 ```bash
