@@ -5,9 +5,10 @@ five-seed benchmark evaluation are complete. See [PRIORITY1_RESULTS.md](PRIORITY
 for measured costs, verified results, compact evidence, and manuscript/reviewer
 response text. The earlier estimates below are retained as the original plan.
 
-Priority 2 now has a separate checkpoint-probing runner. See
-[PRIORITY2_RUNBOOK.md](PRIORITY2_RUNBOOK.md) for its frozen scope and bounded L4
-pilot commands. Paper revisions are deferred until the planned experiments finish.
+Priority 2's five-seed checkpoint probes are also complete. See
+[PRIORITY2_RESULTS.md](PRIORITY2_RESULTS.md) for results and
+[PRIORITY2_RUNBOOK.md](PRIORITY2_RUNBOOK.md) for the frozen scope and commands.
+Paper revisions are deferred until the planned experiments finish.
 
 Priority 1 uses a separate UPGD tuning/evaluation campaign; priority 2 uses the
 checkpoint-probing runner linked above. Priorities 3–4 remain planned follow-ups.

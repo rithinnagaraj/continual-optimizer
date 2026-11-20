@@ -1,0 +1,233 @@
+{
+  "bootstrap_resamples": 10000,
+  "bootstrap_seed": 610000,
+  "checkpoint_task": 200,
+  "data_identity": {
+    "eval_indices_sha256": "55bd82125de8fba21e18e3f29a3cd9eec727bc14ff64b7d91cb74213a816d5f1",
+    "eval_x_sha256": "a2190cd63d38c12490b0c5599efaca76160d06f6ab680058ffc017bdfb7babdb",
+    "eval_y_sha256": "79ac0bae374050d2da4bcd41b5cdf423508a888663bb914c7296d1b5a6d0714c",
+    "evaluation_examples": 2000,
+    "evaluation_source": "official_test",
+    "smoke": false,
+    "train_examples": 60000,
+    "train_indices_sha256": "fe4e39bbf5e7508e2743343e541d967d3a36c5d8560d34e7e1d41073ece735ba",
+    "train_x_sha256": "f1c2bb7165ea73871fe2009a9e6c6d555ceb6ddc9d484219ca231a524b401391",
+    "train_y_sha256": "e474323ac02fc156161b0bbb1f8c9cfeb327a74bcd9f9680a8385269a24f566c"
+  },
+  "domains": 40,
+  "environment": {
+    "cublas_workspace_config": ":4096:8",
+    "cuda": "13.0",
+    "cudnn": 91900,
+    "deterministic_algorithms": true,
+    "device": "cuda",
+    "gpu": "NVIDIA L4",
+    "platform": "Linux",
+    "python": "3.10.22",
+    "tf32": false,
+    "threads": 1,
+    "torch": "2.11.0+cu130",
+    "torchvision": "0.26.0"
+  },
+  "eval_batch_size": 1000,
+  "fisher": "frozen mean per-example squared cross-entropy gradients on stratified official-test subsets, all pool domains",
+  "fisher_examples": 200,
+  "fisher_microbatch": 16,
+  "fisher_subset_seed": 510000,
+  "fraction": 0.01,
+  "inference": "average layers within seed; paired contrasts; bootstrap whole seeds",
+  "layers": [
+    "network.1.weight",
+    "network.3.weight",
+    "network.5.weight"
+  ],
+  "noise_draws": 3,
+  "noise_scale": 0.1,
+  "parent_campaign_hash": "0aa822457441e6617a6a0483e8222acfc0dec2a1baf142d4d4751b8b0f86d942",
+  "primary_loss": "mean cross-entropy over all pool domains, matching CAP M1",
+  "probe_seed": 410000,
+  "random_groups": 20,
+  "secondary_loss": "mean cross-entropy over non-current pool domains",
+  "seeds": [
+    42,
+    123,
+    451,
+    789,
+    2026
+  ],
+  "selected_config_hash": "229d2ce5aacc80d04e9cd975dd4a8d1c7aa0fbd8277279d71caf8bc005f5d444",
+  "smoke": false,
+  "source_hashes": {
+    "cap_adam.py": "02b9b99ae8eb82f3a0f34ec8bc523bd8cc928f45da93c794e5db51bf9cee6bfd",
+    "cap_mechanistic/cap_mech/__init__.py": "9b4f47be14be6e375b3b43fe31c4fdda578bfbe595aaf8a1c47f9a824305aa53",
+    "cap_mechanistic/cap_mech/analysis.py": "1baa19b9b01ec927af70f35cbc75ded34f9b0625c8d3d72e9b5059f9c1536d95",
+    "cap_mechanistic/cap_mech/checkpointing.py": "e71929f26f46bcbb98bc69f363c6c49303ba4d83c7ae1d27fb09633faad8c0ed",
+    "cap_mechanistic/cap_mech/cli.py": "b4870638d4db7bb54fcb224981531e707f4357520a31da2662fb319867d4ea45",
+    "cap_mechanistic/cap_mech/configs/final_cap.json": "fd19b0daedd409bd6395a6a0b2e1ecffe5abd7429b44a3b4a652c01783ea6119",
+    "cap_mechanistic/cap_mech/configs/mechanisms.json": "ad0ce0e932bc66591edbf9f230590c3734ff8ffc3b6b6070ae128a38122579c0",
+    "cap_mechanistic/cap_mech/configs/streams.json": "6ff43647df8b6a4a3cc1506be7d0fc615dcb49a08309458103515bd4b2145a9c",
+    "cap_mechanistic/cap_mech/constants.py": "fbdf79ba6bb41d5c264f8f3fa3ea9d2d60b7cc2517169e8fd61a2b739cc0aeec",
+    "cap_mechanistic/cap_mech/data.py": "9b44bdc8e8ff1acd937786912793c95e147b1b7e4b83b014ae1d5d641a1f2870",
+    "cap_mechanistic/cap_mech/faithfulness.py": "7c2b3e8e0a84c7212082b54cfe4463ba1d9a2cbce1f8ac28625d4575831534b7",
+    "cap_mechanistic/cap_mech/interventions/__init__.py": "6c7e2fe1bbef9bdde2e452d6d0194453cf1544a82ebf829db7c0c416e8cc71ed",
+    "cap_mechanistic/cap_mech/interventions/box_toggle.py": "8e0c3331f88b44ed9fb4faa3da9a4e8d32b3c1c86937245bcf2ee2ab8e74e493",
+    "cap_mechanistic/cap_mech/interventions/importance_shuffle.py": "62f062266cec1c8121acd2a10a4f715ad9b0e30afb8307b6d762a8632cb63fa0",
+    "cap_mechanistic/cap_mech/interventions/k_dial.py": "00043461c44acb550aad0e64b895b7808e41441721042b21cc18dbf16973d1d2",
+    "cap_mechanistic/cap_mech/interventions/release_dial.py": "62019b7a255819b206103bad94c208e2fa3aeac9585bea5ed237b7f439e654d3",
+    "cap_mechanistic/cap_mech/interventions/state_reset.py": "8e2e5c9faeb1e2b62aed746019416f53298c50dcbc10f297d7a1b6e1543ceb1d",
+    "cap_mechanistic/cap_mech/metrics.py": "6e1b0a78ded6f6d5bdf7e7c4cbc3454b90d4b2468850ae340627d77b6f728fe3",
+    "cap_mechanistic/cap_mech/model.py": "3be121811aea9a0f7773df7ef4fe6a06168d620d783ecae76140a5d1a3af53f3",
+    "cap_mechanistic/cap_mech/optim/__init__.py": "6a29b22bdd9d563be34d94a9a71989aeeb5423950885e9a06ec569f5508428b5",
+    "cap_mechanistic/cap_mech/optim/adamw.py": "f2e5256b14a9ee52d6b9ce4a937e37c312270b95d04e39cc5d8e38632f518f51",
+    "cap_mechanistic/cap_mech/optim/cap_final.py": "cdbfac49149aaaf71ada00b2f50f658f11f1ceed45d687b9cd01db02af6c9558",
+    "cap_mechanistic/cap_mech/plotting.py": "e227e8ad54e249142c0a41c04f9f4dafba07aac55b88ffa8628c1ffdabc0ab58",
+    "cap_mechanistic/cap_mech/prediction.py": "d09732e75f1ba2e0f4063e9d07fe975a29e5d8bb4f88be2aae13cff5260a7591",
+    "cap_mechanistic/cap_mech/probes/__init__.py": "982eefcdd5bb36b4fc35459532f51459e68db88dc714beedc8ed20aac1c194a8",
+    "cap_mechanistic/cap_mech/probes/fisher.py": "3a9e900edeb055a1ee899062080e8056589b92027957c5c46acb8708c4a759b1",
+    "cap_mechanistic/cap_mech/probes/functional_damage.py": "60bfe502039b928778f9bd5aa74d88069cc913a11e8e7414d05256bb38e04fcd",
+    "cap_mechanistic/cap_mech/probes/state_features.py": "faafc76e2caf4a34b2db5265073000f297e38d0518431fa31486171b6a365cdb",
+    "cap_mechanistic/cap_mech/records.py": "084f57ea705005c10c7ebbfb0c1df1b2ce02f0e76db78b3ea8f8a46b11222c22",
+    "cap_mechanistic/cap_mech/runner.py": "6cc2d27e125d835947c4b61dc9dac80abff9107b51b0d33753a195c061139d93",
+    "cap_mechanistic/cap_mech/seed.py": "e8c56f4c6377a77360f532d9ed9cc23495fb45bc561a43b1e4aa146b6f26277d",
+    "cap_mechanistic/cap_mech/statistics.py": "4332b227b36c93d5002e00e7e07bd2623028933de363f08cc26ff05e017cdf64",
+    "cap_mechanistic/cap_mech/streams.py": "38154660f9a91a6504fa7740f713ae067c4775fd4835cf3db48798872eb3e30a",
+    "experiment_upgd_evaluation.py": "72f726e36756ce25a47330767151dfe5e6a58a41cd74d67191795f527ae1e979",
+    "experiment_upgd_m1.py": "10cc15c2f43316e871e15ddfc408f41a8ac357f67c4a465b625b592e699d56b0",
+    "experiment_upgd_tuning.py": "76271e33397310bafbb2022014f9e22e505c11533fcfbe97e38ac66194a37518",
+    "external/upgd/core/optim/weight_upgd/first_order.py": "d976b8ca34cced48b79a2002a638f717b72ad00368f6eeb7d1d424fa5724cdef",
+    "model.py": "7078a6a9f344f2a13ee13df38992858e43610adeb6a725b5b0acef6da9a7f2f1",
+    "upgd_m1.py": "ed28329d3e05e6f0c0d08d05d819b166b2989610dd020852744d169a380ed58b",
+    "upgd_m1_runtime.py": "737a85488915d25a49ffda6e7680d0de898ff582eb14549ba36465c7d87ab1be",
+    "upgd_rebuttal.py": "7e1343743665e94063b1beb11663ac7330a551d285b972c188b8e2c184fb144f",
+    "upgd_rebuttal_runtime.py": "b91d07e165db03e33daf618ab62e59c32febc61ea19e2ff8c48fb1849f6c02b9"
+  },
+  "sources": {
+    "123": {
+      "checkpoint": "task_200.pt",
+      "checkpoint_hash": "18bd0f35412f9346fd40158db1695fd87dfb319e67fba52391cfeb006823319b",
+      "job": {
+        "arm": "selected",
+        "campaign_hash": "0aa822457441e6617a6a0483e8222acfc0dec2a1baf142d4d4751b8b0f86d942",
+        "checkpoint_tasks": [
+          100,
+          200
+        ],
+        "config": {
+          "beta_utility": 0.9999,
+          "lr": 0.001,
+          "sigma": 0.0001,
+          "weight_decay": 0.0
+        },
+        "config_index": 22,
+        "id": "eval-selected-123-b",
+        "seed": 123,
+        "stage": "eval",
+        "stream": "b",
+        "updates": 1000000
+      },
+      "result_hash": "6e759dd277ad64a646e98645b33e744edaf8532e9e0fb0f9cfc3d7a47b667348"
+    },
+    "2026": {
+      "checkpoint": "task_200.pt",
+      "checkpoint_hash": "d80e3355b3962dbdddebec3763efd0690de5e3d420cb1a975eca630c6f2dbbe6",
+      "job": {
+        "arm": "selected",
+        "campaign_hash": "0aa822457441e6617a6a0483e8222acfc0dec2a1baf142d4d4751b8b0f86d942",
+        "checkpoint_tasks": [
+          100,
+          200
+        ],
+        "config": {
+          "beta_utility": 0.9999,
+          "lr": 0.001,
+          "sigma": 0.0001,
+          "weight_decay": 0.0
+        },
+        "config_index": 22,
+        "id": "eval-selected-2026-b",
+        "seed": 2026,
+        "stage": "eval",
+        "stream": "b",
+        "updates": 1000000
+      },
+      "result_hash": "12925d8ceb38c05f41699ab82be4c8e4dbcb5bfa312e84be76eae2d72cf396fa"
+    },
+    "42": {
+      "checkpoint": "task_200.pt",
+      "checkpoint_hash": "edf6ef01577b696f5178979d52ad333c2b8766a37cb8ebdad5ce41881ffef328",
+      "job": {
+        "arm": "selected",
+        "campaign_hash": "0aa822457441e6617a6a0483e8222acfc0dec2a1baf142d4d4751b8b0f86d942",
+        "checkpoint_tasks": [
+          100,
+          200
+        ],
+        "config": {
+          "beta_utility": 0.9999,
+          "lr": 0.001,
+          "sigma": 0.0001,
+          "weight_decay": 0.0
+        },
+        "config_index": 22,
+        "id": "eval-selected-42-b",
+        "seed": 42,
+        "stage": "eval",
+        "stream": "b",
+        "updates": 1000000
+      },
+      "result_hash": "fef67f7a878ca4086ed1da235f0f4c08dc1d8cf25bbd2f2a26ff3316895de65a"
+    },
+    "451": {
+      "checkpoint": "task_200.pt",
+      "checkpoint_hash": "fff3648fbeef2cf29218228d0be51b67f44b921f094e1d12d2eba64ffe4a94df",
+      "job": {
+        "arm": "selected",
+        "campaign_hash": "0aa822457441e6617a6a0483e8222acfc0dec2a1baf142d4d4751b8b0f86d942",
+        "checkpoint_tasks": [
+          100,
+          200
+        ],
+        "config": {
+          "beta_utility": 0.9999,
+          "lr": 0.001,
+          "sigma": 0.0001,
+          "weight_decay": 0.0
+        },
+        "config_index": 22,
+        "id": "eval-selected-451-b",
+        "seed": 451,
+        "stage": "eval",
+        "stream": "b",
+        "updates": 1000000
+      },
+      "result_hash": "66119f0d89cf03bf23751e6146efe6c21c41fa95b6ee4a6449208e34398a89b9"
+    },
+    "789": {
+      "checkpoint": "task_200.pt",
+      "checkpoint_hash": "06d300c7947db0bf8c4dcc309be19d060efacc013666fdfe1e7cb344a560ae35",
+      "job": {
+        "arm": "selected",
+        "campaign_hash": "0aa822457441e6617a6a0483e8222acfc0dec2a1baf142d4d4751b8b0f86d942",
+        "checkpoint_tasks": [
+          100,
+          200
+        ],
+        "config": {
+          "beta_utility": 0.9999,
+          "lr": 0.001,
+          "sigma": 0.0001,
+          "weight_decay": 0.0
+        },
+        "config_index": 22,
+        "id": "eval-selected-789-b",
+        "seed": 789,
+        "stage": "eval",
+        "stream": "b",
+        "updates": 1000000
+      },
+      "result_hash": "843163425a15af2d0362ea4b6ac8ef6e88dd5ef7825e884e73a0d8392f2bce02"
+    }
+  },
+  "utility": "signed bias-corrected avg_utility; equivalent to pre-sigmoid protection ranking for a positive global maximum",
+  "version": "upgd-m1-v1"
+}

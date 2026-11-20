@@ -1,5 +1,10 @@
 # Priority 2: native UPGD utility faithfulness
 
+**20 November 2026:** The five-seed experiment completed in 7.28 recorded minutes,
+including the pilot. See [PRIORITY2_RESULTS.md](PRIORITY2_RESULTS.md) for verified
+findings and limitations. The commands below document the completed protocol;
+the earlier 1–6-hour allowance is superseded by this measurement.
+
 This follow-up addresses reviewer 2 important request 2: whether native utility
 from another boundary-free optimizer identifies consequential weights, and how
 CAP's inspectability relates to existing methods. It never trains a model.

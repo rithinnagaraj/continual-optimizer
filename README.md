@@ -88,6 +88,8 @@ The completed priority-1 campaign is recorded in
 utility/Fisher/random perturbation probes, use the separate
 [bounded-pilot runbook](docs/PRIORITY2_RUNBOOK.md). These probes reuse the final
 UPGD checkpoints and do not train a model.
+The completed five-seed probe results are recorded in
+[PRIORITY2_RESULTS.md](docs/PRIORITY2_RESULTS.md).
 
 To list stages or inspect commands without training:
 
