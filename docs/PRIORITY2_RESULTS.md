@@ -19,6 +19,13 @@ not establish a unique inspection capability for CAP or compare optimizer qualit
 through cross-model raw damage magnitudes. The conceptual explanation of CAP's
 explicit constraint state relative to EWC/UPGD remains a manuscript task.
 
+The author-requested framing and a qualified historical CAP/UPGD M1 comparison
+are recorded in [REBUTTAL_INTERPRETATION.md](REBUTTAL_INTERPRETATION.md). CAP's
+final-checkpoint/1% importance subset has top > random > bottom in all 15
+seed–matrix cells. This is a descriptive within-host ordering comparison, not
+a matched test of cross-method superiority; retain the host/environment and
+historical CAP reproduction qualifications alongside it.
+
 ## Protocol and coverage
 
 The frozen procedure is in [PRIORITY2_RUNBOOK.md](PRIORITY2_RUNBOOK.md), with the

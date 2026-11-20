@@ -15,6 +15,8 @@ reproduction of the reported result, not an improvement over it.
 
 This addresses reviewer 1 requested change 1 and reviewer 2 important requested
 change 3: the unequal tuning budgets and reliability of the UPGD comparison.
+The contribution framing and qualified performance context to carry into the
+joint revision are recorded in [REBUTTAL_INTERPRETATION.md](REBUTTAL_INTERPRETATION.md).
 It is an **expanded UPGD search**, not equal historical or lifetime tuning effort.
 Historical CAP tuning included 216 configurations and subsequent development;
 the previously reported baseline searches included 16 UPGD, 8 AdamW, and 24 EWC

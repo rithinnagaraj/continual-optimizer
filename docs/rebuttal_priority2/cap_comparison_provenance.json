@@ -1,0 +1,35 @@
+{
+  "source_workspace_relative": "results/main_res/safe_mechanistic/source/m1_importance_faithfulness/summary/m1_summary.csv",
+  "source_sha256": "98c0fac6f41167fcde3c156dde6d9bb322b04454741fb96b0354441c0c0507a4",
+  "filter": {
+    "checkpoint_task": 200,
+    "fraction": 0.01,
+    "comparators": [
+      "importance",
+      "fisher"
+    ]
+  },
+  "counts": {
+    "importance": {
+      "cells": 15,
+      "independent_seeds": 5,
+      "top_gt_random": 15,
+      "top_gt_bottom": 15,
+      "random_gt_bottom": 15
+    },
+    "fisher": {
+      "cells": 15,
+      "independent_seeds": 5,
+      "top_gt_random": 15,
+      "top_gt_bottom": 15,
+      "random_gt_bottom": 15
+    }
+  },
+  "subset_sha256": "57d570750e7e757ec367f99f42f06ddfe34585d634db862e60df6ca7011e9124",
+  "interpretation": "Post-result descriptive within-host ordering comparison; not a matched cross-method superiority test.",
+  "limitations": [
+    "Five independent seeds; three repeated matrix observations each.",
+    "Different trained hosts and GPU environments (historical CAP A30 versus current UPGD L4).",
+    "Historical CAP endpoint-reproduction failure remains; bounded same-environment validation is distinct."
+  ]
+}
