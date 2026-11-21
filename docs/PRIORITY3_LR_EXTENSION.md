@@ -1,5 +1,11 @@
 # CIFAR bounded LR extension
 
+**Verified completion, 21 November:** all 12 extra trials finished in 4.28 minutes.
+The merged selection is AdamW LR 0.0003 and UPGD LR 0.1 for both architectures;
+all winners are interior. No further extension is planned. Continue with
+**Evaluation after extension review** below. The full evaluation projects to
+16.58 hours; reserve 20–24 hours. See [verified results](PRIORITY3_RESULTS.md).
+
 The initial search completed successfully, but both UPGD winners were the largest
 tested LR (0.01). Before benchmark evaluation, test 0.03, 0.1, and 0.3 for both
 AdamW and UPGD on both architectures. This is exactly 12 new 5,000-update jobs;

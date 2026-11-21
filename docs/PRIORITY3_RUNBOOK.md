@@ -1,9 +1,10 @@
 # Priority 3: CIFAR-100 learner baselines
 
-**21 November update:** the pilot and all 40 initial LR trials are verified.
-Both UPGD winners hit the upper grid boundary. Follow the
-[bounded extension runbook](PRIORITY3_LR_EXTENSION.md) before evaluation, using its
-separate launcher and merged selection. See [results and measured timings](PRIORITY3_RESULTS.md).
+**21 November update:** the pilot, all 40 initial LR trials, and the 12-trial
+extension are verified. Final winners are AdamW LR 0.0003 and UPGD LR 0.1 for both
+architectures, with no boundary winners. Use the evaluation commands in the
+[extension runbook](PRIORITY3_LR_EXTENSION.md), which use the merged selection.
+See [results and measured timings](PRIORITY3_RESULTS.md).
 The original commands below document the initial ten-rate campaign.
 
 Implementation prepared 21 November 2026. Addresses reviewer 2's request for

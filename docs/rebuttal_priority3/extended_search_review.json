@@ -1,0 +1,249 @@
+{
+  "archive_sha256": "f2ea911846206918d5d37a9876d50c5dafab90f5fb9e9f5d3fda65d29806b111",
+  "campaign_hash": "17b6026d363861c3b0798525fa48e49b78ed732817beceda57fcb326e18f70c3",
+  "parent_campaign_hash": "523b31bb34f746ac92ff3634fa26c1e7a914ee0b0d162d2a3acbd5b11be10ae9",
+  "parent_evidence_byte_identical": true,
+  "protocol_source_verified": true,
+  "environment_and_data_match_parent": true,
+  "initialization_matches_parent": true,
+  "no_evaluation_jobs_in_feedback": true,
+  "extension_job_statuses": {
+    "complete": 12
+  },
+  "verified_extension_nonbinary_artifacts": 72,
+  "combined_candidates": 52,
+  "selection_recomputed": true,
+  "selected": {
+    "mlp-adamw": {
+      "lr": 0.0003,
+      "lr_index": 4,
+      "metrics": {
+        "validation_accuracy": 0.264,
+        "validation_loss": 3.341241610336304
+      },
+      "at_grid_boundary": false,
+      "source": "parent"
+    },
+    "mlp-upgd": {
+      "lr": 0.1,
+      "lr_index": 11,
+      "metrics": {
+        "validation_accuracy": 0.26,
+        "validation_loss": 3.1300999862670897
+      },
+      "at_grid_boundary": false,
+      "source": "extension"
+    },
+    "cnn-adamw": {
+      "lr": 0.0003,
+      "lr_index": 4,
+      "metrics": {
+        "validation_accuracy": 0.2972,
+        "validation_loss": 2.9938492458343506
+      },
+      "at_grid_boundary": false,
+      "source": "parent"
+    },
+    "cnn-upgd": {
+      "lr": 0.1,
+      "lr_index": 11,
+      "metrics": {
+        "validation_accuracy": 0.271,
+        "validation_loss": 3.059290453338623
+      },
+      "at_grid_boundary": false,
+      "source": "extension"
+    }
+  },
+  "events": {
+    "start": 12,
+    "checkpoint": 72,
+    "ready": 12,
+    "complete": 12
+  },
+  "rows": [
+    {
+      "id": "search-mlp-adamw-10",
+      "model": "mlp",
+      "arm": "adamw",
+      "lr": 0.03,
+      "status": "complete",
+      "step": 5000,
+      "validation_accuracy": 0.01,
+      "validation_loss": 4.611439256286621,
+      "wall_seconds": 17.26477310806513,
+      "steady_ms_per_update": 2.707988501060754
+    },
+    {
+      "id": "search-mlp-adamw-11",
+      "model": "mlp",
+      "arm": "adamw",
+      "lr": 0.1,
+      "status": "complete",
+      "step": 5000,
+      "validation_accuracy": 0.01,
+      "validation_loss": 4.628901947021484,
+      "wall_seconds": 16.802858270704746,
+      "steady_ms_per_update": 2.717973828781396
+    },
+    {
+      "id": "search-mlp-adamw-12",
+      "model": "mlp",
+      "arm": "adamw",
+      "lr": 0.3,
+      "status": "complete",
+      "step": 5000,
+      "validation_accuracy": 0.01,
+      "validation_loss": 4.663326815032959,
+      "wall_seconds": 17.022524297237396,
+      "steady_ms_per_update": 2.7491052034310997
+    },
+    {
+      "id": "search-mlp-upgd-10",
+      "model": "mlp",
+      "arm": "upgd",
+      "lr": 0.03,
+      "status": "complete",
+      "step": 5000,
+      "validation_accuracy": 0.214,
+      "validation_loss": 3.3354170417785642,
+      "wall_seconds": 20.05545125901699,
+      "steady_ms_per_update": 3.3395956456661224
+    },
+    {
+      "id": "search-mlp-upgd-11",
+      "model": "mlp",
+      "arm": "upgd",
+      "lr": 0.1,
+      "status": "complete",
+      "step": 5000,
+      "validation_accuracy": 0.26,
+      "validation_loss": 3.1300999862670897,
+      "wall_seconds": 20.13300439156592,
+      "steady_ms_per_update": 3.368913118727505
+    },
+    {
+      "id": "search-mlp-upgd-12",
+      "model": "mlp",
+      "arm": "upgd",
+      "lr": 0.3,
+      "status": "complete",
+      "step": 5000,
+      "validation_accuracy": 0.2536,
+      "validation_loss": 3.5452186042785643,
+      "wall_seconds": 20.063313826918602,
+      "steady_ms_per_update": 3.360276877414435
+    },
+    {
+      "id": "search-cnn-adamw-10",
+      "model": "cnn",
+      "arm": "adamw",
+      "lr": 0.03,
+      "status": "complete",
+      "step": 5000,
+      "validation_accuracy": 0.01,
+      "validation_loss": 4.611453721618652,
+      "wall_seconds": 21.344523463398218,
+      "steady_ms_per_update": 3.576725014485419
+    },
+    {
+      "id": "search-cnn-adamw-11",
+      "model": "cnn",
+      "arm": "adamw",
+      "lr": 0.1,
+      "status": "complete",
+      "step": 5000,
+      "validation_accuracy": 0.01,
+      "validation_loss": 4.628903530883789,
+      "wall_seconds": 21.068691793829203,
+      "steady_ms_per_update": 3.562138309236616
+    },
+    {
+      "id": "search-cnn-adamw-12",
+      "model": "cnn",
+      "arm": "adamw",
+      "lr": 0.3,
+      "status": "complete",
+      "step": 5000,
+      "validation_accuracy": 0.01,
+      "validation_loss": 4.663003628540039,
+      "wall_seconds": 21.2076608017087,
+      "steady_ms_per_update": 3.5938120717182755
+    },
+    {
+      "id": "search-cnn-upgd-10",
+      "model": "cnn",
+      "arm": "upgd",
+      "lr": 0.03,
+      "status": "complete",
+      "step": 5000,
+      "validation_accuracy": 0.2074,
+      "validation_loss": 3.3412310371398926,
+      "wall_seconds": 27.198556881397963,
+      "steady_ms_per_update": 4.777379627805203
+    },
+    {
+      "id": "search-cnn-upgd-11",
+      "model": "cnn",
+      "arm": "upgd",
+      "lr": 0.1,
+      "status": "complete",
+      "step": 5000,
+      "validation_accuracy": 0.271,
+      "validation_loss": 3.059290453338623,
+      "wall_seconds": 27.238384364172816,
+      "steady_ms_per_update": 4.790673736482859
+    },
+    {
+      "id": "search-cnn-upgd-12",
+      "model": "cnn",
+      "arm": "upgd",
+      "lr": 0.3,
+      "status": "complete",
+      "step": 5000,
+      "validation_accuracy": 0.2648,
+      "validation_loss": 3.853170166015625,
+      "wall_seconds": 27.31239377707243,
+      "steady_ms_per_update": 4.800621715374291
+    }
+  ],
+  "extension_wall_minutes": 4.278535603918135,
+  "total_tuning_wall_minutes": 18.484675565206757,
+  "projection": [
+    {
+      "cell": "mlp-adamw",
+      "selected_lr": 0.0003,
+      "projected_five_seed_hours": 3.1339951847783394,
+      "steady_ms_per_update": 2.701634609606117
+    },
+    {
+      "cell": "mlp-upgd",
+      "selected_lr": 0.1,
+      "projected_five_seed_hours": 3.863852648064494,
+      "steady_ms_per_update": 3.368913118727505
+    },
+    {
+      "cell": "cnn-adamw",
+      "selected_lr": 0.0003,
+      "projected_five_seed_hours": 4.116332773740093,
+      "steady_ms_per_update": 3.5820553125813603
+    },
+    {
+      "cell": "cnn-upgd",
+      "selected_lr": 0.1,
+      "projected_five_seed_hours": 5.464777666247553,
+      "steady_ms_per_update": 4.790673736482859
+    }
+  ],
+  "projected_evaluation_hours": 16.57895827283048,
+  "practical_evaluation_hours": [
+    20,
+    24
+  ],
+  "limitations": [
+    "Scientific checkpoint bytes omitted; recorded hashes cannot be checked locally.",
+    "Single-task train-holdout selection, not a continual-learning performance comparison.",
+    "Runtime extrapolation uses first-task training and pilot pool costs; later-task overhead may vary.",
+    "13 LR trials per baseline/architecture versus 10 in the historical CAP search."
+  ]
+}

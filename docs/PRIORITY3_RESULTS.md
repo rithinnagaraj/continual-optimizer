@@ -1,4 +1,4 @@
-# Priority 3: verified CIFAR pilot and initial LR search
+# Priority 3: verified CIFAR pilot and completed LR selection
 
 Updated 21 November 2026. Scientific baseline evaluation is **pending**. These
 are timing and train-holdout selection results, not continual-learning benchmark
@@ -6,6 +6,43 @@ results. Manuscript changes remain deferred until the planned experiments finish
 
 Addresses reviewer 2's request for AdamW and UPGD on the CIFAR MLP/CNN settings.
 The follow-up search also addresses the general concern about under-tuned baselines.
+
+## Completed extension and frozen final selections
+
+All 12 extension trials completed at 5,000 updates with no numerical divergences
+or logged infrastructure errors. Their 72 nonbinary result artifacts passed hash
+checks; source, environment, data, initialization, CSV coverage, and timing records
+were verified. All original campaign evidence was byte-identical to the previously
+audited archive. Selection was independently recomputed over **all 52 trials**.
+There were no evaluation jobs in the returned feedback.
+
+| Architecture | Baseline | Final selected LR | Train-holdout accuracy | Boundary winner |
+|---|---|---:|---:|---|
+| MLP | AdamW | 0.0003 | 26.40% | No |
+| MLP | UPGD | 0.1 | 26.00% | No |
+| CNN | AdamW | 0.0003 | 29.72% | No |
+| CNN | UPGD | 0.1 | 27.10% | No |
+
+UPGD's MLP validation accuracies at LR 0.03 / 0.1 / 0.3 were 21.40% / 26.00% /
+25.36%; CNN accuracies were 20.74% / 27.10% / 26.48%. The interior winners resolve
+the original boundary concern. The high-rate AdamW trials all achieved 1% accuracy
+with finite losses; these are poor completed trials, not numerical divergences.
+The extension took **4.279 minutes**, making total recorded tuning time
+**18.485 minutes**. No further tuning extension is planned. Proceed to the
+40-job evaluation with `experiment_cifar_lr_extension.py`, using its merged frozen
+selection. Do not use the original ten-rate launcher for these evaluation runs.
+
+These are single-seed, single-task validation results. They do not establish
+relative continual-learning performance or significance of the LR differences.
+UPGD's validation improvement over its former boundary choice is 9.68 percentage
+points for MLP and 15.92 points for CNN; the full-stream evaluation remains pending.
+
+Evidence: [extension audit, all 12 trials, and merged selections](rebuttal_priority3/extended_search_review.json).
+Extension feedback SHA-256:
+`f2ea911846206918d5d37a9876d50c5dafab90f5fb9e9f5d3fda65d29806b111`.
+Extension campaign SHA-256:
+`17b6026d363861c3b0798525fa48e49b78ed732817beceda57fcb326e18f70c3`.
+Checkpoint bytes remain on the L4 and were not present for local audit.
 
 ## Verified evidence
 
@@ -43,7 +80,7 @@ Parent campaign SHA-256:
 Pilot archive SHA-256:
 `d3542fd7314905ded8a1595ecc1965688c3aa8c6dd21fe394f851d41ecdd5fad`.
 
-## Bounded follow-up decided before benchmark evaluation
+## Bounded follow-up design (now completed)
 
 Add rates **0.03, 0.1, 0.3** for both baselines and both architectures: 12 new
 jobs, 60,000 total updates. Keep every other setting, seed, train/holdout split,
@@ -64,20 +101,19 @@ further grid expansion or benchmark launch. Commands are in the
 
 ## Runtime estimates on one L4
 
-Using the selected initial LR's steady training speed (last four 1,000-update
+Using the final selected LR's steady training speed (last four 1,000-update
 blocks) and measured pilot single-domain / 40-domain evaluation costs:
 
 | Architecture / baseline | ms/update | Five seeds × both 80-task streams |
 |---|---:|---:|
 | MLP / AdamW | 2.702 | 3.13 hours |
-| MLP / UPGD | 3.312 | 3.80 hours |
+| MLP / UPGD | 3.369 | 3.86 hours |
 | CNN / AdamW | 3.582 | 4.12 hours |
-| CNN / UPGD | 4.796 | 5.47 hours |
-| Total | | **16.52 hours projected** |
+| CNN / UPGD | 4.791 | 5.46 hours |
+| Total | | **16.58 hours projected** |
 
-Reserve **20–24 GPU-hours** for the 40 baseline evaluations and **5–7 minutes**
-for the 12-trial extension (about 4.3 minutes from original average trial durations).
-Update the estimate if extended-rate timings differ. Projections extrapolate from
+Reserve **20–24 GPU-hours** for the 40 baseline evaluations. The extension is
+complete and its selected-rate timings are included above. Projections extrapolate from
 one initial task, omit some setup/checkpoint overhead, and assume an otherwise idle
 L4. Evaluation uses 50k training images rather than the search's 45k. The pilots
 allocated at most about 134 MiB of PyTorch GPU tensor memory; this excludes device
