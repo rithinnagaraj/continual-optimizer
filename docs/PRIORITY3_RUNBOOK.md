@@ -1,5 +1,11 @@
 # Priority 3: CIFAR-100 learner baselines
 
+**21 November update:** the pilot and all 40 initial LR trials are verified.
+Both UPGD winners hit the upper grid boundary. Follow the
+[bounded extension runbook](PRIORITY3_LR_EXTENSION.md) before evaluation, using its
+separate launcher and merged selection. See [results and measured timings](PRIORITY3_RESULTS.md).
+The original commands below document the initial ten-rate campaign.
+
 Implementation prepared 21 November 2026. Addresses reviewer 2's request for
 AdamW and UPGD results on the CIFAR MLP/CNN settings, so CAP's learning performance
 can be assessed alongside its mechanistic findings. No scientific CIFAR baseline

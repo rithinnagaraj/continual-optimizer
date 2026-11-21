@@ -1,0 +1,491 @@
+{
+  "archive_sha256": "a76a056fa69a27f277f1ca899d88185a6b6eeceb4db670bfe46ba2443be9428d",
+  "campaign_hash": "523b31bb34f746ac92ff3634fa26c1e7a914ee0b0d162d2a3acbd5b11be10ae9",
+  "complete_jobs": 40,
+  "updates": 200000,
+  "verified_nonbinary_artifacts": 240,
+  "protocol_source_verified": true,
+  "pilot_evidence_unchanged": true,
+  "selection_recomputed": true,
+  "identical_initialization_within_architecture": true,
+  "selected": {
+    "mlp-adamw": {
+      "lr": 0.0003,
+      "lr_index": 4,
+      "metrics": {
+        "validation_accuracy": 0.264,
+        "validation_loss": 3.341241610336304
+      },
+      "at_grid_boundary": false
+    },
+    "mlp-upgd": {
+      "lr": 0.01,
+      "lr_index": 9,
+      "metrics": {
+        "validation_accuracy": 0.1632,
+        "validation_loss": 3.6112462326049806
+      },
+      "at_grid_boundary": true
+    },
+    "cnn-adamw": {
+      "lr": 0.0003,
+      "lr_index": 4,
+      "metrics": {
+        "validation_accuracy": 0.2972,
+        "validation_loss": 2.9938492458343506
+      },
+      "at_grid_boundary": false
+    },
+    "cnn-upgd": {
+      "lr": 0.01,
+      "lr_index": 9,
+      "metrics": {
+        "validation_accuracy": 0.1118,
+        "validation_loss": 3.875103586578369
+      },
+      "at_grid_boundary": true
+    }
+  },
+  "events": {
+    "start": 40,
+    "checkpoint": 240,
+    "ready": 40,
+    "complete": 40
+  },
+  "total_search_minutes": 14.20613996128862,
+  "rows": [
+    {
+      "id": "search-mlp-adamw-00",
+      "model": "mlp",
+      "arm": "adamw",
+      "lr": 1e-05,
+      "validation_accuracy": 0.169,
+      "validation_loss": 3.5960016258239746,
+      "wall_seconds": 17.248779026791453,
+      "steady_ms_per_update": 2.7043554168194532
+    },
+    {
+      "id": "search-mlp-adamw-01",
+      "model": "mlp",
+      "arm": "adamw",
+      "lr": 3e-05,
+      "validation_accuracy": 0.216,
+      "validation_loss": 3.3661734409332276,
+      "wall_seconds": 16.67157769575715,
+      "steady_ms_per_update": 2.6929541411809623
+    },
+    {
+      "id": "search-mlp-adamw-02",
+      "model": "mlp",
+      "arm": "adamw",
+      "lr": 0.0001,
+      "validation_accuracy": 0.2544,
+      "validation_loss": 3.169767893600464,
+      "wall_seconds": 17.015397936105728,
+      "steady_ms_per_update": 2.7586060031317174
+    },
+    {
+      "id": "search-mlp-adamw-03",
+      "model": "mlp",
+      "arm": "adamw",
+      "lr": 0.0002,
+      "validation_accuracy": 0.2552,
+      "validation_loss": 3.2277797183990478,
+      "wall_seconds": 16.806187296286225,
+      "steady_ms_per_update": 2.6972699696198106
+    },
+    {
+      "id": "search-mlp-adamw-04",
+      "model": "mlp",
+      "arm": "adamw",
+      "lr": 0.0003,
+      "validation_accuracy": 0.264,
+      "validation_loss": 3.341241610336304,
+      "wall_seconds": 16.80237433128059,
+      "steady_ms_per_update": 2.701634609606117
+    },
+    {
+      "id": "search-mlp-adamw-05",
+      "model": "mlp",
+      "arm": "adamw",
+      "lr": 0.0005,
+      "validation_accuracy": 0.2574,
+      "validation_loss": 3.728775337600708,
+      "wall_seconds": 16.783712916076183,
+      "steady_ms_per_update": 2.699749863706529
+    },
+    {
+      "id": "search-mlp-adamw-06",
+      "model": "mlp",
+      "arm": "adamw",
+      "lr": 0.001,
+      "validation_accuracy": 0.2322,
+      "validation_loss": 4.26918910331726,
+      "wall_seconds": 16.81312931701541,
+      "steady_ms_per_update": 2.7117662099190056
+    },
+    {
+      "id": "search-mlp-adamw-07",
+      "model": "mlp",
+      "arm": "adamw",
+      "lr": 0.002,
+      "validation_accuracy": 0.2032,
+      "validation_loss": 3.918882765197754,
+      "wall_seconds": 16.78373653627932,
+      "steady_ms_per_update": 2.7072941521182656
+    },
+    {
+      "id": "search-mlp-adamw-08",
+      "model": "mlp",
+      "arm": "adamw",
+      "lr": 0.0033333333333333335,
+      "validation_accuracy": 0.1622,
+      "validation_loss": 3.8578851810455324,
+      "wall_seconds": 16.80384081788361,
+      "steady_ms_per_update": 2.700184294488281
+    },
+    {
+      "id": "search-mlp-adamw-09",
+      "model": "mlp",
+      "arm": "adamw",
+      "lr": 0.01,
+      "validation_accuracy": 0.031,
+      "validation_loss": 4.376212863922119,
+      "wall_seconds": 16.56651121750474,
+      "steady_ms_per_update": 2.658851834014058
+    },
+    {
+      "id": "search-mlp-upgd-00",
+      "model": "mlp",
+      "arm": "upgd",
+      "lr": 1e-05,
+      "validation_accuracy": 0.0106,
+      "validation_loss": 4.610414970397949,
+      "wall_seconds": 19.926379235461354,
+      "steady_ms_per_update": 3.3312896890565753
+    },
+    {
+      "id": "search-mlp-upgd-01",
+      "model": "mlp",
+      "arm": "upgd",
+      "lr": 3e-05,
+      "validation_accuracy": 0.0108,
+      "validation_loss": 4.607749182128906,
+      "wall_seconds": 19.871457075700164,
+      "steady_ms_per_update": 3.3316775537095964
+    },
+    {
+      "id": "search-mlp-upgd-02",
+      "model": "mlp",
+      "arm": "upgd",
+      "lr": 0.0001,
+      "validation_accuracy": 0.0122,
+      "validation_loss": 4.598771289825439,
+      "wall_seconds": 19.89638091623783,
+      "steady_ms_per_update": 3.3352065468207
+    },
+    {
+      "id": "search-mlp-upgd-03",
+      "model": "mlp",
+      "arm": "upgd",
+      "lr": 0.0002,
+      "validation_accuracy": 0.021,
+      "validation_loss": 4.586687028503418,
+      "wall_seconds": 19.983174892142415,
+      "steady_ms_per_update": 3.33877756819129
+    },
+    {
+      "id": "search-mlp-upgd-04",
+      "model": "mlp",
+      "arm": "upgd",
+      "lr": 0.0003,
+      "validation_accuracy": 0.0282,
+      "validation_loss": 4.574938722991943,
+      "wall_seconds": 19.820650447160006,
+      "steady_ms_per_update": 3.3096086806617677
+    },
+    {
+      "id": "search-mlp-upgd-05",
+      "model": "mlp",
+      "arm": "upgd",
+      "lr": 0.0005,
+      "validation_accuracy": 0.0378,
+      "validation_loss": 4.549589830780029,
+      "wall_seconds": 19.836648201569915,
+      "steady_ms_per_update": 3.3171542468480766
+    },
+    {
+      "id": "search-mlp-upgd-06",
+      "model": "mlp",
+      "arm": "upgd",
+      "lr": 0.001,
+      "validation_accuracy": 0.0552,
+      "validation_loss": 4.468337270355224,
+      "wall_seconds": 19.91144111007452,
+      "steady_ms_per_update": 3.328477813396603
+    },
+    {
+      "id": "search-mlp-upgd-07",
+      "model": "mlp",
+      "arm": "upgd",
+      "lr": 0.002,
+      "validation_accuracy": 0.0786,
+      "validation_loss": 4.239346258544922,
+      "wall_seconds": 19.831899911165237,
+      "steady_ms_per_update": 3.313175182323903
+    },
+    {
+      "id": "search-mlp-upgd-08",
+      "model": "mlp",
+      "arm": "upgd",
+      "lr": 0.0033333333333333335,
+      "validation_accuracy": 0.1018,
+      "validation_loss": 3.9977925079345704,
+      "wall_seconds": 19.884252285584807,
+      "steady_ms_per_update": 3.3165453705005348
+    },
+    {
+      "id": "search-mlp-upgd-09",
+      "model": "mlp",
+      "arm": "upgd",
+      "lr": 0.01,
+      "validation_accuracy": 0.1632,
+      "validation_loss": 3.6112462326049806,
+      "wall_seconds": 19.838754994794726,
+      "steady_ms_per_update": 3.3115567876957357
+    },
+    {
+      "id": "search-cnn-adamw-00",
+      "model": "cnn",
+      "arm": "adamw",
+      "lr": 1e-05,
+      "validation_accuracy": 0.124,
+      "validation_loss": 3.844881827545166,
+      "wall_seconds": 21.41292412020266,
+      "steady_ms_per_update": 3.5991298616863787
+    },
+    {
+      "id": "search-cnn-adamw-01",
+      "model": "cnn",
+      "arm": "adamw",
+      "lr": 3e-05,
+      "validation_accuracy": 0.174,
+      "validation_loss": 3.546850532913208,
+      "wall_seconds": 21.319888154044747,
+      "steady_ms_per_update": 3.60365520324558
+    },
+    {
+      "id": "search-cnn-adamw-02",
+      "model": "cnn",
+      "arm": "adamw",
+      "lr": 0.0001,
+      "validation_accuracy": 0.2532,
+      "validation_loss": 3.1519532470703124,
+      "wall_seconds": 21.247152948752046,
+      "steady_ms_per_update": 3.587977955583483
+    },
+    {
+      "id": "search-cnn-adamw-03",
+      "model": "cnn",
+      "arm": "adamw",
+      "lr": 0.0002,
+      "validation_accuracy": 0.2742,
+      "validation_loss": 3.0257353271484373,
+      "wall_seconds": 21.321785140782595,
+      "steady_ms_per_update": 3.6046426510438323
+    },
+    {
+      "id": "search-cnn-adamw-04",
+      "model": "cnn",
+      "arm": "adamw",
+      "lr": 0.0003,
+      "validation_accuracy": 0.2972,
+      "validation_loss": 2.9938492458343506,
+      "wall_seconds": 21.245754862204194,
+      "steady_ms_per_update": 3.5820553125813603
+    },
+    {
+      "id": "search-cnn-adamw-05",
+      "model": "cnn",
+      "arm": "adamw",
+      "lr": 0.0005,
+      "validation_accuracy": 0.287,
+      "validation_loss": 3.339713285827637,
+      "wall_seconds": 21.43981656804681,
+      "steady_ms_per_update": 3.634967575315386
+    },
+    {
+      "id": "search-cnn-adamw-06",
+      "model": "cnn",
+      "arm": "adamw",
+      "lr": 0.001,
+      "validation_accuracy": 0.2794,
+      "validation_loss": 4.149763433074951,
+      "wall_seconds": 21.38706462457776,
+      "steady_ms_per_update": 3.60976191284135
+    },
+    {
+      "id": "search-cnn-adamw-07",
+      "model": "cnn",
+      "arm": "adamw",
+      "lr": 0.002,
+      "validation_accuracy": 0.2648,
+      "validation_loss": 3.8449431243896486,
+      "wall_seconds": 21.211291844025254,
+      "steady_ms_per_update": 3.5751922354102135
+    },
+    {
+      "id": "search-cnn-adamw-08",
+      "model": "cnn",
+      "arm": "adamw",
+      "lr": 0.0033333333333333335,
+      "validation_accuracy": 0.2522,
+      "validation_loss": 3.3273899925231936,
+      "wall_seconds": 21.153463378548622,
+      "steady_ms_per_update": 3.5659147184342146
+    },
+    {
+      "id": "search-cnn-adamw-09",
+      "model": "cnn",
+      "arm": "adamw",
+      "lr": 0.01,
+      "validation_accuracy": 0.01,
+      "validation_loss": 4.60698394241333,
+      "wall_seconds": 21.14870418421924,
+      "steady_ms_per_update": 3.562414559070021
+    },
+    {
+      "id": "search-cnn-upgd-00",
+      "model": "cnn",
+      "arm": "upgd",
+      "lr": 1e-05,
+      "validation_accuracy": 0.0088,
+      "validation_loss": 4.606446430969238,
+      "wall_seconds": 27.151290444657207,
+      "steady_ms_per_update": 4.772401902358979
+    },
+    {
+      "id": "search-cnn-upgd-01",
+      "model": "cnn",
+      "arm": "upgd",
+      "lr": 3e-05,
+      "validation_accuracy": 0.0088,
+      "validation_loss": 4.6062808502197266,
+      "wall_seconds": 27.20486656576395,
+      "steady_ms_per_update": 4.782855750061572
+    },
+    {
+      "id": "search-cnn-upgd-02",
+      "model": "cnn",
+      "arm": "upgd",
+      "lr": 0.0001,
+      "validation_accuracy": 0.0086,
+      "validation_loss": 4.605711468505859,
+      "wall_seconds": 27.1372409183532,
+      "steady_ms_per_update": 4.769479118287563
+    },
+    {
+      "id": "search-cnn-upgd-03",
+      "model": "cnn",
+      "arm": "upgd",
+      "lr": 0.0002,
+      "validation_accuracy": 0.0096,
+      "validation_loss": 4.604928141784668,
+      "wall_seconds": 27.209205504506826,
+      "steady_ms_per_update": 4.789832764305174
+    },
+    {
+      "id": "search-cnn-upgd-04",
+      "model": "cnn",
+      "arm": "upgd",
+      "lr": 0.0003,
+      "validation_accuracy": 0.01,
+      "validation_loss": 4.60417982711792,
+      "wall_seconds": 27.273967742919922,
+      "steady_ms_per_update": 4.799104260280728
+    },
+    {
+      "id": "search-cnn-upgd-05",
+      "model": "cnn",
+      "arm": "upgd",
+      "lr": 0.0005,
+      "validation_accuracy": 0.0108,
+      "validation_loss": 4.602742736816406,
+      "wall_seconds": 27.28494354709983,
+      "steady_ms_per_update": 4.804993105586618
+    },
+    {
+      "id": "search-cnn-upgd-06",
+      "model": "cnn",
+      "arm": "upgd",
+      "lr": 0.001,
+      "validation_accuracy": 0.0104,
+      "validation_loss": 4.599103406524658,
+      "wall_seconds": 27.286753229796886,
+      "steady_ms_per_update": 4.8038720935583115
+    },
+    {
+      "id": "search-cnn-upgd-07",
+      "model": "cnn",
+      "arm": "upgd",
+      "lr": 0.002,
+      "validation_accuracy": 0.023,
+      "validation_loss": 4.586929396057129,
+      "wall_seconds": 27.270502610132098,
+      "steady_ms_per_update": 4.802884723991156
+    },
+    {
+      "id": "search-cnn-upgd-08",
+      "model": "cnn",
+      "arm": "upgd",
+      "lr": 0.0033333333333333335,
+      "validation_accuracy": 0.03,
+      "validation_loss": 4.530969653320312,
+      "wall_seconds": 27.291808428242803,
+      "steady_ms_per_update": 4.796269626822323
+    },
+    {
+      "id": "search-cnn-upgd-09",
+      "model": "cnn",
+      "arm": "upgd",
+      "lr": 0.01,
+      "validation_accuracy": 0.1118,
+      "validation_loss": 3.875103586578369,
+      "wall_seconds": 27.273686699569225,
+      "steady_ms_per_update": 4.795608935877681
+    }
+  ],
+  "projection": [
+    {
+      "cell": "mlp-adamw",
+      "selected_lr": 0.0003,
+      "projected_five_seed_hours": 3.1339951847783394,
+      "steady_ms_per_update": 2.701634609606117
+    },
+    {
+      "cell": "mlp-upgd",
+      "selected_lr": 0.01,
+      "projected_five_seed_hours": 3.800123391362528,
+      "steady_ms_per_update": 3.3115567876957357
+    },
+    {
+      "cell": "cnn-adamw",
+      "selected_lr": 0.0003,
+      "projected_five_seed_hours": 4.116332773740093,
+      "steady_ms_per_update": 3.5820553125813603
+    },
+    {
+      "cell": "cnn-upgd",
+      "selected_lr": 0.01,
+      "projected_five_seed_hours": 5.470261221130689,
+      "steady_ms_per_update": 4.795608935877681
+    }
+  ],
+  "projected_evaluation_hours": 16.52071257101165,
+  "limitations": [
+    "Checkpoint bytes omitted; their recorded hashes were not independently checked.",
+    "Single development seed/task; holdout accuracies do not establish continual-learning performance.",
+    "UPGD wins at upper grid boundary for both models: expand LR range before full evaluation.",
+    "Projection uses selected-LR search speed and pilot pool costs; later-task checkpoint/setup costs may differ."
+  ]
+}

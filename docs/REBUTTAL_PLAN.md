@@ -280,7 +280,7 @@ commands above. The inherited full scientific suites were not rerun.
 | Priority | Minimal follow-up | Reviewer concern | Incremental estimate |
 |---|---|---|---|
 | 2 | Five final UPGD B checkpoints; native utility/Fisher/random M1 at 1%, existing noise protocol; compare rankings within each host model | R2 important request 2: comparison with existing protection statistics | 1–6 GPU-hours, no new training |
-| 3 | AdamW/UPGD on CIFAR MLP and CNN, five seeds, both streams, 80 tasks (400k updates); explicit LR pilot; recover matched CAP prefixes | R2: absent CIFAR learner baselines | 25–85 GPU-hours; provisional until CIFAR timing |
+| 3 | AdamW/UPGD on CIFAR MLP and CNN, five seeds, both streams, 80 tasks (400k updates); explicit LR pilot; recover matched CAP prefixes | R2: absent CIFAR learner baselines | L4 measured projection 16.52 hours; reserve 20–24 hours, plus 5–7 minutes for bounded LR extension |
 | 4 | Recover CIFAR A checkpoints at 20/50/100/150; four M3 branches, five seeds, two architectures, one task each (800k updates); log proposed/clipped/applied update norms | R2: MLP–CNN difference and null recentering effect | 2–8 GPU-hours if checkpoint banks are recovered |
 
 The local scientific review summaries do not include full mechanistic checkpoint
@@ -289,6 +289,13 @@ committing to priorities 2–4. Existing `validation/artifacts` smoke outputs mu
 not be substituted for scientific runs. M1 already includes frozen empirical
 Fisher, so do not duplicate that experiment. A large anchor-timescale sweep,
 new benchmark, and broad baseline suite are outside this first-week scope.
+
+Priority 3 status, 21 November: the four timing pilots and all 40 initial LR trials
+are verified. Both UPGD winners reached the highest tested LR, so run the
+[12-trial bounded extension](PRIORITY3_LR_EXTENSION.md) before evaluation.
+[Verified evidence and timings](PRIORITY3_RESULTS.md) are saved. Matching historical
+CAP 80-task prefixes have been recovered; priority 3 does not need new CAP training.
+Priority 4 still requires the original mechanistic checkpoint banks.
 
 Keep the paper framing narrow: inspectable protection studied with matched
 interventions. Broaden related work and disclose the expanded but still unequal
