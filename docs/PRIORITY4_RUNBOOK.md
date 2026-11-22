@@ -92,3 +92,7 @@ wall time also includes loading and checkpoint commits. The full 160-job run
 was authorized and launched after these checks, with 36.7 GiB disk available.
 The original source-tree digest also matched the archived source version, and
 rename-normalized original/public optimizer implementations were identical.
+Data, sampler, architecture, evaluation and protocol functions also matched.
+The released seed helper adds an explicit matmul-TF32 disable that the original
+left at the framework default. New matched branches all use the same recorded
+settings; exact historical cross-GPU trajectory reproduction is not claimed.

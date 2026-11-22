@@ -5,7 +5,7 @@ import math
 from pathlib import Path
 import numpy as np
 import torch
-from experiment_cifar_diagnostics import jobs, job_id, SEEDS, AGES, BRANCHES, identity
+from experiment_cifar_diagnostics import jobs, job_id, SEEDS, AGES, BRANCHES, identity, reference
 from cap_mechanistic_cifar.cifar_mech.checkpointing import load, file_hash, digest, atomic_json
 from cap_mechanistic_cifar.cifar_mech.metrics import task_metrics
 from cap_mechanistic_cifar.cifar_mech.streams import old_tasks
@@ -51,6 +51,7 @@ def report(root, verify_checkpoints=True):
         r = json.loads(p.read_text())
         assert r["complete"] and r["step"] == 5000 and len(r["online"]) == 5000
         assert r["key"]["job"] == list(j) and r["key"]["campaign"] == digest(campaign)
+        assert r["key"]["source_sha256"] == reference()[j[0]]["reproduction_gate.json"]["content"]["checkpoint_hashes"][f"a_seed{j[1]}_task{j[2]}.pt"]
         assert [x["step"] for x in r["online"]] == list(range(1, 5001))
         assert r["accuracies"] == [x["accuracy"] for x in r["online"]]
         assert task_metrics(r["accuracies"]) == r["metrics"]
@@ -72,6 +73,8 @@ def report(root, verify_checkpoints=True):
             assert cp["key"] == r["key"] and cp["record"] == {k: v for k, v in r.items() if k != "key"}
             assert all(torch.isfinite(t).all().item() for t in cp["model"].values())
             assert all(s["step"] == (j[2]+1)*5000 for s in cp["optimizer"]["state"].values())
+            assert all(torch.isfinite(v).all().item() for s in cp["optimizer"]["state"].values()
+                       for v in s.values() if torch.is_tensor(v))
             hashes[str((directory/"resume.pt").relative_to(root))] = file_hash(directory/"resume.pt")
         hashes[str(p.relative_to(root))] = file_hash(p)
         records[j] = r
