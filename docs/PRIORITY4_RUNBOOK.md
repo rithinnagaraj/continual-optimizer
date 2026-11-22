@@ -80,3 +80,15 @@ time, GPU memory, and free disk before full launch. Initial budget is 2–8 L4 G
 hours; use measured pilot timings to refine it. Preserve the original banks.
 After completion verify all 160 result/checkpoint pairs, matched batch hashes,
 expected trace/retention counts and recomputed metrics before reporting.
+
+```bash
+python report_cifar_diagnostics.py
+```
+
+The four L4 pilot prefixes passed exact sampled proposal checks. Measured job
+times for 1,000 updates were 3.76/3.42 seconds (MLP ages 20/150) and 4.94/4.71
+seconds (CNN). Linear scaling gives 0.935 job-hours for the campaign; actual
+wall time also includes loading and checkpoint commits. The full 160-job run
+was authorized and launched after these checks, with 36.7 GiB disk available.
+The original source-tree digest also matched the archived source version, and
+rename-normalized original/public optimizer implementations were identical.

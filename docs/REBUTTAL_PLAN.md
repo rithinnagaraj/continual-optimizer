@@ -298,7 +298,10 @@ MLP balanced score; AdamW has the highest CNN balanced score and exceeds archive
 CAP on both CNN plasticity and retention. Preserve the historical-control caveats.
 [Verified evidence and timings](PRIORITY3_RESULTS.md) are saved. Matching historical
 CAP 80-task prefixes have been recovered; priority 3 does not need new CAP training.
-Priority 4 still requires the original mechanistic checkpoint banks.
+Priority 4: original mechanistic banks were recovered and all 90 checkpoint
+hashes authenticated on 23 November. The bounded L4 pilot passed, projecting
+about one job-hour; the full 160-branch campaign is now running. See
+[the frozen diagnostic plan](PRIORITY4_RUNBOOK.md).
 
 Keep the paper framing narrow: inspectable protection studied with matched
 interventions. Broaden related work and disclose the expanded but still unequal
