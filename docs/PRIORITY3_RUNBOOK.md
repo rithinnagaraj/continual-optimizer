@@ -1,5 +1,9 @@
 # Priority 3: CIFAR-100 learner baselines
 
+**23 November update:** priority 3 is complete. All 40 evaluations passed
+verification; [final results and measured costs](PRIORITY3_RESULTS.md) are saved.
+The commands below document the original workflow rather than new requested runs.
+
 **21 November update:** the pilot, all 40 initial LR trials, and the 12-trial
 extension are verified. Final winners are AdamW LR 0.0003 and UPGD LR 0.1 for both
 architectures, with no boundary winners. Use the evaluation commands in the

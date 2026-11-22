@@ -1,6 +1,6 @@
 # Interpretation to preserve for the joint revision
 
-Updated 21 November 2026 at the author's request. This is a results/synthesis
+Updated 23 November 2026 at the author's request. This is a results/synthesis
 record, not a manuscript edit. Paper revisions remain deferred until the planned
 experiments are complete.
 
@@ -85,10 +85,33 @@ Required qualifications alongside this comparison:
 The defensible synthesis is usefulness and distinctive explicit controls, with
 qualified empirical support for importance ordering—not general superiority.
 
+## CIFAR baseline context after priority 3
+
+All 40 new baseline jobs are complete and verified. At the matching 80-task
+horizon, mean balanced scores for MLP are CAP archived 0.07024, UPGD 0.05548,
+and AdamW 0.05537. CNN scores are AdamW 0.23178, CAP archived 0.20909, and
+UPGD 0.19532. All reported per-seed balanced scores equal retention in this setting.
+
+The CNN result limits any broad performance claim: AdamW exceeds historical CAP
+on both mean plasticity (0.58742 versus 0.35661) and retention (0.23178 versus
+0.20909). CAP has greater CNN retention than UPGD but lower plasticity. Historical
+CAP has the strongest MLP retention/balanced means, although all MLP retention
+values are low. These comparisons use archived CAP prefixes, not fresh matched
+L4 controls; tuning scope/development seeds and environments have disclosed
+differences. Treat them as qualified benchmark context, not a superiority test.
+
+The contribution should remain explicit protection controls and matched causal
+interventions, with architecture-dependent empirical performance. Do not turn
+the CIFAR ranking into a causal explanation for the architecture contrast: the
+planned priority-4 interventions must test that explanation. See
+[full CIFAR results, uncertainties, and provenance](PRIORITY3_RESULTS.md).
+
 ## Results records
 
 - [Priority 1](PRIORITY1_RESULTS.md): expanded UPGD tuning and benchmark reproduction.
 - [Priority 2](PRIORITY2_RESULTS.md): native utility/Fisher/random probes, effect
   sizes, uncertainty, and layer-level qualifications.
-- Priorities 3 and 4 remain pending; revise the eventual synthesis in light of
-  those results, without presenting this current framing as evidence they passed.
+- [Priority 3](PRIORITY3_RESULTS.md): completed CIFAR baselines and qualified
+  comparison with archived CAP prefixes.
+- Priority 4 remains pending: recover the original mechanistic checkpoint banks
+  before the targeted MLP/CNN matched-intervention follow-up.

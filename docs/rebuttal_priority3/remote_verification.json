@@ -1,0 +1,85 @@
+{
+  "release_audit": {
+    "passed": true,
+    "files_checked": 252,
+    "python_files_parsed": 181,
+    "errors": []
+  },
+  "evaluation_report": [
+    {
+      "model": "cnn",
+      "arm": "adamw",
+      "seeds": 5,
+      "provenance": "new baseline campaign with extended LR search",
+      "plasticity": 0.5874189062774181,
+      "retention": 0.23178205128205132,
+      "balanced": 0.23178205128205132,
+      "plasticity_std": 0.006614447059043479,
+      "retention_std": 0.004641565700267669,
+      "balanced_std": 0.004641565700267669
+    },
+    {
+      "model": "cnn",
+      "arm": "cap_archived",
+      "seeds": 5,
+      "provenance": "historical CAP 80-task prefix; not a same-environment rerun",
+      "plasticity": 0.3566109375119209,
+      "retention": 0.2090923076923077,
+      "balanced": 0.2090923076923077,
+      "plasticity_std": 0.004372738360601061,
+      "retention_std": 0.006455044813964956,
+      "balanced_std": 0.006455044813964956
+    },
+    {
+      "model": "cnn",
+      "arm": "upgd",
+      "seeds": 5,
+      "provenance": "new baseline campaign with extended LR search",
+      "plasticity": 0.5284970312893391,
+      "retention": 0.19532051282051283,
+      "balanced": 0.19532051282051283,
+      "plasticity_std": 0.003326140404108332,
+      "retention_std": 0.0024276344332468825,
+      "balanced_std": 0.0024276344332468825
+    },
+    {
+      "model": "mlp",
+      "arm": "adamw",
+      "seeds": 5,
+      "provenance": "new baseline campaign with extended LR search",
+      "plasticity": 0.3372884375154972,
+      "retention": 0.055371794871794874,
+      "balanced": 0.055371794871794874,
+      "plasticity_std": 0.004012521383378568,
+      "retention_std": 0.001857404288337701,
+      "balanced_std": 0.001857404288337701
+    },
+    {
+      "model": "mlp",
+      "arm": "cap_archived",
+      "seeds": 5,
+      "provenance": "historical CAP 80-task prefix; not a same-environment rerun",
+      "plasticity": 0.3556020312637091,
+      "retention": 0.07024358974358974,
+      "balanced": 0.07024358974358974,
+      "plasticity_std": 0.0017576374637123615,
+      "retention_std": 0.0012643001873920512,
+      "balanced_std": 0.0012643001873920512
+    },
+    {
+      "model": "mlp",
+      "arm": "upgd",
+      "seeds": 5,
+      "provenance": "new baseline campaign with extended LR search",
+      "plasticity": 0.352490000012517,
+      "retention": 0.05548205128205129,
+      "balanced": 0.05548205128205129,
+      "plasticity_std": 0.0020777714559046057,
+      "retention_std": 0.0017748563479572919,
+      "balanced_std": 0.0017748563479572919
+    }
+  ],
+  "verified_unix_time": 1795333827.2096012,
+  "commit": "3f155575b4d9b5c7359eafdf8c8e2b10b518fc49",
+  "scope": "Remote release audit and report gate, including all checkpoint/export hashes; independent local metric audit follows."
+}

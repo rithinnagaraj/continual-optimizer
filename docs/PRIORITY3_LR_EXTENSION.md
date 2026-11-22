@@ -1,5 +1,10 @@
 # CIFAR bounded LR extension
 
+**23 November update:** all 40 scientific evaluations have finished and passed
+verification. Recorded evaluation cost was 16.862 hours. See the
+[final benchmark and evidence](PRIORITY3_RESULTS.md). The commands below remain
+as reproduction/recovery instructions; no additional priority-3 training is planned.
+
 **Verified completion, 21 November:** all 12 extra trials finished in 4.28 minutes.
 The merged selection is AdamW LR 0.0003 and UPGD LR 0.1 for both architectures;
 all winners are interior. No further extension is planned. Continue with

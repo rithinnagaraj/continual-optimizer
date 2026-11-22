@@ -1,0 +1,102 @@
+{
+  "campaign_hash": "17b6026d363861c3b0798525fa48e49b78ed732817beceda57fcb326e18f70c3",
+  "parent_campaign_hash": "523b31bb34f746ac92ff3634fa26c1e7a914ee0b0d162d2a3acbd5b11be10ae9",
+  "result_hashes": {
+    "search-cnn-adamw-00": "d13e86a6cc1d592d7204ef1715d5dfcaa49b67bd1d9061425711b6d37313a069",
+    "search-cnn-adamw-01": "32fb9418f364f90495b9066d222ceefdb4525d0019623af2c21bcfbb48699e21",
+    "search-cnn-adamw-02": "95abbea093ff878bc46970107e723fc72823901fdcf33c3893f48fc0f09f7f9a",
+    "search-cnn-adamw-03": "dfda944963504b9afa8813f62f1bfccc9fd3b64c2059e5c9ad8bfb26bfef1edb",
+    "search-cnn-adamw-04": "c505d415d045e53792f5542e97638bdad5ab7a4803b49704b748cdf3c2d2a4f9",
+    "search-cnn-adamw-05": "07d552cdb1c7622c71af3dee78c69d96ef3f18a4914339669a2be91cb2507a4c",
+    "search-cnn-adamw-06": "3871136390a31de117167c66e122baec37ea05e94f99dd297d84610ef3b3dd0b",
+    "search-cnn-adamw-07": "70785458a5b9a78e3008906d4394eecac4e82f8074a2583d99386ccf1993f57d",
+    "search-cnn-adamw-08": "426f2ea02aad352fa4878edd5ce26e92bcfcf8c7c23b19cb2dd389cdf5a041fe",
+    "search-cnn-adamw-09": "ddb5ec8db97753a01a0dbcc8410a24db650938e7db96d151bf73e0da52d3ca44",
+    "search-cnn-adamw-10": "1a1cd29b4df349c77b94d8405373499eea96c1b1be7a3464009ec172c33a40b4",
+    "search-cnn-adamw-11": "2cd038ccb36e5895b7467c237bb64210d21e731027b8376125f80bab5270d9e5",
+    "search-cnn-adamw-12": "83b9736ec8ed1ce0e9e2a86ea6c7ad06235208074410596785097d0ca1c7609a",
+    "search-cnn-upgd-00": "a347fc3ca201ef99ed33497f9195d74856409e67744cbd8dfec68fea2515bec0",
+    "search-cnn-upgd-01": "0389ee237727920e1125648055866b3c4e7f9e1c72c2c808eda921d1d4842512",
+    "search-cnn-upgd-02": "479f9ce2408c00317865e3519c305f3a14b1aad5839abac1b27fc2d863225dbe",
+    "search-cnn-upgd-03": "9d7a273179884ddb45097844d43f87495a35ae27ef6d036ba17edf2b789e0ab7",
+    "search-cnn-upgd-04": "b3a1c8731e2689b0c7c04bec97d651698272f0cd6bcdedacabaa743771ff289c",
+    "search-cnn-upgd-05": "5fc24efdb08f95b0cc558d73e99347035ef4427a84f72dba6b7edc2f2b47123b",
+    "search-cnn-upgd-06": "bf2cc64cf3e7e5b7ff09c6f591461e08418fbbfbb0ef0aa2d3fa5ac494c270f8",
+    "search-cnn-upgd-07": "7ad2295be2addb96b49767ecf7f95a8ee304ad9409b09a24e84c4305df2447b5",
+    "search-cnn-upgd-08": "857c81e5c00ccf1d0ad95b30b6724c0cc8ddd3d84f818449bae165d1668be3a3",
+    "search-cnn-upgd-09": "741dbb1d54757c9035ba82f322044122040a5f730ef4c434e4f779578e4b7af5",
+    "search-cnn-upgd-10": "411c862def583c1425985419a6e150e980d612910ed3ffbce027b7e58b3b8c52",
+    "search-cnn-upgd-11": "917ff62e386add30bc231631583464f9f93e8fcc3b7990da3f16847eb4601dd1",
+    "search-cnn-upgd-12": "c16ec77870d2d3a5fbfa9541087a24893760009609f373d70802a1152c8d154d",
+    "search-mlp-adamw-00": "9ed1173c94731286510d912df08f6ffccfd46aaac10ba616b913e9816bc7afe2",
+    "search-mlp-adamw-01": "ee229981cad91386a84586cf5a4e50cfbaf9e571a8d5d249e16588ac6b2ca64a",
+    "search-mlp-adamw-02": "e67c17bdba2e0a1041e4b340a5fa54989016e153fa2d71dfcdac5dfa7b46743e",
+    "search-mlp-adamw-03": "f20a0a4c6aedfe7e4d904c2284bac8a6b745e7e57a956ca66c9a876f0056607b",
+    "search-mlp-adamw-04": "c28d7e90d389a164ebaea8e39f693ad6d06890ee15df4e81ba7f2e944d6b1235",
+    "search-mlp-adamw-05": "064cafca5801ff54cb78c253e1807829e22db22e582b117ef61ce883e91e4cb9",
+    "search-mlp-adamw-06": "47de814ad42c092ca207595f2a13a6c34fc2e55acfc82f3ecb7206bf1402eecd",
+    "search-mlp-adamw-07": "1893beffe9b08a2faca3b447b56edb9f43f1938286f273178a32b36c8281eff2",
+    "search-mlp-adamw-08": "72d42c816adb8b3a734bcbba24abb0b1dbdb7657d2b33548868417336f4e7903",
+    "search-mlp-adamw-09": "b9f703ced38c69482c16d146735f4447c500177a69c21b8999444df6c01b8414",
+    "search-mlp-adamw-10": "5fb620a83bcfd4653b4993d249c22a2a63e905759249fd5cdec4129839844eee",
+    "search-mlp-adamw-11": "c7040f1bb4aa1da1657e8fd2f0a93d0f1e3eea783d00b801653baca168036451",
+    "search-mlp-adamw-12": "8a0a47c2e6a465afcf02631a0663b6ac13b6b5c82739d5d5999b1ae47d33ece5",
+    "search-mlp-upgd-00": "2e125fdd2e2bb6d80cee52c7a56888db18d48e54162837947ac968133cbb049f",
+    "search-mlp-upgd-01": "a409fdfe466a6a3307120944edfd19e799a9c51479c07e46584917000735b709",
+    "search-mlp-upgd-02": "73f462191b56dbddca98ce0340365f10759ecb83c5461985ebf8c19e87dde499",
+    "search-mlp-upgd-03": "2cbcce600b5f357cba40b1819d7a64fc77f89ddd2e3bc306fb2ff5fe737bc876",
+    "search-mlp-upgd-04": "fb32a93b0598f87a40bd9ed147f5fd057042426556f010ca8d489b179fcf60e3",
+    "search-mlp-upgd-05": "c66c3090b54b5987df4f13a5eee295583b357e771b45aa0037eb7d2bb7302434",
+    "search-mlp-upgd-06": "07968fa45befdf651669098903acfa48b583ae8af253d7824579c8715f40bb80",
+    "search-mlp-upgd-07": "cc922b1ba2bea656adb5a9249629818fcd53d7d73fac1648109696510c788f27",
+    "search-mlp-upgd-08": "a996d2328a44c6a7b276eac84a7d5d812be716bcb5a7de07eaa7f9a9cd3b7681",
+    "search-mlp-upgd-09": "beb2d57e764323e70758c81cf844539707f4f77d98dd5b8a8a17f6064a316160",
+    "search-mlp-upgd-10": "a490522fb5bba3179c49ab4d58e3afbd185a2c01c8f3a1010ca60ea9305c15ec",
+    "search-mlp-upgd-11": "99c32f74818c5f5eeabcb6ffe4942bf48564f3bbfd8ef7fde754fedc5acd20e3",
+    "search-mlp-upgd-12": "3a38a06763955c2ea66537e3fb43975408252d1b974079e4c70cfcb01d9b8a80"
+  },
+  "selected": {
+    "cnn-adamw": {
+      "at_grid_boundary": false,
+      "lr": 0.0003,
+      "lr_index": 4,
+      "metrics": {
+        "validation_accuracy": 0.2972,
+        "validation_loss": 2.9938492458343506
+      },
+      "source": "parent"
+    },
+    "cnn-upgd": {
+      "at_grid_boundary": false,
+      "lr": 0.1,
+      "lr_index": 11,
+      "metrics": {
+        "validation_accuracy": 0.271,
+        "validation_loss": 3.059290453338623
+      },
+      "source": "extension"
+    },
+    "mlp-adamw": {
+      "at_grid_boundary": false,
+      "lr": 0.0003,
+      "lr_index": 4,
+      "metrics": {
+        "validation_accuracy": 0.264,
+        "validation_loss": 3.341241610336304
+      },
+      "source": "parent"
+    },
+    "mlp-upgd": {
+      "at_grid_boundary": false,
+      "lr": 0.1,
+      "lr_index": 11,
+      "metrics": {
+        "validation_accuracy": 0.26,
+        "validation_loss": 3.1300999862670897
+      },
+      "source": "extension"
+    }
+  },
+  "selection_rule": "highest final single-task validation accuracy; then lowest loss, then lowest LR",
+  "smoke": false
+}

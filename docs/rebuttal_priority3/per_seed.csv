@@ -1,0 +1,31 @@
+model,arm,seed,plasticity,retention,balanced,provenance
+mlp,adamw,42,0.3425710937604308,0.05824358974358974,0.05824358974358974,new baseline campaign with extended LR search
+mlp,adamw,123,0.3325835937708616,0.05512820512820513,0.05512820512820513,new baseline campaign with extended LR search
+mlp,adamw,451,0.3347945312708616,0.05321794871794873,0.05321794871794873,new baseline campaign with extended LR search
+mlp,adamw,789,0.34002187501639125,0.05452564102564104,0.05452564102564104,new baseline campaign with extended LR search
+mlp,adamw,2026,0.3364710937589407,0.055743589743589755,0.055743589743589755,new baseline campaign with extended LR search
+mlp,upgd,42,0.35287812501192095,0.05747435897435898,0.05747435897435898,new baseline campaign with extended LR search
+mlp,upgd,123,0.3555867187678814,0.054794871794871795,0.054794871794871795,new baseline campaign with extended LR search
+mlp,upgd,451,0.3516234375089407,0.05319230769230769,0.05319230769230769,new baseline campaign with extended LR search
+mlp,upgd,789,0.3498867187649012,0.05707692307692309,0.05707692307692309,new baseline campaign with extended LR search
+mlp,upgd,2026,0.3524750000089407,0.05487179487179489,0.05487179487179489,new baseline campaign with extended LR search
+cnn,adamw,42,0.5875757812857628,0.2317820512820513,0.2317820512820513,new baseline campaign with extended LR search
+cnn,adamw,123,0.5788226562738419,0.23214102564102573,0.23214102564102573,new baseline campaign with extended LR search
+cnn,adamw,451,0.5856109375357628,0.2307179487179488,0.2307179487179488,new baseline campaign with extended LR search
+cnn,adamw,789,0.5877828125059604,0.23864102564102566,0.23864102564102566,new baseline campaign with extended LR search
+cnn,adamw,2026,0.5973023437857627,0.22562820512820517,0.22562820512820517,new baseline campaign with extended LR search
+cnn,upgd,42,0.5238523437976838,0.19629487179487176,0.19629487179487176,new baseline campaign with extended LR search
+cnn,upgd,123,0.530986718788743,0.1917692307692308,0.1917692307692308,new baseline campaign with extended LR search
+cnn,upgd,451,0.5286117187738418,0.198423076923077,0.198423076923077,new baseline campaign with extended LR search
+cnn,upgd,789,0.5321992188096046,0.1954102564102564,0.1954102564102564,new baseline campaign with extended LR search
+cnn,upgd,2026,0.5268351562768221,0.19470512820512823,0.19470512820512823,new baseline campaign with extended LR search
+mlp,cap_archived,42,0.35568906252086163,0.06805128205128205,0.06805128205128205,historical CAP 80-task prefix; not a same-environment rerun
+mlp,cap_archived,123,0.3559125000089407,0.07025641025641026,0.07025641025641026,historical CAP 80-task prefix; not a same-environment rerun
+mlp,cap_archived,451,0.35822890627384185,0.07097435897435897,0.07097435897435897,historical CAP 80-task prefix; not a same-environment rerun
+mlp,cap_archived,789,0.35471406251192095,0.07101282051282051,0.07101282051282051,historical CAP 80-task prefix; not a same-environment rerun
+mlp,cap_archived,2026,0.35346562500298023,0.07092307692307692,0.07092307692307692,historical CAP 80-task prefix; not a same-environment rerun
+cnn,cap_archived,42,0.3553421875014901,0.21394871794871795,0.21394871794871795,historical CAP 80-task prefix; not a same-environment rerun
+cnn,cap_archived,123,0.3552179687693715,0.21126923076923076,0.21126923076923076,historical CAP 80-task prefix; not a same-environment rerun
+cnn,cap_archived,451,0.3515953125059605,0.20744871794871794,0.20744871794871794,historical CAP 80-task prefix; not a same-environment rerun
+cnn,cap_archived,789,0.35742421877384184,0.21417948717948718,0.21417948717948718,historical CAP 80-task prefix; not a same-environment rerun
+cnn,cap_archived,2026,0.3634750000089407,0.1986153846153846,0.1986153846153846,historical CAP 80-task prefix; not a same-environment rerun

@@ -1,0 +1,12 @@
+{
+  "eval_indices_sha256": "55bd82125de8fba21e18e3f29a3cd9eec727bc14ff64b7d91cb74213a816d5f1",
+  "eval_x_sha256": "abdee99eb60bff5a3131c5ff3bf1af3d6f38e792f08630f6a14f7a92cc561b33",
+  "eval_y_sha256": "96584f45d457e8821c9043b328012ca29bedf056fb98bbaf4e446c7cba6bae31",
+  "evaluation_examples": 2000,
+  "evaluation_source": "official_test",
+  "smoke": false,
+  "train_examples": 50000,
+  "train_indices_sha256": "33236cc6bd19fa6b89e06d441d3fcd8eb37dc8540f6a4f2b627b20af10894a41",
+  "train_x_sha256": "e40f5f336796aa4398b48be6f3c454589825596dec0b8debabd6bcaf8d17fdb1",
+  "train_y_sha256": "8bf4935e7c77a3096270043c6f3b221b6ecb9c63d1a08608e9af66cff17e977a"
+}

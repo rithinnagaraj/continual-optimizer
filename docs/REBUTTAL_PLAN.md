@@ -280,7 +280,7 @@ commands above. The inherited full scientific suites were not rerun.
 | Priority | Minimal follow-up | Reviewer concern | Incremental estimate |
 |---|---|---|---|
 | 2 | Five final UPGD B checkpoints; native utility/Fisher/random M1 at 1%, existing noise protocol; compare rankings within each host model | R2 important request 2: comparison with existing protection statistics | 1–6 GPU-hours, no new training |
-| 3 | AdamW/UPGD on CIFAR MLP and CNN, five seeds, both streams, 80 tasks (400k updates); explicit LR pilot; recover matched CAP prefixes | R2: absent CIFAR learner baselines | Selection complete; L4 evaluation projection 16.58 hours; reserve 20–24 hours |
+| 3 | AdamW/UPGD on CIFAR MLP and CNN, five seeds, both streams, 80 tasks (400k updates); explicit LR pilot; recover matched CAP prefixes | R2: absent CIFAR learner baselines | Complete and verified: 16.862 L4 evaluation hours; 0.308 tuning hours |
 | 4 | Recover CIFAR A checkpoints at 20/50/100/150; four M3 branches, five seeds, two architectures, one task each (800k updates); log proposed/clipped/applied update norms | R2: MLP–CNN difference and null recentering effect | 2–8 GPU-hours if checkpoint banks are recovered |
 
 The local scientific review summaries do not include full mechanistic checkpoint
@@ -290,11 +290,12 @@ not be substituted for scientific runs. M1 already includes frozen empirical
 Fisher, so do not duplicate that experiment. A large anchor-timescale sweep,
 new benchmark, and broad baseline suite are outside this first-week scope.
 
-Priority 3 status, 21 November: the four timing pilots, all 40 initial LR trials,
-and all 12 extension trials are verified. The final merged selection is AdamW LR
-0.0003 and UPGD LR 0.1 for both architectures; no winners are at a grid boundary.
-No further tuning extension is planned. Proceed with the 40-job evaluation using
-the [extension launcher and runbook](PRIORITY3_LR_EXTENSION.md).
+Priority 3 status, 23 November: the four timing pilots, all 52 LR trials, and all
+40 scientific evaluations are verified. The final merged selection was AdamW LR
+0.0003 and UPGD LR 0.1 for both architectures. No additional priority-3 training
+is needed for the planned minimal comparison. Historical CAP has the highest mean
+MLP balanced score; AdamW has the highest CNN balanced score and exceeds archived
+CAP on both CNN plasticity and retention. Preserve the historical-control caveats.
 [Verified evidence and timings](PRIORITY3_RESULTS.md) are saved. Matching historical
 CAP 80-task prefixes have been recovered; priority 3 does not need new CAP training.
 Priority 4 still requires the original mechanistic checkpoint banks.

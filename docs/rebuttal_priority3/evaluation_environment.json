@@ -1,0 +1,17 @@
+{
+  "cublas_workspace_config": ":4096:8",
+  "cuda": "13.0",
+  "cudnn": 91900,
+  "cudnn_allow_tf32": true,
+  "cudnn_benchmark": false,
+  "cudnn_deterministic": true,
+  "deterministic_algorithms": true,
+  "device": "cuda",
+  "gpu": "NVIDIA L4",
+  "platform": "Linux",
+  "python": "3.10.22",
+  "tf32": false,
+  "threads": 1,
+  "torch": "2.11.0+cu130",
+  "torchvision": "0.26.0"
+}

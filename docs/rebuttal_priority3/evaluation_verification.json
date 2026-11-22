@@ -1,0 +1,987 @@
+{
+  "archive_sha256": "14f9a96b7dc360527354bb9eb727620fa9261f2cde37ff2f76ae6b80e3557b0d",
+  "campaign_hash": "17b6026d363861c3b0798525fa48e49b78ed732817beceda57fcb326e18f70c3",
+  "parent_campaign_hash": "523b31bb34f746ac92ff3634fa26c1e7a914ee0b0d162d2a3acbd5b11be10ae9",
+  "remote_commit": "3f155575b4d9b5c7359eafdf8c8e2b10b518fc49",
+  "complete_jobs": 40,
+  "total_updates": 16000000,
+  "verified_nonbinary_result_artifacts": 240,
+  "remote_checkpoint_hashes_verified": true,
+  "local_checkpoint_payloads_loaded": false,
+  "prior_search_evidence_unchanged": true,
+  "source_environment_data_verified": true,
+  "selection_precedes_evaluation": true,
+  "shared_initialization_within_architecture_seed": true,
+  "shared_schedule_verified": true,
+  "scalar_rows_checked": 160000,
+  "pool_rows_checked": 64000,
+  "metrics_and_report_recomputed": true,
+  "events": {
+    "start": 40,
+    "checkpoint": 16040,
+    "ready": 40,
+    "complete": 40
+  },
+  "remote_report_roundoff": [
+    {
+      "model": "cnn",
+      "arm": "adamw",
+      "field": "retention",
+      "remote": 0.23178205128205132,
+      "recomputed": 0.2317820512820513,
+      "difference": 2.7755575615628914e-17
+    },
+    {
+      "model": "cnn",
+      "arm": "adamw",
+      "field": "balanced",
+      "remote": 0.23178205128205132,
+      "recomputed": 0.2317820512820513,
+      "difference": 2.7755575615628914e-17
+    },
+    {
+      "model": "cnn",
+      "arm": "adamw",
+      "field": "retention_std",
+      "remote": 0.004641565700267669,
+      "recomputed": 0.00464156570026768,
+      "difference": 1.1275702593849246e-17
+    },
+    {
+      "model": "cnn",
+      "arm": "adamw",
+      "field": "balanced_std",
+      "remote": 0.004641565700267669,
+      "recomputed": 0.00464156570026768,
+      "difference": 1.1275702593849246e-17
+    },
+    {
+      "model": "cnn",
+      "arm": "cap_archived",
+      "field": "plasticity_std",
+      "remote": 0.004372738360601061,
+      "recomputed": 0.0043727383606010604,
+      "difference": 8.673617379884035e-19
+    },
+    {
+      "model": "cnn",
+      "arm": "upgd",
+      "field": "retention_std",
+      "remote": 0.0024276344332468825,
+      "recomputed": 0.002427634433246869,
+      "difference": 1.3444106938820255e-17
+    },
+    {
+      "model": "cnn",
+      "arm": "upgd",
+      "field": "balanced_std",
+      "remote": 0.0024276344332468825,
+      "recomputed": 0.002427634433246869,
+      "difference": 1.3444106938820255e-17
+    },
+    {
+      "model": "mlp",
+      "arm": "adamw",
+      "field": "retention",
+      "remote": 0.055371794871794874,
+      "recomputed": 0.05537179487179487,
+      "difference": 6.938893903907228e-18
+    },
+    {
+      "model": "mlp",
+      "arm": "adamw",
+      "field": "balanced",
+      "remote": 0.055371794871794874,
+      "recomputed": 0.05537179487179487,
+      "difference": 6.938893903907228e-18
+    },
+    {
+      "model": "mlp",
+      "arm": "adamw",
+      "field": "retention_std",
+      "remote": 0.001857404288337701,
+      "recomputed": 0.0018574042883377085,
+      "difference": 7.589415207398531e-18
+    },
+    {
+      "model": "mlp",
+      "arm": "adamw",
+      "field": "balanced_std",
+      "remote": 0.001857404288337701,
+      "recomputed": 0.0018574042883377085,
+      "difference": 7.589415207398531e-18
+    },
+    {
+      "model": "mlp",
+      "arm": "upgd",
+      "field": "retention",
+      "remote": 0.05548205128205129,
+      "recomputed": 0.05548205128205128,
+      "difference": 6.938893903907228e-18
+    },
+    {
+      "model": "mlp",
+      "arm": "upgd",
+      "field": "balanced",
+      "remote": 0.05548205128205129,
+      "recomputed": 0.05548205128205128,
+      "difference": 6.938893903907228e-18
+    },
+    {
+      "model": "mlp",
+      "arm": "upgd",
+      "field": "retention_std",
+      "remote": 0.0017748563479572919,
+      "recomputed": 0.001774856347957288,
+      "difference": 3.903127820947816e-18
+    },
+    {
+      "model": "mlp",
+      "arm": "upgd",
+      "field": "balanced_std",
+      "remote": 0.0017748563479572919,
+      "recomputed": 0.001774856347957288,
+      "difference": 3.903127820947816e-18
+    }
+  ],
+  "total_recorded_job_hours": 16.86200259545973,
+  "elapsed_campaign_hours": 16.86617278913657,
+  "summary": [
+    {
+      "model": "cnn",
+      "arm": "adamw",
+      "seeds": 5,
+      "provenance": "new baseline campaign with extended LR search",
+      "plasticity": 0.5874189062774181,
+      "retention": 0.2317820512820513,
+      "balanced": 0.2317820512820513,
+      "plasticity_std": 0.006614447059043479,
+      "retention_std": 0.00464156570026768,
+      "balanced_std": 0.00464156570026768
+    },
+    {
+      "model": "cnn",
+      "arm": "cap_archived",
+      "seeds": 5,
+      "provenance": "historical CAP 80-task prefix; not a same-environment rerun",
+      "plasticity": 0.3566109375119209,
+      "retention": 0.2090923076923077,
+      "balanced": 0.2090923076923077,
+      "plasticity_std": 0.0043727383606010604,
+      "retention_std": 0.006455044813964956,
+      "balanced_std": 0.006455044813964956
+    },
+    {
+      "model": "cnn",
+      "arm": "upgd",
+      "seeds": 5,
+      "provenance": "new baseline campaign with extended LR search",
+      "plasticity": 0.5284970312893391,
+      "retention": 0.19532051282051283,
+      "balanced": 0.19532051282051283,
+      "plasticity_std": 0.003326140404108332,
+      "retention_std": 0.002427634433246869,
+      "balanced_std": 0.002427634433246869
+    },
+    {
+      "model": "mlp",
+      "arm": "adamw",
+      "seeds": 5,
+      "provenance": "new baseline campaign with extended LR search",
+      "plasticity": 0.3372884375154972,
+      "retention": 0.05537179487179487,
+      "balanced": 0.05537179487179487,
+      "plasticity_std": 0.004012521383378568,
+      "retention_std": 0.0018574042883377085,
+      "balanced_std": 0.0018574042883377085
+    },
+    {
+      "model": "mlp",
+      "arm": "cap_archived",
+      "seeds": 5,
+      "provenance": "historical CAP 80-task prefix; not a same-environment rerun",
+      "plasticity": 0.3556020312637091,
+      "retention": 0.07024358974358974,
+      "balanced": 0.07024358974358974,
+      "plasticity_std": 0.0017576374637123615,
+      "retention_std": 0.0012643001873920512,
+      "balanced_std": 0.0012643001873920512
+    },
+    {
+      "model": "mlp",
+      "arm": "upgd",
+      "seeds": 5,
+      "provenance": "new baseline campaign with extended LR search",
+      "plasticity": 0.352490000012517,
+      "retention": 0.05548205128205128,
+      "balanced": 0.05548205128205128,
+      "plasticity_std": 0.0020777714559046057,
+      "retention_std": 0.001774856347957288,
+      "balanced_std": 0.001774856347957288
+    }
+  ],
+  "per_seed": [
+    {
+      "model": "mlp",
+      "arm": "adamw",
+      "seed": 42,
+      "plasticity": 0.3425710937604308,
+      "retention": 0.058243589743589744,
+      "balanced": 0.058243589743589744,
+      "provenance": "new baseline campaign with extended LR search"
+    },
+    {
+      "model": "mlp",
+      "arm": "adamw",
+      "seed": 123,
+      "plasticity": 0.3325835937708616,
+      "retention": 0.05512820512820513,
+      "balanced": 0.05512820512820513,
+      "provenance": "new baseline campaign with extended LR search"
+    },
+    {
+      "model": "mlp",
+      "arm": "adamw",
+      "seed": 451,
+      "plasticity": 0.3347945312708616,
+      "retention": 0.053217948717948715,
+      "balanced": 0.053217948717948715,
+      "provenance": "new baseline campaign with extended LR search"
+    },
+    {
+      "model": "mlp",
+      "arm": "adamw",
+      "seed": 789,
+      "plasticity": 0.34002187501639125,
+      "retention": 0.054525641025641024,
+      "balanced": 0.054525641025641024,
+      "provenance": "new baseline campaign with extended LR search"
+    },
+    {
+      "model": "mlp",
+      "arm": "adamw",
+      "seed": 2026,
+      "plasticity": 0.3364710937589407,
+      "retention": 0.05574358974358974,
+      "balanced": 0.05574358974358974,
+      "provenance": "new baseline campaign with extended LR search"
+    },
+    {
+      "model": "mlp",
+      "arm": "upgd",
+      "seed": 42,
+      "plasticity": 0.35287812501192095,
+      "retention": 0.05747435897435897,
+      "balanced": 0.05747435897435897,
+      "provenance": "new baseline campaign with extended LR search"
+    },
+    {
+      "model": "mlp",
+      "arm": "upgd",
+      "seed": 123,
+      "plasticity": 0.3555867187678814,
+      "retention": 0.054794871794871795,
+      "balanced": 0.054794871794871795,
+      "provenance": "new baseline campaign with extended LR search"
+    },
+    {
+      "model": "mlp",
+      "arm": "upgd",
+      "seed": 451,
+      "plasticity": 0.3516234375089407,
+      "retention": 0.05319230769230769,
+      "balanced": 0.05319230769230769,
+      "provenance": "new baseline campaign with extended LR search"
+    },
+    {
+      "model": "mlp",
+      "arm": "upgd",
+      "seed": 789,
+      "plasticity": 0.3498867187649012,
+      "retention": 0.057076923076923074,
+      "balanced": 0.057076923076923074,
+      "provenance": "new baseline campaign with extended LR search"
+    },
+    {
+      "model": "mlp",
+      "arm": "upgd",
+      "seed": 2026,
+      "plasticity": 0.3524750000089407,
+      "retention": 0.054871794871794874,
+      "balanced": 0.054871794871794874,
+      "provenance": "new baseline campaign with extended LR search"
+    },
+    {
+      "model": "cnn",
+      "arm": "adamw",
+      "seed": 42,
+      "plasticity": 0.5875757812857628,
+      "retention": 0.2317820512820513,
+      "balanced": 0.2317820512820513,
+      "provenance": "new baseline campaign with extended LR search"
+    },
+    {
+      "model": "cnn",
+      "arm": "adamw",
+      "seed": 123,
+      "plasticity": 0.5788226562738419,
+      "retention": 0.23214102564102562,
+      "balanced": 0.23214102564102562,
+      "provenance": "new baseline campaign with extended LR search"
+    },
+    {
+      "model": "cnn",
+      "arm": "adamw",
+      "seed": 451,
+      "plasticity": 0.5856109375357628,
+      "retention": 0.2307179487179487,
+      "balanced": 0.2307179487179487,
+      "provenance": "new baseline campaign with extended LR search"
+    },
+    {
+      "model": "cnn",
+      "arm": "adamw",
+      "seed": 789,
+      "plasticity": 0.5877828125059604,
+      "retention": 0.23864102564102566,
+      "balanced": 0.23864102564102566,
+      "provenance": "new baseline campaign with extended LR search"
+    },
+    {
+      "model": "cnn",
+      "arm": "adamw",
+      "seed": 2026,
+      "plasticity": 0.5973023437857627,
+      "retention": 0.22562820512820514,
+      "balanced": 0.22562820512820514,
+      "provenance": "new baseline campaign with extended LR search"
+    },
+    {
+      "model": "cnn",
+      "arm": "upgd",
+      "seed": 42,
+      "plasticity": 0.5238523437976838,
+      "retention": 0.1962948717948718,
+      "balanced": 0.1962948717948718,
+      "provenance": "new baseline campaign with extended LR search"
+    },
+    {
+      "model": "cnn",
+      "arm": "upgd",
+      "seed": 123,
+      "plasticity": 0.530986718788743,
+      "retention": 0.19176923076923078,
+      "balanced": 0.19176923076923078,
+      "provenance": "new baseline campaign with extended LR search"
+    },
+    {
+      "model": "cnn",
+      "arm": "upgd",
+      "seed": 451,
+      "plasticity": 0.5286117187738418,
+      "retention": 0.19842307692307692,
+      "balanced": 0.19842307692307692,
+      "provenance": "new baseline campaign with extended LR search"
+    },
+    {
+      "model": "cnn",
+      "arm": "upgd",
+      "seed": 789,
+      "plasticity": 0.5321992188096046,
+      "retention": 0.19541025641025642,
+      "balanced": 0.19541025641025642,
+      "provenance": "new baseline campaign with extended LR search"
+    },
+    {
+      "model": "cnn",
+      "arm": "upgd",
+      "seed": 2026,
+      "plasticity": 0.5268351562768221,
+      "retention": 0.19470512820512823,
+      "balanced": 0.19470512820512823,
+      "provenance": "new baseline campaign with extended LR search"
+    },
+    {
+      "arm": "cap_archived",
+      "balanced": 0.06805128205128205,
+      "model": "mlp",
+      "plasticity": 0.35568906252086163,
+      "provenance": "historical CAP 80-task prefix; not a same-environment rerun",
+      "retention": 0.06805128205128205,
+      "seed": 42
+    },
+    {
+      "arm": "cap_archived",
+      "balanced": 0.07025641025641026,
+      "model": "mlp",
+      "plasticity": 0.3559125000089407,
+      "provenance": "historical CAP 80-task prefix; not a same-environment rerun",
+      "retention": 0.07025641025641026,
+      "seed": 123
+    },
+    {
+      "arm": "cap_archived",
+      "balanced": 0.07097435897435897,
+      "model": "mlp",
+      "plasticity": 0.35822890627384185,
+      "provenance": "historical CAP 80-task prefix; not a same-environment rerun",
+      "retention": 0.07097435897435897,
+      "seed": 451
+    },
+    {
+      "arm": "cap_archived",
+      "balanced": 0.07101282051282051,
+      "model": "mlp",
+      "plasticity": 0.35471406251192095,
+      "provenance": "historical CAP 80-task prefix; not a same-environment rerun",
+      "retention": 0.07101282051282051,
+      "seed": 789
+    },
+    {
+      "arm": "cap_archived",
+      "balanced": 0.07092307692307692,
+      "model": "mlp",
+      "plasticity": 0.35346562500298023,
+      "provenance": "historical CAP 80-task prefix; not a same-environment rerun",
+      "retention": 0.07092307692307692,
+      "seed": 2026
+    },
+    {
+      "arm": "cap_archived",
+      "balanced": 0.21394871794871795,
+      "model": "cnn",
+      "plasticity": 0.3553421875014901,
+      "provenance": "historical CAP 80-task prefix; not a same-environment rerun",
+      "retention": 0.21394871794871795,
+      "seed": 42
+    },
+    {
+      "arm": "cap_archived",
+      "balanced": 0.21126923076923076,
+      "model": "cnn",
+      "plasticity": 0.3552179687693715,
+      "provenance": "historical CAP 80-task prefix; not a same-environment rerun",
+      "retention": 0.21126923076923076,
+      "seed": 123
+    },
+    {
+      "arm": "cap_archived",
+      "balanced": 0.20744871794871794,
+      "model": "cnn",
+      "plasticity": 0.3515953125059605,
+      "provenance": "historical CAP 80-task prefix; not a same-environment rerun",
+      "retention": 0.20744871794871794,
+      "seed": 451
+    },
+    {
+      "arm": "cap_archived",
+      "balanced": 0.21417948717948718,
+      "model": "cnn",
+      "plasticity": 0.35742421877384184,
+      "provenance": "historical CAP 80-task prefix; not a same-environment rerun",
+      "retention": 0.21417948717948718,
+      "seed": 789
+    },
+    {
+      "arm": "cap_archived",
+      "balanced": 0.1986153846153846,
+      "model": "cnn",
+      "plasticity": 0.3634750000089407,
+      "provenance": "historical CAP 80-task prefix; not a same-environment rerun",
+      "retention": 0.1986153846153846,
+      "seed": 2026
+    }
+  ],
+  "timing": [
+    {
+      "id": "eval-mlp-adamw-42-a",
+      "model": "mlp",
+      "arm": "adamw",
+      "seed": 42,
+      "stream": "a",
+      "attempts": 1,
+      "wall_seconds": 1099.070375856012,
+      "training_seconds": 1080.402640460059,
+      "evaluation_seconds": 2.5623886436223984,
+      "peak_cuda_allocated_mib": 85.86279296875
+    },
+    {
+      "id": "eval-mlp-adamw-42-b",
+      "model": "mlp",
+      "arm": "adamw",
+      "seed": 42,
+      "stream": "b",
+      "attempts": 1,
+      "wall_seconds": 1179.7194842621684,
+      "training_seconds": 1075.044027544558,
+      "evaluation_seconds": 86.70564505457878,
+      "peak_cuda_allocated_mib": 85.86279296875
+    },
+    {
+      "id": "eval-mlp-adamw-123-a",
+      "model": "mlp",
+      "arm": "adamw",
+      "seed": 123,
+      "stream": "a",
+      "attempts": 1,
+      "wall_seconds": 1103.6501397192478,
+      "training_seconds": 1085.3853935748339,
+      "evaluation_seconds": 2.6077163573354483,
+      "peak_cuda_allocated_mib": 85.86279296875
+    },
+    {
+      "id": "eval-mlp-adamw-123-b",
+      "model": "mlp",
+      "arm": "adamw",
+      "seed": 123,
+      "stream": "b",
+      "attempts": 1,
+      "wall_seconds": 1184.8029641509056,
+      "training_seconds": 1081.0526438988745,
+      "evaluation_seconds": 86.15409662202,
+      "peak_cuda_allocated_mib": 85.86279296875
+    },
+    {
+      "id": "eval-mlp-adamw-451-a",
+      "model": "mlp",
+      "arm": "adamw",
+      "seed": 451,
+      "stream": "a",
+      "attempts": 1,
+      "wall_seconds": 1101.3868021406233,
+      "training_seconds": 1080.7247405536473,
+      "evaluation_seconds": 2.567417088896036,
+      "peak_cuda_allocated_mib": 85.86279296875
+    },
+    {
+      "id": "eval-mlp-adamw-451-b",
+      "model": "mlp",
+      "arm": "adamw",
+      "seed": 451,
+      "stream": "b",
+      "attempts": 1,
+      "wall_seconds": 1186.5261501241475,
+      "training_seconds": 1081.722132889554,
+      "evaluation_seconds": 87.51469662971795,
+      "peak_cuda_allocated_mib": 85.86279296875
+    },
+    {
+      "id": "eval-mlp-adamw-789-a",
+      "model": "mlp",
+      "arm": "adamw",
+      "seed": 789,
+      "stream": "a",
+      "attempts": 1,
+      "wall_seconds": 1103.3882714044303,
+      "training_seconds": 1085.0691967010498,
+      "evaluation_seconds": 2.595758119598031,
+      "peak_cuda_allocated_mib": 85.86279296875
+    },
+    {
+      "id": "eval-mlp-adamw-789-b",
+      "model": "mlp",
+      "arm": "adamw",
+      "seed": 789,
+      "stream": "b",
+      "attempts": 1,
+      "wall_seconds": 1187.3773617278785,
+      "training_seconds": 1082.5206954013556,
+      "evaluation_seconds": 86.88179079443216,
+      "peak_cuda_allocated_mib": 85.86279296875
+    },
+    {
+      "id": "eval-mlp-adamw-2026-a",
+      "model": "mlp",
+      "arm": "adamw",
+      "seed": 2026,
+      "stream": "a",
+      "attempts": 1,
+      "wall_seconds": 1103.4571485128254,
+      "training_seconds": 1085.0759244505316,
+      "evaluation_seconds": 2.575384236872196,
+      "peak_cuda_allocated_mib": 85.86279296875
+    },
+    {
+      "id": "eval-mlp-adamw-2026-b",
+      "model": "mlp",
+      "arm": "adamw",
+      "seed": 2026,
+      "stream": "b",
+      "attempts": 1,
+      "wall_seconds": 1189.770683646202,
+      "training_seconds": 1085.255011221394,
+      "evaluation_seconds": 86.72156191058457,
+      "peak_cuda_allocated_mib": 85.86279296875
+    },
+    {
+      "id": "eval-mlp-upgd-42-a",
+      "model": "mlp",
+      "arm": "upgd",
+      "seed": 42,
+      "stream": "a",
+      "attempts": 1,
+      "wall_seconds": 1372.0734900478274,
+      "training_seconds": 1355.4896708540618,
+      "evaluation_seconds": 2.6288062315434217,
+      "peak_cuda_allocated_mib": 95.48388671875
+    },
+    {
+      "id": "eval-mlp-upgd-42-b",
+      "model": "mlp",
+      "arm": "upgd",
+      "seed": 42,
+      "stream": "b",
+      "attempts": 1,
+      "wall_seconds": 1451.9799526445568,
+      "training_seconds": 1351.663145026192,
+      "evaluation_seconds": 84.10475074313581,
+      "peak_cuda_allocated_mib": 95.48388671875
+    },
+    {
+      "id": "eval-mlp-upgd-123-a",
+      "model": "mlp",
+      "arm": "upgd",
+      "seed": 123,
+      "stream": "a",
+      "attempts": 1,
+      "wall_seconds": 1375.6124483775347,
+      "training_seconds": 1358.9300942718983,
+      "evaluation_seconds": 2.5638236552476883,
+      "peak_cuda_allocated_mib": 95.48388671875
+    },
+    {
+      "id": "eval-mlp-upgd-123-b",
+      "model": "mlp",
+      "arm": "upgd",
+      "seed": 123,
+      "stream": "b",
+      "attempts": 1,
+      "wall_seconds": 1449.7983554154634,
+      "training_seconds": 1347.9245030656457,
+      "evaluation_seconds": 85.94158042035997,
+      "peak_cuda_allocated_mib": 95.48388671875
+    },
+    {
+      "id": "eval-mlp-upgd-451-a",
+      "model": "mlp",
+      "arm": "upgd",
+      "seed": 451,
+      "stream": "a",
+      "attempts": 1,
+      "wall_seconds": 1367.772832384333,
+      "training_seconds": 1350.721747044474,
+      "evaluation_seconds": 2.633021393790841,
+      "peak_cuda_allocated_mib": 95.48388671875
+    },
+    {
+      "id": "eval-mlp-upgd-451-b",
+      "model": "mlp",
+      "arm": "upgd",
+      "seed": 451,
+      "stream": "b",
+      "attempts": 1,
+      "wall_seconds": 1458.1666891146451,
+      "training_seconds": 1356.0315981078893,
+      "evaluation_seconds": 85.77107413485646,
+      "peak_cuda_allocated_mib": 95.48388671875
+    },
+    {
+      "id": "eval-mlp-upgd-789-a",
+      "model": "mlp",
+      "arm": "upgd",
+      "seed": 789,
+      "stream": "a",
+      "attempts": 1,
+      "wall_seconds": 1373.570275451988,
+      "training_seconds": 1356.135918840766,
+      "evaluation_seconds": 2.608277063816786,
+      "peak_cuda_allocated_mib": 95.48388671875
+    },
+    {
+      "id": "eval-mlp-upgd-789-b",
+      "model": "mlp",
+      "arm": "upgd",
+      "seed": 789,
+      "stream": "b",
+      "attempts": 1,
+      "wall_seconds": 1453.2166838701814,
+      "training_seconds": 1351.3735707271844,
+      "evaluation_seconds": 85.73415765725076,
+      "peak_cuda_allocated_mib": 95.48388671875
+    },
+    {
+      "id": "eval-mlp-upgd-2026-a",
+      "model": "mlp",
+      "arm": "upgd",
+      "seed": 2026,
+      "stream": "a",
+      "attempts": 1,
+      "wall_seconds": 1377.1769685540348,
+      "training_seconds": 1359.3043521698564,
+      "evaluation_seconds": 2.6014186665415764,
+      "peak_cuda_allocated_mib": 95.48388671875
+    },
+    {
+      "id": "eval-mlp-upgd-2026-b",
+      "model": "mlp",
+      "arm": "upgd",
+      "seed": 2026,
+      "stream": "b",
+      "attempts": 1,
+      "wall_seconds": 1457.9324474800378,
+      "training_seconds": 1354.8592314869165,
+      "evaluation_seconds": 86.67197878472507,
+      "peak_cuda_allocated_mib": 95.48388671875
+    },
+    {
+      "id": "eval-cnn-adamw-42-a",
+      "model": "cnn",
+      "arm": "adamw",
+      "seed": 42,
+      "stream": "a",
+      "attempts": 1,
+      "wall_seconds": 1476.889971299097,
+      "training_seconds": 1457.796348311007,
+      "evaluation_seconds": 2.7649457529187202,
+      "peak_cuda_allocated_mib": 133.05322265625
+    },
+    {
+      "id": "eval-cnn-adamw-42-b",
+      "model": "cnn",
+      "arm": "adamw",
+      "seed": 42,
+      "stream": "b",
+      "attempts": 1,
+      "wall_seconds": 1564.511142237112,
+      "training_seconds": 1451.9383425302804,
+      "evaluation_seconds": 96.04179691709578,
+      "peak_cuda_allocated_mib": 133.05322265625
+    },
+    {
+      "id": "eval-cnn-adamw-123-a",
+      "model": "cnn",
+      "arm": "adamw",
+      "seed": 123,
+      "stream": "a",
+      "attempts": 1,
+      "wall_seconds": 1468.4605143591762,
+      "training_seconds": 1450.9039391167462,
+      "evaluation_seconds": 2.9567236211150885,
+      "peak_cuda_allocated_mib": 133.05322265625
+    },
+    {
+      "id": "eval-cnn-adamw-123-b",
+      "model": "cnn",
+      "arm": "adamw",
+      "seed": 123,
+      "stream": "b",
+      "attempts": 1,
+      "wall_seconds": 1558.4970461446792,
+      "training_seconds": 1448.0271802283823,
+      "evaluation_seconds": 93.01446928083897,
+      "peak_cuda_allocated_mib": 133.05322265625
+    },
+    {
+      "id": "eval-cnn-adamw-451-a",
+      "model": "cnn",
+      "arm": "adamw",
+      "seed": 451,
+      "stream": "a",
+      "attempts": 1,
+      "wall_seconds": 1472.0234728697687,
+      "training_seconds": 1454.320370402187,
+      "evaluation_seconds": 2.7069253399968147,
+      "peak_cuda_allocated_mib": 133.05322265625
+    },
+    {
+      "id": "eval-cnn-adamw-451-b",
+      "model": "cnn",
+      "arm": "adamw",
+      "seed": 451,
+      "stream": "b",
+      "attempts": 1,
+      "wall_seconds": 1560.727093083784,
+      "training_seconds": 1450.0144164618105,
+      "evaluation_seconds": 92.6359040029347,
+      "peak_cuda_allocated_mib": 133.05322265625
+    },
+    {
+      "id": "eval-cnn-adamw-789-a",
+      "model": "cnn",
+      "arm": "adamw",
+      "seed": 789,
+      "stream": "a",
+      "attempts": 1,
+      "wall_seconds": 1478.563552390784,
+      "training_seconds": 1460.9135018382221,
+      "evaluation_seconds": 2.6689586639404297,
+      "peak_cuda_allocated_mib": 133.05322265625
+    },
+    {
+      "id": "eval-cnn-adamw-789-b",
+      "model": "cnn",
+      "arm": "adamw",
+      "seed": 789,
+      "stream": "b",
+      "attempts": 1,
+      "wall_seconds": 1561.220489602536,
+      "training_seconds": 1450.9981978479773,
+      "evaluation_seconds": 92.62051383405924,
+      "peak_cuda_allocated_mib": 133.05322265625
+    },
+    {
+      "id": "eval-cnn-adamw-2026-a",
+      "model": "cnn",
+      "arm": "adamw",
+      "seed": 2026,
+      "stream": "a",
+      "attempts": 1,
+      "wall_seconds": 1466.421737458557,
+      "training_seconds": 1448.8688494320959,
+      "evaluation_seconds": 2.714550467208028,
+      "peak_cuda_allocated_mib": 133.05322265625
+    },
+    {
+      "id": "eval-cnn-adamw-2026-b",
+      "model": "cnn",
+      "arm": "adamw",
+      "seed": 2026,
+      "stream": "b",
+      "attempts": 1,
+      "wall_seconds": 1558.0936622750014,
+      "training_seconds": 1449.5764456130564,
+      "evaluation_seconds": 92.46501099690795,
+      "peak_cuda_allocated_mib": 133.05322265625
+    },
+    {
+      "id": "eval-cnn-upgd-42-a",
+      "model": "cnn",
+      "arm": "upgd",
+      "seed": 42,
+      "stream": "a",
+      "attempts": 1,
+      "wall_seconds": 1944.4484752640128,
+      "training_seconds": 1926.6570665035397,
+      "evaluation_seconds": 2.6616771314293146,
+      "peak_cuda_allocated_mib": 130.5927734375
+    },
+    {
+      "id": "eval-cnn-upgd-42-b",
+      "model": "cnn",
+      "arm": "upgd",
+      "seed": 42,
+      "stream": "b",
+      "attempts": 1,
+      "wall_seconds": 2042.5136363878846,
+      "training_seconds": 1934.5210093148053,
+      "evaluation_seconds": 93.09631846472621,
+      "peak_cuda_allocated_mib": 130.0927734375
+    },
+    {
+      "id": "eval-cnn-upgd-123-a",
+      "model": "cnn",
+      "arm": "upgd",
+      "seed": 123,
+      "stream": "a",
+      "attempts": 1,
+      "wall_seconds": 1949.6603728234768,
+      "training_seconds": 1933.6377590354532,
+      "evaluation_seconds": 2.722033755853772,
+      "peak_cuda_allocated_mib": 130.0927734375
+    },
+    {
+      "id": "eval-cnn-upgd-123-b",
+      "model": "cnn",
+      "arm": "upgd",
+      "seed": 123,
+      "stream": "b",
+      "attempts": 1,
+      "wall_seconds": 2035.8700977116823,
+      "training_seconds": 1927.4431060738862,
+      "evaluation_seconds": 92.56280530057847,
+      "peak_cuda_allocated_mib": 130.0927734375
+    },
+    {
+      "id": "eval-cnn-upgd-451-a",
+      "model": "cnn",
+      "arm": "upgd",
+      "seed": 451,
+      "stream": "a",
+      "attempts": 1,
+      "wall_seconds": 1946.6761498544365,
+      "training_seconds": 1930.7857100758702,
+      "evaluation_seconds": 2.7478054240345955,
+      "peak_cuda_allocated_mib": 130.0927734375
+    },
+    {
+      "id": "eval-cnn-upgd-451-b",
+      "model": "cnn",
+      "arm": "upgd",
+      "seed": 451,
+      "stream": "b",
+      "attempts": 1,
+      "wall_seconds": 2040.5570018813014,
+      "training_seconds": 1931.550363857299,
+      "evaluation_seconds": 93.10675483755767,
+      "peak_cuda_allocated_mib": 130.0927734375
+    },
+    {
+      "id": "eval-cnn-upgd-789-a",
+      "model": "cnn",
+      "arm": "upgd",
+      "seed": 789,
+      "stream": "a",
+      "attempts": 1,
+      "wall_seconds": 1961.8923230040818,
+      "training_seconds": 1945.778793592006,
+      "evaluation_seconds": 2.8166589811444283,
+      "peak_cuda_allocated_mib": 130.0927734375
+    },
+    {
+      "id": "eval-cnn-upgd-789-b",
+      "model": "cnn",
+      "arm": "upgd",
+      "seed": 789,
+      "stream": "b",
+      "attempts": 1,
+      "wall_seconds": 2054.678384596482,
+      "training_seconds": 1945.0624782200903,
+      "evaluation_seconds": 93.6581106595695,
+      "peak_cuda_allocated_mib": 130.0927734375
+    },
+    {
+      "id": "eval-cnn-upgd-2026-a",
+      "model": "cnn",
+      "arm": "upgd",
+      "seed": 2026,
+      "stream": "a",
+      "attempts": 1,
+      "wall_seconds": 1948.87015244551,
+      "training_seconds": 1932.8356676343828,
+      "evaluation_seconds": 2.7908337861299515,
+      "peak_cuda_allocated_mib": 130.0927734375
+    },
+    {
+      "id": "eval-cnn-upgd-2026-b",
+      "model": "cnn",
+      "arm": "upgd",
+      "seed": 2026,
+      "stream": "b",
+      "attempts": 1,
+      "wall_seconds": 2036.184543080628,
+      "training_seconds": 1928.5229458454996,
+      "evaluation_seconds": 92.34700088202953,
+      "peak_cuda_allocated_mib": 130.0927734375
+    }
+  ],
+  "limitations": [
+    "Derived from archived task/pool summaries; no checkpoint bytes in review archive.",
+    "Historical CAP and new baseline environments may differ; no exact trajectory equality claimed.",
+    "CAP LR selection used seed 42; new baseline development seed is disjoint from reporting seeds.",
+    "80-task prefixes, not original 200-task endpoints; earlier exploratory test access remains disclosed.",
+    "Baselines have 13 LR trials per architecture versus historical CAP 10.",
+    "Selection is single-seed single-task LR-only; non-LR UPGD settings are inherited from MNIST.",
+    "Remote checkpoint hashes verified by report gate; checkpoint bytes remain on the L4.",
+    "Five independent seeds; archived CAP entries are historical controls, not fresh L4 reruns."
+  ]
+}
