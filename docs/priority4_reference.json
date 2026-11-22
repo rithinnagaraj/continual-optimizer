@@ -1,0 +1,621 @@
+{
+  "archive_sha256": "8236000fda453531dbb853eae5aa94e23ce4737191fd22977c64a1409f812d02",
+  "architectures": {
+    "mlp": {
+      "run_config.json": {
+        "sha256": "f8a94658f33e50c5a52e6aa45dc449f11505986d8c71f145087ce315904c1b1d",
+        "content": {
+          "allow_unverified_reference": false,
+          "baseline": {
+            "T_a": 2000.0,
+            "T_m": 1000000.0,
+            "T_s": 2000.0,
+            "betas": [
+              0.9,
+              0.999
+            ],
+            "eps": 1e-08,
+            "importance": "raw_g2",
+            "k": 7e-05,
+            "lr": 0.0002,
+            "protection": "coordinate_box",
+            "release_update": "contest_blocked",
+            "weight_decay": 0.0
+          },
+          "checkpoint_hashes": {},
+          "device": "cuda",
+          "experiment": "reference",
+          "mechanisms": {
+            "a_checkpoints": [
+              20,
+              50,
+              100,
+              150
+            ],
+            "b_checkpoints": [
+              100,
+              150
+            ],
+            "bootstrap_resamples": 10000,
+            "bootstrap_seed": 610000,
+            "checkpoint_interval": 1000,
+            "curve_steps": [
+              100,
+              200,
+              500,
+              1000,
+              2000,
+              5000
+            ],
+            "diagnostic_interval": 100,
+            "fisher_examples_per_permutation": 200,
+            "fisher_subset_seed": 510000,
+            "fractions": [
+              0.01,
+              0.05,
+              0.2
+            ],
+            "horizons": {
+              "m2": 5,
+              "m3": 1,
+              "m4": 10
+            },
+            "k_multipliers": [
+              0.5,
+              0.75,
+              1.0,
+              1.5,
+              2.0
+            ],
+            "m1_checkpoints": [
+              100,
+              200
+            ],
+            "noise_draws": 3,
+            "noise_scale": 0.1,
+            "probe_seed": 410000,
+            "random_groups": 20,
+            "reset_branches": [
+              "baseline",
+              "box_off",
+              "recenter_only",
+              "importance_reset",
+              "full_safe_state_reset"
+            ],
+            "seeds": [
+              42,
+              123,
+              451,
+              789,
+              2026
+            ],
+            "shuffle_replicates": 8,
+            "shuffle_seed": 310000,
+            "version": "cifar-mechanisms-final-v1"
+          },
+          "protocol": {
+            "architecture": "mlp",
+            "augmentation": "none",
+            "batchnorm": false,
+            "cnn": "Conv3x3(3,32)-ReLU-Pool2; Conv3x3(32,64)-ReLU-Pool2; Conv3x3(64,128)-ReLU-Pool2; Flatten-Linear(2048,256)-ReLU-Linear(256,100)",
+            "dataset": "CIFAR100",
+            "dropout": false,
+            "lr_selection_sha256": "ceb29f7de11090fac20acbfd4b9908ca44630f83e8bff0309669e44a000c7bca",
+            "mlp": [
+              3072,
+              300,
+              300,
+              100
+            ],
+            "patch_grid": 8,
+            "patch_semantics": "shared RGB permutation; within-patch pixels unchanged",
+            "patch_size": 4,
+            "reference_policy": "complete same-protocol bank; no historical CIFAR targets"
+          },
+          "seeds": [
+            42,
+            123,
+            451,
+            789,
+            2026
+          ],
+          "smoke": false,
+          "source_version": "796be470c5f9077caeb267d342e4e6502e1e00e68f3f4139ac324dec4a896970",
+          "streams": {
+            "a_checkpoints": [
+              20,
+              50,
+              100,
+              150,
+              200
+            ],
+            "a_permutation_seed": 100000,
+            "additional_plasticity_metric": "P_dense_all_updates",
+            "b_checkpoints": [
+              50,
+              100,
+              150,
+              200
+            ],
+            "b_permutation_seed": 200001,
+            "batch_size": 128,
+            "dataset": "CIFAR100",
+            "eval_batch_size": 128,
+            "gate_plasticity_metric": "P_sampled_100step",
+            "historical_accuracy_interval": 100,
+            "normalization_mean": [
+              0.5071,
+              0.4867,
+              0.4408
+            ],
+            "normalization_std": [
+              0.2675,
+              0.2565,
+              0.2761
+            ],
+            "persistent_workers": true,
+            "pool_size": 40,
+            "sampler": "pytorch_random_sampler_persistent_workers",
+            "schedule_seed": 555,
+            "schedule_type": "five_shuffled_40_task_blocks",
+            "tasks": 200,
+            "test_examples": 2000,
+            "test_subset_seed": 999,
+            "threshold": 0.85,
+            "threshold_window": 200,
+            "updates_per_task": 5000
+          },
+          "threads": 1,
+          "torch_version": "2.11.0+cu130",
+          "version": "cifar-mechanisms-final-v1"
+        }
+      },
+      "reproduction_gate.json": {
+        "sha256": "18cb7c3f6526ee556bca69c883838bf5db5a8fcfd7d2b7f7d1d69527c3618d51",
+        "content": {
+          "P_definition": "P_sampled_100step: updates 500100, 500200, ..., 1000000; sampled descriptive metric; no historical CIFAR target",
+          "P_dense_all_updates": {
+            "123": 0.39168185314148674,
+            "2026": 0.39038662189207973,
+            "42": 0.39059942814107984,
+            "451": 0.3952196531406343,
+            "789": 0.39366302814003823
+          },
+          "baseline_config_sha256": "5d8b5220790296716fb13211be71fc4873610a81300dcd1c30e944f24f6f3739",
+          "checkpoint_hashes": {
+            "a_seed123_task100.pt": "cadae8206afc4668d1335287d746cbf448cbc89cb56cc53764e6265d41d9b421",
+            "a_seed123_task150.pt": "a5f9544ae00e3efbca6741b497e0efedc4ecdf12bb5a30a05679550c2932899c",
+            "a_seed123_task20.pt": "82e0545396d7462c3e096d09e0858639ba0f1cbda3f10cf53f445443f1c74648",
+            "a_seed123_task200.pt": "2945f0b7f01fc7133b150fbd38f3f3abd4636de01d0c2e5ba070da6695e890c9",
+            "a_seed123_task50.pt": "45ca4853c8c4336512ce08346df244bee3bd46fa85caf093ece254fd33b24daf",
+            "a_seed2026_task100.pt": "467ef238397a5236b76ec04336e7153b6b1bda8e964ef3860a5a73acf000f3ff",
+            "a_seed2026_task150.pt": "a6db5bbca4b6032175d265570d0d7b272c0ddafdf25265948530ea3f9f28a1db",
+            "a_seed2026_task20.pt": "a669166b8d07a8deb8262fb595c81b6c3c51fe0dbf70cd9b0267ecdb06906218",
+            "a_seed2026_task200.pt": "f28f550820e45fd2ef67a810bfe6548b8603cc6dcdb1d649c86b745646107666",
+            "a_seed2026_task50.pt": "37bb8e17cdd47343fac51187c34ff9b2a8ee99818d4498e5abca091c5b5c04a3",
+            "a_seed42_task100.pt": "c07b3723ca244804935628717337f7ba73d1fd7ef0804b02a75792cc122796a0",
+            "a_seed42_task150.pt": "76a3e3c7fa275fd09a3352d673a0a9fd7666f4a31313862d48d3eebaaffe70a2",
+            "a_seed42_task20.pt": "452df58d26b08f1cfd505fb0b3eab593615823f9870af7840f730f435573444b",
+            "a_seed42_task200.pt": "94145238abcb0b281814db39af952fea7959c59ca643147ce00beeb8f74e100a",
+            "a_seed42_task50.pt": "99d85fbed03645f3cb0af2a319b77c270b689051d1957306860686d1ae8523eb",
+            "a_seed451_task100.pt": "1bb913f5022a91f8844d09d945f826c65e686494ad8fc52930afcb09cd731669",
+            "a_seed451_task150.pt": "b3ba88a4eed08018a4119f215fd1caf57ae9924bf4ba1bc09a8242336f22157e",
+            "a_seed451_task20.pt": "37e316f354e390e517932b7f23a9779f6a477b6d8e6528d8b5ed23aa23535fac",
+            "a_seed451_task200.pt": "3fe230aac1842b03fab8d260224eb3d395d1ec8f2306f0f29b0903e116fb012a",
+            "a_seed451_task50.pt": "458c43e996874b467a062a04a48391c333092dd1ab824eafb9b2b96905638796",
+            "a_seed789_task100.pt": "dda7cf4429b5584a0086caf4dd742e7f4202b78e32640be4199dc9c7e14b71bd",
+            "a_seed789_task150.pt": "cff87504c8e96c9b3d27033242210ea31baef34597a7c90afbfdc263e9a9bf62",
+            "a_seed789_task20.pt": "39e25ba04bbb59bc367e4a6e1a79a9229a06c9ca54ece3e6a70da01cbfc8b7e7",
+            "a_seed789_task200.pt": "0c6df4e0fe352590fd448907f7d3d9e68dba9f878ce99d2c6f17ad353731dc04",
+            "a_seed789_task50.pt": "99731bfcbd3d812e70f8d25e920e56a8cfff0ee0b8e2433d759bdcad14134fad",
+            "b_seed123_task100.pt": "55b01323f5699aaf92547eff873cbbbb5af391695fd9115b528ffc1b83099ec6",
+            "b_seed123_task150.pt": "033d960879515c4cb1bba77f6d7956b80b3624a53be884b9dcc10e42bdc897bb",
+            "b_seed123_task200.pt": "65dd395c30d3c18c46c7d4690e1ca292dfd18d35d903633aed7b47e4b0088cae",
+            "b_seed123_task50.pt": "e131283316bab6f4d4b3456ddb0226f83fe3f7212eda4e49dffda60a7d7be2ff",
+            "b_seed2026_task100.pt": "315f195e0b87462cdc8ad9d7ce4848bd182ffc71d5fb50e57b6346502df4b8c7",
+            "b_seed2026_task150.pt": "bb7954875c411bced1a5d7605d6a1373e48bd05650f1b9127d15fa5308494039",
+            "b_seed2026_task200.pt": "13f6367b40c48c546795d31123d4ba3aa4214f3e15b96724a750f0a121c8ded9",
+            "b_seed2026_task50.pt": "bc3dd07547524f5aba8530b215e8467ff5762d57434d8332adf2587ee536a3a3",
+            "b_seed42_task100.pt": "7ff95ceff38547255ca443eb443bce2302134217fd71b2305fbfb7e646093b2d",
+            "b_seed42_task150.pt": "b954f859ffccb3e322ed58a686570c513f47fffff200e7898529c3fba910f20d",
+            "b_seed42_task200.pt": "4340b79517978cd73e23734d4b81176b40c6a8bfea9b8a5ae9be2b569a1323ee",
+            "b_seed42_task50.pt": "495c058ff7ba47dd691dbc66b4516a49b388f446e3ba1c90f9ceb5e74e5c81a1",
+            "b_seed451_task100.pt": "86b3ebe8df1af818cb0c2dc6fd1eff4064112564ca933eeff0609045a1534fad",
+            "b_seed451_task150.pt": "b5a52511bf16b86058630a93732509780f96b64f6d1244bbdeace9d5b4b0c4d5",
+            "b_seed451_task200.pt": "76fe0a99028979cc9201fbe34acf653e3ee5b2505ab25559338a591069cc141b",
+            "b_seed451_task50.pt": "36284cb7d7cc2a7ee55b4d2acdc8de0f4deed46a7f7ab9b4d6f96f4dd7001e76",
+            "b_seed789_task100.pt": "8e43c5f56580f3dac1920096eab05d62f2970ae02c3a4ecfbc767a1a6b350371",
+            "b_seed789_task150.pt": "b5635ef40b594b394ade7cf32d5730ecbe8921f86e952f61527e177a474fe79d",
+            "b_seed789_task200.pt": "6150d0d505f2afc05934dea07123173642afedc9296bd8b852d65072ab437cf2",
+            "b_seed789_task50.pt": "1b9ef93d3a99e44e5ac9df68bb7ef692afff1862f1fc6bf097c2d68fd4f3876f"
+          },
+          "dense_P_definition": "P_dense_all_updates: updates 500001 through 1000000; descriptive CIFAR metric",
+          "passed": true,
+          "protocol": {
+            "architecture": "mlp",
+            "augmentation": "none",
+            "batchnorm": false,
+            "cnn": "Conv3x3(3,32)-ReLU-Pool2; Conv3x3(32,64)-ReLU-Pool2; Conv3x3(64,128)-ReLU-Pool2; Flatten-Linear(2048,256)-ReLU-Linear(256,100)",
+            "dataset": "CIFAR100",
+            "dropout": false,
+            "lr_selection_sha256": "ceb29f7de11090fac20acbfd4b9908ca44630f83e8bff0309669e44a000c7bca",
+            "mlp": [
+              3072,
+              300,
+              300,
+              100
+            ],
+            "patch_grid": 8,
+            "patch_semantics": "shared RGB permutation; within-patch pixels unchanged",
+            "patch_size": 4,
+            "reference_policy": "complete same-protocol bank; no historical CIFAR targets"
+          },
+          "rows": [
+            {
+              "metric": "P_sampled_100step",
+              "observed": 0.3950915625274182,
+              "seed": 42
+            },
+            {
+              "metric": "R",
+              "observed": 0.0827948717948718,
+              "seed": 42
+            },
+            {
+              "metric": "P_sampled_100step",
+              "observed": 0.39502000001668924,
+              "seed": 123
+            },
+            {
+              "metric": "R",
+              "observed": 0.08508974358974357,
+              "seed": 123
+            },
+            {
+              "metric": "P_sampled_100step",
+              "observed": 0.39843281252682217,
+              "seed": 451
+            },
+            {
+              "metric": "R",
+              "observed": 0.08248717948717947,
+              "seed": 451
+            },
+            {
+              "metric": "P_sampled_100step",
+              "observed": 0.3970587500214577,
+              "seed": 789
+            },
+            {
+              "metric": "R",
+              "observed": 0.08311538461538463,
+              "seed": 789
+            },
+            {
+              "metric": "P_sampled_100step",
+              "observed": 0.3953337500095367,
+              "seed": 2026
+            },
+            {
+              "metric": "R",
+              "observed": 0.08337179487179487,
+              "seed": 2026
+            }
+          ],
+          "source_version": "796be470c5f9077caeb267d342e4e6502e1e00e68f3f4139ac324dec4a896970",
+          "valid_reference": true,
+          "validation_scope": "reference completeness and integrity only; not historical reproduction",
+          "version": "cifar-mechanisms-final-v1"
+        }
+      }
+    },
+    "cnn": {
+      "run_config.json": {
+        "sha256": "9db2cf8d8d82c9b4387d7ec8645863b7a70911a5b5d6ade04ab3b9a349aeb250",
+        "content": {
+          "allow_unverified_reference": false,
+          "baseline": {
+            "T_a": 2000.0,
+            "T_m": 1000000.0,
+            "T_s": 2000.0,
+            "betas": [
+              0.9,
+              0.999
+            ],
+            "eps": 1e-08,
+            "importance": "raw_g2",
+            "k": 7e-05,
+            "lr": 0.0003,
+            "protection": "coordinate_box",
+            "release_update": "contest_blocked",
+            "weight_decay": 0.0
+          },
+          "checkpoint_hashes": {},
+          "device": "cuda",
+          "experiment": "reference",
+          "mechanisms": {
+            "a_checkpoints": [
+              20,
+              50,
+              100,
+              150
+            ],
+            "b_checkpoints": [
+              100,
+              150
+            ],
+            "bootstrap_resamples": 10000,
+            "bootstrap_seed": 610000,
+            "checkpoint_interval": 1000,
+            "curve_steps": [
+              100,
+              200,
+              500,
+              1000,
+              2000,
+              5000
+            ],
+            "diagnostic_interval": 100,
+            "fisher_examples_per_permutation": 200,
+            "fisher_subset_seed": 510000,
+            "fractions": [
+              0.01,
+              0.05,
+              0.2
+            ],
+            "horizons": {
+              "m2": 5,
+              "m3": 1,
+              "m4": 10
+            },
+            "k_multipliers": [
+              0.5,
+              0.75,
+              1.0,
+              1.5,
+              2.0
+            ],
+            "m1_checkpoints": [
+              100,
+              200
+            ],
+            "noise_draws": 3,
+            "noise_scale": 0.1,
+            "probe_seed": 410000,
+            "random_groups": 20,
+            "reset_branches": [
+              "baseline",
+              "box_off",
+              "recenter_only",
+              "importance_reset",
+              "full_safe_state_reset"
+            ],
+            "seeds": [
+              42,
+              123,
+              451,
+              789,
+              2026
+            ],
+            "shuffle_replicates": 8,
+            "shuffle_seed": 310000,
+            "version": "cifar-mechanisms-final-v1"
+          },
+          "protocol": {
+            "architecture": "cnn",
+            "augmentation": "none",
+            "batchnorm": false,
+            "cnn": "Conv3x3(3,32)-ReLU-Pool2; Conv3x3(32,64)-ReLU-Pool2; Conv3x3(64,128)-ReLU-Pool2; Flatten-Linear(2048,256)-ReLU-Linear(256,100)",
+            "dataset": "CIFAR100",
+            "dropout": false,
+            "lr_selection_sha256": "ceb29f7de11090fac20acbfd4b9908ca44630f83e8bff0309669e44a000c7bca",
+            "mlp": [
+              3072,
+              300,
+              300,
+              100
+            ],
+            "patch_grid": 8,
+            "patch_semantics": "shared RGB permutation; within-patch pixels unchanged",
+            "patch_size": 4,
+            "reference_policy": "complete same-protocol bank; no historical CIFAR targets"
+          },
+          "seeds": [
+            42,
+            123,
+            451,
+            789,
+            2026
+          ],
+          "smoke": false,
+          "source_version": "796be470c5f9077caeb267d342e4e6502e1e00e68f3f4139ac324dec4a896970",
+          "streams": {
+            "a_checkpoints": [
+              20,
+              50,
+              100,
+              150,
+              200
+            ],
+            "a_permutation_seed": 100000,
+            "additional_plasticity_metric": "P_dense_all_updates",
+            "b_checkpoints": [
+              50,
+              100,
+              150,
+              200
+            ],
+            "b_permutation_seed": 200001,
+            "batch_size": 128,
+            "dataset": "CIFAR100",
+            "eval_batch_size": 128,
+            "gate_plasticity_metric": "P_sampled_100step",
+            "historical_accuracy_interval": 100,
+            "normalization_mean": [
+              0.5071,
+              0.4867,
+              0.4408
+            ],
+            "normalization_std": [
+              0.2675,
+              0.2565,
+              0.2761
+            ],
+            "persistent_workers": true,
+            "pool_size": 40,
+            "sampler": "pytorch_random_sampler_persistent_workers",
+            "schedule_seed": 555,
+            "schedule_type": "five_shuffled_40_task_blocks",
+            "tasks": 200,
+            "test_examples": 2000,
+            "test_subset_seed": 999,
+            "threshold": 0.85,
+            "threshold_window": 200,
+            "updates_per_task": 5000
+          },
+          "threads": 1,
+          "torch_version": "2.11.0+cu130",
+          "version": "cifar-mechanisms-final-v1"
+        }
+      },
+      "reproduction_gate.json": {
+        "sha256": "b7a5e0ab2ec43652e790e7adcdb93bdbe54408b86579723f2a1f1761afa0119d",
+        "content": {
+          "P_definition": "P_sampled_100step: updates 500100, 500200, ..., 1000000; sampled descriptive metric; no historical CIFAR target",
+          "P_dense_all_updates": {
+            "123": 0.394594346889019,
+            "2026": 0.4042245687655509,
+            "42": 0.3928842375157177,
+            "451": 0.3923044343903958,
+            "789": 0.396428656264186
+          },
+          "baseline_config_sha256": "7dce9d2a743e0d73a52743abfdb7e303bb8f603d86074449937e31735f8f0026",
+          "checkpoint_hashes": {
+            "a_seed123_task100.pt": "b010d2ed9761b4e8f39916244dbbbd9d65166021563935e5607ac62585ebf2f4",
+            "a_seed123_task150.pt": "1e960c8f49922658971f67b19e0e4e3cbf1ff19b55349eb71b47764cba6505df",
+            "a_seed123_task20.pt": "c5cfcd41311a140c4b8cd6616faa0ca68e98bd7bdb896a672c334683a35d3bb0",
+            "a_seed123_task200.pt": "cb7b58c2d3dc49b51b527cd80ce48033b0ee29ffa7f484ee155391babded06cd",
+            "a_seed123_task50.pt": "bdfc79e28dcc99b2b1d489af0cf61224caa1d84840ba42b135ddd48891222b35",
+            "a_seed2026_task100.pt": "eb86738237b186887abd76215d754590176231a9ce0934e3b8b1be43ed27b7ee",
+            "a_seed2026_task150.pt": "25a9bcdd0a3b5563ab2032e0073dcfa74ae671f70a36cdca97d17e6fbc6d2356",
+            "a_seed2026_task20.pt": "926eb38e90ece56943aef1937eba32cb8f6057e391215435ca91b0dc332b489e",
+            "a_seed2026_task200.pt": "369be3528c40d352f83a3faab8bf4a4c4cf01b2c1d534284ac159e3ab5ca2b9e",
+            "a_seed2026_task50.pt": "dfe9f4f704c46eb8d352227d5e4af648dc0641d5fc223d0ed77848944c98d9b9",
+            "a_seed42_task100.pt": "a01fc2ae3b09a6d29215a63290a6aee2ce06f59f4b7cdc362a7ccb02ba883fa3",
+            "a_seed42_task150.pt": "574f89220f1e5b547a52c728aa085fe684dd8082b750cdac789d8fc395ca4951",
+            "a_seed42_task20.pt": "a9702605c4e88049a481efcb63b35d8f77ccc694f20fc462ae7d1cd5c9bd65ac",
+            "a_seed42_task200.pt": "fc82045047645441b85d41538716b1e7e5ed7e19d43a1d54c1a7bb5dd719d445",
+            "a_seed42_task50.pt": "ff49ccb3ca1e5656fc08a3fedcb6a33260c77baf77f95d6dcfc54448682937ac",
+            "a_seed451_task100.pt": "784e0e328f12164065938f79c50b90ef3ac8757e0580293f1e941f8f8636f369",
+            "a_seed451_task150.pt": "80ea05ca855887cc4fdd15f3a53fb742adc2102b870aa65a4dd6fd355552fa38",
+            "a_seed451_task20.pt": "a1e619d37a8ed5f7bdf41f627d3768be5e05c6692eef673aed0c57cc12f43ccf",
+            "a_seed451_task200.pt": "2c53cb25748a0ae50a2174407c0e8017e177c4caa71cc91bd3e1d779d29c39e1",
+            "a_seed451_task50.pt": "56847df0050bebdc8c872211a2fb655f04158b89980bb32f3010c9ac257d2e82",
+            "a_seed789_task100.pt": "a7d016fb7da06528964c3847d0a0044716c4ed34dd579a17643c260a67123812",
+            "a_seed789_task150.pt": "fa6a6d0ef6c43798232727a8b348c8294768cd37cc9e180a10769fd3008c85c5",
+            "a_seed789_task20.pt": "4c8040fbf0c9d381997e1c3c67c4d19626c23079c60c9bde33eb10f05bf8fc78",
+            "a_seed789_task200.pt": "ea4cc6ae1d43bfbe658381f703491cc6bc4f115d0daee5ec27569b622ec1a332",
+            "a_seed789_task50.pt": "c18a4e94681d334e8b4d07857e0dba9f7fae6e76717c1326cc4847439ac9ce9a",
+            "b_seed123_task100.pt": "bfce520fa50ab8c3c68281e6a68d0797726ff92b9bace2b6fa128604fd086fd2",
+            "b_seed123_task150.pt": "0b6444a779b490ca4735edadf29805d02c6e09aeed03a5b71aad92f046768de9",
+            "b_seed123_task200.pt": "7b50f6d5f4e9fd7049c86d4662b2d54566a316b6ad104c10aa14d90afcdd7477",
+            "b_seed123_task50.pt": "3aaf4f7a42276bda6683a0164d3c8ff3a1f3b4b226b80aa7f44954e68dd2e1ed",
+            "b_seed2026_task100.pt": "9816ca65c126775f15f9a86cbae01bf302a8f64dd9b004a819f96ff4607dae04",
+            "b_seed2026_task150.pt": "1cb82f77de78de6ab4b7737325692fb6e9528a58985dd68fe8d6977755f5ed73",
+            "b_seed2026_task200.pt": "b915edd6a85349f2989a5d9c485567588cdc25e468373b97f7dc625f3ffe8087",
+            "b_seed2026_task50.pt": "f4b6cfdae811fe3d19a2fcbe807f9ebaa87163e44e4e0c3688f5c602f65a9b7b",
+            "b_seed42_task100.pt": "54c4eaca15d924ee5dcf2e72172eac186d0b8c4d3ffb02697cfc9fc6f7be5e8d",
+            "b_seed42_task150.pt": "aa215d67eadea9a9a2d4a5e00eb1b2bde0712d3352bb02ec1f3f50d4ee3ee58f",
+            "b_seed42_task200.pt": "b405f3673d68cb46184ef9317f5d3a56b57fe635a2ad09d5b004d6b92eb13fc0",
+            "b_seed42_task50.pt": "d2fc8dc48d2ebcfb2764ecdca2f53cacaf8587aacd5f40da982ee050e7a52eca",
+            "b_seed451_task100.pt": "47491b0af29c398c517e7f1657db82ee1a5cf55dd6e8e9d78055f35b5bf25eec",
+            "b_seed451_task150.pt": "e132d95574606be4e482bf6dea1532bf12ccb26014691625ca6643633b9750b6",
+            "b_seed451_task200.pt": "453557cec9b53395a0788a3bb5f253b7da1ada19a90177efb53c3561243714d7",
+            "b_seed451_task50.pt": "d820207bdf38b576c3bef98c18d293816b64a971256558ef154c51e164827364",
+            "b_seed789_task100.pt": "ee0fc1325e527d5047d58483399b164c0c53885349125db7701e20ca4bac182f",
+            "b_seed789_task150.pt": "b83e5ac91f8bd1bed9b135ef132958cf9c8e6fa83a1c1e64e6e92fb7d77e3ba8",
+            "b_seed789_task200.pt": "f722f6df3e7503c38a3f51c90e84875199c9e2ce4b8a8886bf06c3e99fd7ce12",
+            "b_seed789_task50.pt": "e57d0f5bf10d69b8f9dad4045d299a597491fc2193066f292930c087aa04ab71"
+          },
+          "dense_P_definition": "P_dense_all_updates: updates 500001 through 1000000; descriptive CIFAR metric",
+          "passed": true,
+          "protocol": {
+            "architecture": "cnn",
+            "augmentation": "none",
+            "batchnorm": false,
+            "cnn": "Conv3x3(3,32)-ReLU-Pool2; Conv3x3(32,64)-ReLU-Pool2; Conv3x3(64,128)-ReLU-Pool2; Flatten-Linear(2048,256)-ReLU-Linear(256,100)",
+            "dataset": "CIFAR100",
+            "dropout": false,
+            "lr_selection_sha256": "ceb29f7de11090fac20acbfd4b9908ca44630f83e8bff0309669e44a000c7bca",
+            "mlp": [
+              3072,
+              300,
+              300,
+              100
+            ],
+            "patch_grid": 8,
+            "patch_semantics": "shared RGB permutation; within-patch pixels unchanged",
+            "patch_size": 4,
+            "reference_policy": "complete same-protocol bank; no historical CIFAR targets"
+          },
+          "rows": [
+            {
+              "metric": "P_sampled_100step",
+              "observed": 0.39371281252503393,
+              "seed": 42
+            },
+            {
+              "metric": "R",
+              "observed": 0.24869230769230777,
+              "seed": 42
+            },
+            {
+              "metric": "P_sampled_100step",
+              "observed": 0.39592125001549716,
+              "seed": 123
+            },
+            {
+              "metric": "R",
+              "observed": 0.23939743589743587,
+              "seed": 123
+            },
+            {
+              "metric": "P_sampled_100step",
+              "observed": 0.3932093750178814,
+              "seed": 451
+            },
+            {
+              "metric": "R",
+              "observed": 0.24508974358974356,
+              "seed": 451
+            },
+            {
+              "metric": "P_sampled_100step",
+              "observed": 0.3985221875071525,
+              "seed": 789
+            },
+            {
+              "metric": "R",
+              "observed": 0.24755128205128207,
+              "seed": 789
+            },
+            {
+              "metric": "P_sampled_100step",
+              "observed": 0.40675968753099434,
+              "seed": 2026
+            },
+            {
+              "metric": "R",
+              "observed": 0.24279487179487183,
+              "seed": 2026
+            }
+          ],
+          "source_version": "796be470c5f9077caeb267d342e4e6502e1e00e68f3f4139ac324dec4a896970",
+          "valid_reference": true,
+          "validation_scope": "reference completeness and integrity only; not historical reproduction",
+          "version": "cifar-mechanisms-final-v1"
+        }
+      }
+    }
+  }
+}
