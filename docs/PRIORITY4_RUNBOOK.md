@@ -4,6 +4,9 @@ Frozen plan, 23 November 2026. Addresses Reviewer 2's instrument-use-case reques
 MLP/CNN age difference, and null anchor-recentering explanation. Manuscript changes
 remain deferred until the experimental program is complete.
 
+Status: all 160 jobs completed and verified. Actual recorded time was 0.808 L4
+job-hours. See [results and interpretation](PRIORITY4_RESULTS.md).
+
 ## Design and scope
 
 Use authenticated original CIFAR stream-A CAP checkpoints at tasks 20, 50, 100,

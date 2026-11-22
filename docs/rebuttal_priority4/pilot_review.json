@@ -1,0 +1,72 @@
+{
+  "verified_statuses": [
+    {
+      "job": "mlp-42-20-baseline",
+      "complete": false,
+      "elapsed_seconds": 3.760269472375512,
+      "key": {
+        "campaign": "7a91291848c8b7da2bc2754dcde3440065e7fbc6858881c7400f2159ed27065f",
+        "job": [
+          "mlp",
+          42,
+          20,
+          "baseline"
+        ],
+        "source_sha256": "452df58d26b08f1cfd505fb0b3eab593615823f9870af7840f730f435573444b"
+      },
+      "step": 1000
+    },
+    {
+      "job": "mlp-42-150-baseline",
+      "complete": false,
+      "elapsed_seconds": 3.42158835940063,
+      "key": {
+        "campaign": "7a91291848c8b7da2bc2754dcde3440065e7fbc6858881c7400f2159ed27065f",
+        "job": [
+          "mlp",
+          42,
+          150,
+          "baseline"
+        ],
+        "source_sha256": "76a3e3c7fa275fd09a3352d673a0a9fd7666f4a31313862d48d3eebaaffe70a2"
+      },
+      "step": 1000
+    },
+    {
+      "job": "cnn-42-20-baseline",
+      "complete": false,
+      "elapsed_seconds": 4.9397187307477,
+      "key": {
+        "campaign": "7a91291848c8b7da2bc2754dcde3440065e7fbc6858881c7400f2159ed27065f",
+        "job": [
+          "cnn",
+          42,
+          20,
+          "baseline"
+        ],
+        "source_sha256": "a9702605c4e88049a481efcb63b35d8f77ccc694f20fc462ae7d1cd5c9bd65ac"
+      },
+      "step": 1000
+    },
+    {
+      "job": "cnn-42-150-baseline",
+      "complete": false,
+      "elapsed_seconds": 4.7116753552109,
+      "key": {
+        "campaign": "7a91291848c8b7da2bc2754dcde3440065e7fbc6858881c7400f2159ed27065f",
+        "job": [
+          "cnn",
+          42,
+          150,
+          "baseline"
+        ],
+        "source_sha256": "574f89220f1e5b547a52c728aa085fe684dd8082b750cdac789d8fc395ca4951"
+      },
+      "step": 1000
+    }
+  ],
+  "projected_job_hours": 0.9351806620963745,
+  "free_disk_gib": 36.67267990112305,
+  "reviewed_unix": 1795375902.4498036,
+  "notes": "Four 1000-update prefixes; sampled CUDA proposal equality assertions passed. Estimate scales all evaluation overhead fivefold and excludes process/data startup."
+}

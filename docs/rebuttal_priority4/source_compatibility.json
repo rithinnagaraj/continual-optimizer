@@ -1,0 +1,9 @@
+{
+  "data.py": true,
+  "streams.py": true,
+  "model.py": true,
+  "seed.py": true,
+  "metrics.py": true,
+  "protocol.py": true,
+  "seed_difference": "Public seed helper explicitly disables matmul TF32; original helper leaves framework default. All new matched branches use identical recorded settings."
+}

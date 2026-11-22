@@ -1,5 +1,12 @@
 # TMLR rebuttal experiment plan
 
+**23 November 2026 status:** All four planned experimental priorities are
+complete and verified. Priority 3 used 16.862 L4 evaluation hours plus 0.308
+tuning hours; priority 4 used 0.808 L4 job-hours. Results are in
+[PRIORITY3_RESULTS.md](PRIORITY3_RESULTS.md) and
+[PRIORITY4_RESULTS.md](PRIORITY4_RESULTS.md). Paper/rebuttal synthesis remains.
+The dated implementation notes and original estimates below are historical.
+
 **20 November 2026 update:** The priority-1 UPGD search, confirmation, and
 five-seed benchmark evaluation are complete. See [PRIORITY1_RESULTS.md](PRIORITY1_RESULTS.md)
 for measured costs, verified results, compact evidence, and manuscript/reviewer
@@ -17,7 +24,7 @@ provenance; no new baseline scientific runs were launched during implementation.
 
 Priority 1 uses a separate UPGD tuning/evaluation campaign; priority 2 uses the
 checkpoint-probing runner linked above. Priority 3 has a separate CIFAR runner;
-priority 4 remains a planned follow-up.
+priority 4 now has its completed diagnostic runner and results linked above.
 No scientific campaign was launched during implementation. Target: freeze experimental results during the
 first week of an approximately two-week rebuttal window.
 
@@ -281,7 +288,7 @@ commands above. The inherited full scientific suites were not rerun.
 |---|---|---|---|
 | 2 | Five final UPGD B checkpoints; native utility/Fisher/random M1 at 1%, existing noise protocol; compare rankings within each host model | R2 important request 2: comparison with existing protection statistics | 1–6 GPU-hours, no new training |
 | 3 | AdamW/UPGD on CIFAR MLP and CNN, five seeds, both streams, 80 tasks (400k updates); explicit LR pilot; recover matched CAP prefixes | R2: absent CIFAR learner baselines | Complete and verified: 16.862 L4 evaluation hours; 0.308 tuning hours |
-| 4 | Recover CIFAR A checkpoints at 20/50/100/150; four M3 branches, five seeds, two architectures, one task each (800k updates); log proposed/clipped/applied update norms | R2: MLP–CNN difference and null recentering effect | 2–8 GPU-hours if checkpoint banks are recovered |
+| 4 | Recovered CIFAR A checkpoints at 20/50/100/150; four M3 branches, five seeds, two architectures, one task each (800k updates); proposed/clipped/applied update diagnostics | R2: MLP–CNN difference and limited recentering effect | Complete and verified: 0.808 L4 job-hours |
 
 The local scientific review summaries do not include full mechanistic checkpoint
 payloads. Recover original banks and their source/environment manifests before
@@ -299,9 +306,16 @@ CAP on both CNN plasticity and retention. Preserve the historical-control caveat
 [Verified evidence and timings](PRIORITY3_RESULTS.md) are saved. Matching historical
 CAP 80-task prefixes have been recovered; priority 3 does not need new CAP training.
 Priority 4: original mechanistic banks were recovered and all 90 checkpoint
-hashes authenticated on 23 November. The bounded L4 pilot passed, projecting
-about one job-hour; the full 160-branch campaign is now running. See
-[the frozen diagnostic plan](PRIORITY4_RUNBOOK.md).
+hashes authenticated on 23 November. All 160 branches completed and passed
+remote checkpoint verification and independent local recomputation, using
+0.808 L4 job-hours. See [the verified results](PRIORITY4_RESULTS.md).
+Recentring sharply changes initial geometry but clipping returns; its benefit
+is small rather than exactly zero. CNN has larger absolute projection cost
+that largely plateaus after age 50, while MLP projection cost continues growing.
+All four planned experimental priorities are complete. Remaining work is the
+paper/rebuttal synthesis, related-work expansion, framing corrections and tuning,
+runtime, historical-control and reproduction disclosures. No extra training is
+required for this agreed minimal experiment plan.
 
 Keep the paper framing narrow: inspectable protection studied with matched
 interventions. Broaden related work and disclose the expanded but still unequal

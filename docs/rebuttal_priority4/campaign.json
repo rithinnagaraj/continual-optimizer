@@ -1,0 +1,48 @@
+{
+  "environment": {
+    "cublas_workspace_config": null,
+    "cuda": "13.0",
+    "cudnn": 91900,
+    "deterministic_algorithms": false,
+    "device": "cuda",
+    "gpu": "NVIDIA L4",
+    "platform": "Linux",
+    "python": "3.10.22",
+    "tf32": false,
+    "threads": 1,
+    "torch": "2.11.0+cu130",
+    "torchvision": "0.26.0"
+  },
+  "identity": {
+    "ages": [
+      20,
+      50,
+      100,
+      150
+    ],
+    "branches": [
+      "baseline",
+      "box_off",
+      "importance_reset",
+      "recenter_only"
+    ],
+    "diagnostic_steps": "1..20 and every 100",
+    "files": {
+      "cifar_update_probe.py": "c746b52c267e92e7d216c788ecaccdc3f3dc8783cd047bc00b34b987444a5ee8",
+      "docs/priority4_reference.json": "700e68eee4df5d0366db7a35876fa75575b591964511ce0b0a59435866886530",
+      "experiment_cifar_diagnostics.py": "8385834bbae10c8d11830041abb22061aea4f2deb66b73b0a93a524c0a337c7c",
+      "upgd_rebuttal.py": "7e1343743665e94063b1beb11663ac7330a551d285b972c188b8e2c184fb144f",
+      "upgd_rebuttal_runtime.py": "b91d07e165db03e33daf618ab62e59c32febc61ea19e2ff8c48fb1849f6c02b9"
+    },
+    "frozen_cifar": "0200956db4432330fcb97f40e5ca701dbc4fbef4fb86dc285d81ea3d1f2bf21e",
+    "seeds": [
+      42,
+      123,
+      451,
+      789,
+      2026
+    ],
+    "updates": 5000,
+    "version": 1
+  }
+}

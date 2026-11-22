@@ -1,0 +1,15 @@
+{
+  "archive_bytes": 56794210,
+  "archive_sha256": "1997cb94240f56fbfa7d79d053f0ba3e0a57cb0cfcf62497429b12976a719c4e",
+  "artifact_hashes_compared": 160,
+  "jobs": 160,
+  "local_torch_checkpoints_loaded": false,
+  "maximum_recomputed_numeric_difference": 2.220446049250313e-16,
+  "passed": true,
+  "path_normalization": "Windows separators normalized to POSIX when comparing artifact paths",
+  "remote_checkpoint_hashes_verified": 160,
+  "retention_rows": 4800,
+  "tolerance": 1e-12,
+  "trace_rows": 44800,
+  "updates": 800000
+}

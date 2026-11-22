@@ -102,9 +102,33 @@ differences. Treat them as qualified benchmark context, not a superiority test.
 
 The contribution should remain explicit protection controls and matched causal
 interventions, with architecture-dependent empirical performance. Do not turn
-the CIFAR ranking into a causal explanation for the architecture contrast: the
-planned priority-4 interventions must test that explanation. See
+the CIFAR ranking into a causal explanation for the architecture contrast. The
+priority-4 diagnostics below directly measure constraint geometry. See
 [full CIFAR results, uncertainties, and provenance](PRIORITY3_RESULTS.md).
+
+## Mechanism measurements after priority 4
+
+All 160 matched continuations are complete. Early projection cost (removed /
+proposed update norm) increases from 0.185 to 0.290 across ages 20–150 in MLP.
+CNN has larger absolute costs, 0.453 at age 20 and approximately 0.487–0.490
+at ages 50–150. Its weak learning-response age trend does not imply absence of
+constraints. Absolute baseline accuracy rises with age in both models; discuss
+the intervention-measured constraint cost rather than absolute learning decline.
+
+Recentring sharply reduces projection immediately, but it returns near baseline
+within about 500 updates in CNN and 1,000 in MLP. Importance remains intact.
+This is stronger evidence for transient relief followed by rebinding than for
+the speculation that anchors were already so close that recentering does nothing.
+Recenter gains at age 150 are small, not zero: +0.333 pp in MLP and +0.063 pp
+in CNN, versus importance-reset gains of +1.305 and +3.213 pp. There are retention
+costs, especially in CNN. See [verified diagnostics](PRIORITY4_RESULTS.md).
+
+These measurements strengthen the within-CAP mechanism account and provide a
+concrete diagnostic use case. They do not show that CAP is a uniquely superior
+instrument, that architecture alone causes the differences, or that every CNN
+age contrast is exactly zero. Retain the narrower instrument framing and
+acknowledge the different learning rates, five-seed uncertainty, and historical
+source/environment compatibility boundary.
 
 ## Results records
 
@@ -113,5 +137,5 @@ planned priority-4 interventions must test that explanation. See
   sizes, uncertainty, and layer-level qualifications.
 - [Priority 3](PRIORITY3_RESULTS.md): completed CIFAR baselines and qualified
   comparison with archived CAP prefixes.
-- Priority 4 remains pending: recover the original mechanistic checkpoint banks
-  before the targeted MLP/CNN matched-intervention follow-up.
+- [Priority 4](PRIORITY4_RESULTS.md): completed proposal/projection diagnostics,
+  transient recentering effects, age trends and paired retention costs.
